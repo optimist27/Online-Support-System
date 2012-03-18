@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swiftlanguage>
+	<title>English (U.S.)</title>
+	<isocode>en-us</isocode>
+	<author>Kayako Infotech Ltd.</author>
+	<charset>UTF-8</charset>
+	<textdirection>LTR</textdirection>
+	<version>0</version>
+	<flagicon>{$themepath}us.gif</flagicon>
+
+	<phrase section="default" code="widgethome">Home</phrase>
+	<phrase section="default" code="widgetregister">Register</phrase>
+	<phrase section="default" code="widgetviewtickets">View Tickets</phrase>
+	<phrase section="default" code="widgetsubmitticket">Submit a Ticket</phrase>
+	<phrase section="default" code="widgetknowledgebase">Knowledgebase</phrase>
+	<phrase section="default" code="widgetdownloads">Downloads</phrase>
+	<phrase section="default" code="widgetnews">News</phrase>
+	<phrase section="default" code="widgettroubleshooter">Troubleshooter</phrase>
+	<phrase section="default" code="bytes">Bytes</phrase>
+	<phrase section="default" code="kb">KB</phrase>
+	<phrase section="default" code="mb">MB</phrase>
+	<phrase section="default" code="gb">GB</phrase>
+	<phrase section="default" code="home">Home</phrase>
+	<phrase section="default" code="login">Login</phrase>
+	<phrase section="default" code="logout">Logout</phrase>
+	<phrase section="default" code="rssfeed">RSS Feed</phrase>
+	<phrase section="default" code="cancel">Cancel</phrase>
+	<phrase section="default" code="noinfoinview">No information available in this view</phrase>
+	<phrase section="default" code="subscribe">Subscribe</phrase>
+	<phrase section="default" code="rememberme">Remember me</phrase>
+	<phrase section="default" code="lostpassword">Lost password</phrase>
+	<phrase section="default" code="poweredby">Powered by Kayako %s Help Desk Software</phrase>
+	<phrase section="default" code="defaulttitle"><![CDATA[<a href="http://www.kayako.com" target="_blank" class="bottomfooterlink">Help Desk Software</a> by Kayako %s]]></phrase>
+	<phrase section="default" code="copyright"><![CDATA[Copyright &copy; 2001-%s Kayako Infotech Ltd.]]></phrase>
+	<phrase section="default" code="module_notreg">%s module is not registered</phrase>
+	<phrase section="default" code="event_notreg">%s event is not registered</phrase>
+	<phrase section="default" code="unable_to_execute">Unable to execute %s</phrase>
+	<phrase section="default" code="searchbutton">SEARCH</phrase>
+	<phrase section="default" code="searchresults">Search Results</phrase>
+	<phrase section="default" code="nosearchresults">No Results Found</phrase>
+	<phrase section="default" code="pleasetypeyourquestion">Please type your question here</phrase>
+	<phrase section="default" code="pleasetypeyourquery">Please type your search query here</phrase>
+	<phrase section="default" code="defaulttimezone">-- Default Time Zone --</phrase>
+	<phrase section="default" code="invaliduseracc">Invalid user account. The account does not exist.</phrase>
+	<phrase section="default" code="invaliduser">Invalid email or password</phrase>
+	<phrase section="default" code="invaliduserdisabled">Unable to login. The user account is disabled</phrase>
+	<phrase section="default" code="invaliduserexpired">Unable to login. The user account has expired</phrase>
+	<phrase section="default" code="invalidusertgroupres">Unable to login. The user group is not authorized to access this template group.</phrase>
+	<phrase section="default" code="action_notreg">%s action is not registered</phrase>
+	<phrase section="default" code="requiredfieldempty">One of the required field(s) is empty</phrase>
+	<phrase section="default" code="emailinvalid">Specified email address is invalid</phrase>
+	<phrase section="default" code="languagefield">Language:</phrase>
+	<phrase section="default" code="close">Close</phrase>
+	<phrase section="default" code="errcaptchainvalid">CAPTCHA phrase does not match.</phrase>
+	<phrase section="default" code="creationfailed">Object creation failed.</phrase>
+	<phrase section="default" code="supportcenterfield">Support Center:</phrase>
+	<phrase section="default" code="errorsmtpconnect">Unable to connect to SMTP server</phrase>
+	<phrase section="default" code="buttonsubmit">Submit</phrase>
+	<phrase section="default" code="buttonupdate">Update</phrase>
+	<phrase section="default" code="buttonsend">Send</phrase>
+	<phrase section="default" code="loginenteremail">Your email address</phrase>
+	<phrase section="default" code="myaccount">Account</phrase>
+	<phrase section="default" code="maprofile">My Profile</phrase>
+	<phrase section="default" code="maorganization">My Organization</phrase>
+	<phrase section="default" code="mapreferences">Preferences</phrase>
+	<phrase section="default" code="machangepassword">Change Password</phrase>
+	<phrase section="default" code="malogout">Logout</phrase>
+	<phrase section="default" code="yes">Yes</phrase>
+	<phrase section="default" code="no">No</phrase>
+	<phrase section="default" code="file">File</phrase>
+	<phrase section="default" code="salutationmr">Mr.</phrase>
+	<phrase section="default" code="salutationmiss">Ms.</phrase>
+	<phrase section="default" code="salutationmrs">Mrs.</phrase>
+	<phrase section="default" code="salutationdr">Dr.</phrase>
+	<phrase section="default" code="buttonnext"><![CDATA[Next &raquo;]]></phrase>
+	<phrase section="default" code="buttonback"><![CDATA[&laquo; Back]]></phrase>
+	<phrase section="default" code="generalinformation">General Information</phrase>
+	<phrase section="default" code="invalidemail">Invalid email address specified</phrase>
+	<phrase section="default" code="nopermission">Unable to continue. You do not have permission to carry out this action.</phrase>
+	<phrase section="default" code="hidden">[ Hidden ]</phrase>
+	<phrase section="default" code="private">[ Private ]</phrase>
+	<phrase section="default" code="na">- NA -</phrase>
+	<phrase section="default" code="logintocontinue">Please login to continue</phrase>
+	<phrase section="default" code="captchadesc">Please enter the text you see in the image into the textbox below. This is required to prevent automated registrations and form submissions.</phrase>
+	<phrase section="default" code="latestupdates">Latest Updates</phrase>
+	<phrase section="default" code="postedby">Posted by</phrase>
+	<phrase section="default" code="on">on</phrase>
+	<phrase section="default" code="readmore"><![CDATA[Read more &raquo;]]></phrase>
+	<phrase section="default" code="viewallnews">View all news</phrase>
+	<phrase section="default" code="captchaverification">CAPTCHA Verification</phrase>
+	<phrase section="default" code="comments">Comments</phrase>
+	<phrase section="default" code="postnewcomment">Post a new comment</phrase>
+	<phrase section="default" code="commentfullname">Full Name:</phrase>
+	<phrase section="default" code="commentemail">Email:</phrase>
+	<phrase section="default" code="commentdata">Comments:</phrase>
+	<phrase section="default" code="commentconfirmation">Thank you for submitting your feedback. Your comment might be flagged for review and will appear once approved by our staff.</phrase>
+	<phrase section="default" code="reply">Reply</phrase>
+	<phrase section="default" code="filternews">News Categories</phrase>
+	<phrase section="default" code="filterkb">Knowledgebase</phrase>
+	<phrase section="default" code="vardate1">%dd %dh %dm</phrase>
+	<phrase section="default" code="vardate2">%dh %dm %ds</phrase>
+	<phrase section="default" code="vardate3">%dm %ds</phrase>
+	<phrase section="default" code="vardate4">%ds</phrase>
+
+	<phrase section="users" code="errorinvalidfileext">The profile image file has an invalid extension. Allowed extensions are: gif, jpeg, jpg, png</phrase>
+	<phrase section="users" code="prnoemailprovided">You must specify at least one valid email address</phrase>
+	<phrase section="users" code="prprofileupdate">Your profile has been updated successfully</phrase>
+	<phrase section="users" code="emailaccounts">Email Accounts</phrase>
+	<phrase section="users" code="praddemail">Add Email</phrase>
+	<phrase section="users" code="prprofileimage">Profile Image:</phrase>
+	<phrase section="users" code="prphone">Phone Number:</phrase>
+	<phrase section="users" code="prfullname">Full Name:</phrase>
+	<phrase section="users" code="prorganization">Organization:</phrase>
+	<phrase section="users" code="prtitleposition">Title/Position:</phrase>
+	<phrase section="users" code="profiledetails">Profile Details</phrase>
+	<phrase section="users" code="profiletitle">My Profile</phrase>
+	<phrase section="users" code="generatepasswordemailsubject">New Password for %s Support Center</phrase>
+	<phrase section="users" code="generatepasswordintro">Your password for our support center has been reset and can be found below:</phrase>
+	<phrase section="users" code="generatepasswordfooter">For more information or if you believe this has been done without your permission, please visit our helpdesk by clicking on the link below.</phrase>
+	<phrase section="users" code="prupdated">Your preferences have been updated successfully</phrase>
+	<phrase section="users" code="prlanguage">Language:</phrase>
+	<phrase section="users" code="prenabledst">Enable DST:</phrase>
+	<phrase section="users" code="prtimezone">Timezone:</phrase>
+	<phrase section="users" code="generaloptions">General Options</phrase>
+	<phrase section="users" code="changepasswordtitle">Change Password</phrase>
+	<phrase section="users" code="passworddetails">Password Details</phrase>
+	<phrase section="users" code="newpassword">New Password:</phrase>
+	<phrase section="users" code="newpasswordrepeat">New Password (repeat):</phrase>
+	<phrase section="users" code="existingpassword">Existing Password:</phrase>
+	<phrase section="users" code="newpwdoesnotmatch">The passwords specified do not match.</phrase>
+	<phrase section="users" code="existingpwdoesnotmatch">Invalid existing password specified. Unable to continue.</phrase>
+	<phrase section="users" code="preferencestitle">Preferences</phrase>
+	<phrase section="users" code="invalidorganization">The Organization does not exist. Please contact support.</phrase>
+	<phrase section="users" code="lpsuccess">Password updated successfully; you may now login with your new credentials.</phrase>
+	<phrase section="users" code="lostpasswordresetdesc">Please enter your new password below and click Submit to reset your password.</phrase>
+	<phrase section="users" code="lprequestsent">Password reset request has been dispatched to "%s"</phrase>
+	<phrase section="users" code="regsignup">Sign Up</phrase>
+	<phrase section="users" code="lpinvalidemail">Unable to locate a user account with "%s" email address</phrase>
+	<phrase section="users" code="accountinformation">Account Information</phrase>
+	<phrase section="users" code="lostpassworddesc">Please enter your registered email address below and click Submit. You will receive an email message with a link to reset your password shortly.</phrase>
+	<phrase section="users" code="lostpasswordtitle">Lost Password</phrase>
+	<phrase section="users" code="regsuccessdesc">Thank you for registering! A copy of your registration details have been sent to your email address. Please use the login form beside this text to log in.</phrase>
+	<phrase section="users" code="registersuccesstitle">Registration Successful</phrase>
+	<phrase section="users" code="pwhidden">[ Hidden ]</phrase>
+	<phrase section="users" code="registrationdetails">Registration details</phrase>
+	<phrase section="users" code="validationpendingesc">Thank you for registering. We have sent you an email message with an activation link. Please follow the link to verify your email address. You must complete this process before you can log in.</phrase>
+	<phrase section="users" code="validationpendingtitle">Email validation required</phrase>
+	<phrase section="users" code="regpwnomatch">The passwords entered do not match.</phrase>
+	<phrase section="users" code="newpwupdated">User password updated successfully.</phrase>
+	<phrase section="users" code="reginvalidemail">Invalid email address specified</phrase>
+	<phrase section="users" code="regemailregisteredsmall">"%s" email address is already registered.</phrase>
+	<phrase section="users" code="regemailregistered">Email address is already registered. Use the lost password option to retrieve your password, or specify a different email address.</phrase>
+	<phrase section="users" code="registertitle">Create a new account</phrase>
+	<phrase section="users" code="myorganization">My Organization</phrase>
+	<phrase section="users" code="orgprofile">Organization Profile</phrase>
+	<phrase section="users" code="orgname">Organization Name:</phrase>
+	<phrase section="users" code="orgaddress">Address:</phrase>
+	<phrase section="users" code="orgcity">City:</phrase>
+	<phrase section="users" code="orgstate">State:</phrase>
+	<phrase section="users" code="orgzip">ZIP/Postal Code:</phrase>
+	<phrase section="users" code="orgcountry">Country:</phrase>
+	<phrase section="users" code="orgphone">Phone:</phrase>
+	<phrase section="users" code="orgfax">Fax:</phrase>
+	<phrase section="users" code="orgwebsite">Website:</phrase>
+	<phrase section="users" code="orgupdated">Your organization profile has been updated successfully</phrase>
+	<phrase section="users" code="verifyregistration">Verify Registration</phrase>
+	<phrase section="users" code="registerdesc">Please fill in the fields below to register for a new account. Once registered, you may need to validate your email address to fully enable your account.</phrase>
+	<phrase section="users" code="regfullname">Full Name:</phrase>
+	<phrase section="users" code="regemail">Email:</phrase>
+	<phrase section="users" code="regpassword">Password:</phrase>
+	<phrase section="users" code="regpasswordrepeat">Password (repeat):</phrase>
+	<phrase section="users" code="lostpasswordemailsubject">Lost password request for %s Support Center</phrase>
+	<phrase section="users" code="registeremailvalidationsubject">Registration at %s Support Center</phrase>
+	<phrase section="users" code="registeremailsubject">Welcome to %s Support Center</phrase>
+	<phrase section="users" code="invalidverifyhash">Invalid or expired hash</phrase>
+	<phrase section="users" code="emailuserpw">New Password:</phrase>
+	<phrase section="users" code="userfirstprompt">Login Successful. Please enter your profile information below.</phrase>
+	<phrase section="users" code="registervalidateemail"><![CDATA[We have received your registration request at the %1$s support desk (%2$s).
+
+Before you can use your new account you must activate it - this ensures the email address you used is valid and belongs to you.
+To activate your account, please click the link below or copy and paste the link into your browser's location bar:
+
+%3$s
+
+If you believe you have received this message in error, you do not need to take any action to cancel the account. The account will not be activated, and you will not receive any further messages from us.
+
+Regards,
+
+
+%1$s]]></phrase>
+	<phrase section="users" code="registersuccessemail"><![CDATA[This message serves as confirmation that you are now successfully registered in our support center.
+
+Registered Email: %3$s
+Password: [HIDDEN]
+
+You can visit the Support Desk at any time by going to %2$s
+
+Please do let us know if you have any questions.
+
+Regards,
+
+
+%1$s]]></phrase>
+	<phrase section="users" code="registerwelcomeemail"><![CDATA[This message serves as confirmation that you are now successfully registered in our support center.
+
+Registered Email: %3$s
+Password: %4$s
+
+You can visit the Support Desk at any time by going to %2$s
+
+Please do let us know if you have any questions.
+
+Regards,
+
+
+%1$s]]></phrase>
+	<phrase section="users" code="forgotpasswordemail"><![CDATA[We have received a request to reset your account password at the %1$s support desk (%2$s). If you believe you have received this message in error, you may disregard it.
+
+To reset your password, click the link below or copy and paste the link into your browser location bar:
+
+%3$s
+
+Regards,
+
+
+%1$s]]></phrase>
+
+
+
+
+	<phrase section="livechatclient" code="livechat">Live Chat</phrase>
+	<phrase section="livechatclient" code="clicktocalltab">Click to Call</phrase>
+	<phrase section="livechatclient" code="callme">Call Me</phrase>
+	<phrase section="livechatclient" code="istyping">%s is typing...</phrase>
+	<phrase section="livechatclient" code="clickforlivechat">Click Here for Live Chat</phrase>
+	<phrase section="livechatclient" code="clicktocall">Click to Call Instantly</phrase>
+	<phrase section="livechatclient" code="lsisaway">Live Chat is Away</phrase>
+	<phrase section="livechatclient" code="lsbacksoon">Live Chat will be back soon</phrase>
+	<phrase section="livechatclient" code="clickleavemessage">Live Chat is offline. Click here to leave a message.</phrase>
+	<phrase section="livechatclient" code="online">Online</phrase>
+	<phrase section="livechatclient" code="offline">Offline</phrase>
+	<phrase section="livechatclient" code="leaveamessage">Leave a Message</phrase>
+	<phrase section="livechatclient" code="proactivetitle">Can I help you?</phrase>
+	<phrase section="livechatclient" code="proactivemsg"><![CDATA[Our agents are ready to assist you. Click &quot;Chat Now&quot; to be connected to one instantly.]]></phrase>
+	<phrase section="livechatclient" code="proactivechatnow">Chat Now</phrase>
+	<phrase section="livechatclient" code="livechatheader">To help us serve you better, please provide some information before we begin your chat.</phrase>
+	<phrase section="livechatclient" code="livechatheadercall">Please enter your phone number and other information required below to initiate the call.</phrase>
+	<phrase section="livechatclient" code="leavemessageheader">To help us serve you better, please provide some information before sending your message.</phrase>
+	<phrase section="livechatclient" code="leavemessageconfirmheader">Thank you for contacting us. One of our team members will review your request and reply shortly.</phrase>
+	<phrase section="livechatclient" code="surveyheader">Your feedback is very important to us and we would like to know how you think we are doing. Please complete the short survey below to rate your experience.</phrase>
+	<phrase section="livechatclient" code="surveyconfirmheader">Thank you for completing the survey. You may now close this window.</phrase>
+	<phrase section="livechatclient" code="fielddepartment">Department:</phrase>
+	<phrase section="livechatclient" code="fieldrating">Rating:</phrase>
+	<phrase section="livechatclient" code="fieldfullname">Full Name:</phrase>
+	<phrase section="livechatclient" code="fieldemail">Email:</phrase>
+	<phrase section="livechatclient" code="fieldphone">Phone:</phrase>
+	<phrase section="livechatclient" code="fieldcomments">Comments:</phrase>
+	<phrase section="livechatclient" code="fieldchatsubject">Your Question:</phrase>
+	<phrase section="livechatclient" code="fieldchatstaff">Staff:</phrase>
+	<phrase section="livechatclient" code="buttonstartchat">Start Chat</phrase>
+	<phrase section="livechatclient" code="joinedchat">You are now chatting with %s - %s</phrase>
+	<phrase section="livechatclient" code="joinedchatdep">You are now chatting with %s</phrase>
+	<phrase section="livechatclient" code="chatleave">%s has left the conversation.</phrase>
+	<phrase section="livechatclient" code="chatenter">%s has joined the conference.</phrase>
+	<phrase section="livechatclient" code="chatexpired">The chat session has expired or ended.</phrase>
+	<phrase section="livechatclient" code="chatendleavemsg">Click here to leave a message.</phrase>
+	<phrase section="livechatclient" code="staffnotacceptedchat">Your message could not be delivered. Please wait for an operator to accept your chat request.</phrase>
+	<phrase section="livechatclient" code="pleasewaitoperator">Please wait, an operator will be with you shortly.</phrase>
+	<phrase section="livechatclient" code="peopleaheadinqueue">There are currently %s chat request(s) before you in the chat queue.</phrase>
+	<phrase section="livechatclient" code="alloperatorsbusy">Your request is important to us. Please wait, an operator will be with you shortly.</phrase>
+	<phrase section="livechatclient" code="onsiterequesttitle">Our operator would like to control your mouse and keyboard</phrase>
+	<phrase section="livechatclient" code="onsiterequest"><![CDATA[To allow our operator to assist you, please download the OnSite&reg; remote support program by clicking the link below. This program enables your computer to be temporarily controlled by our staff. If you wish to stop sharing control of your computer at any time, hold down Control and press the F1 key on your keyboard.]]></phrase>
+	<phrase section="livechatclient" code="onsitewindows">Click here to download OnSite for Windows</phrase>
+	<phrase section="livechatclient" code="send">Send</phrase>
+	<phrase section="livechatclient" code="fieldsubject">Subject:</phrase>
+	<phrase section="livechatclient" code="fieldmessage">Message:</phrase>
+	<phrase section="livechatclient" code="lcprint">Print</phrase>
+	<phrase section="livechatclient" code="lcemail">Email</phrase>
+	<phrase section="livechatclient" code="lcsoundon">Sound: On</phrase>
+	<phrase section="livechatclient" code="lcsoundoff">Sound: Off</phrase>
+	<phrase section="livechatclient" code="chatendsurvey">If you would like to take a short survey regarding the service you've received during this chat conversation, press Cancel, otherwise press OK to close this window.</phrase>
+	<phrase section="livechatclient" code="chatendednotification">The chat conversation has ended.</phrase>
+	<phrase section="livechatclient" code="chatendednotificationsub">Click here to take a short survey regarding the service you've received during this chat conversation.</phrase>
+	<phrase section="livechatclient" code="livechat_emailsubject">%s - Live Chat on %s</phrase>
+	<phrase section="livechatclient" code="chatsendemaildesc">A transcript of the conversation history will be emailed to the address below:</phrase>
+	<phrase section="livechatclient" code="proactivevisitorname">Visitor</phrase>
+	<phrase section="livechatclient" code="chattemplategroup">Template Group</phrase>
+
+	<phrase section="mime" code="pdf">PDF Document</phrase>
+	<phrase section="mime" code="png">PNG Image</phrase>
+	<phrase section="mime" code="htm">HTML Page</phrase>
+	<phrase section="mime" code="html">HTML Page</phrase>
+	<phrase section="mime" code="rtf">Rich Text Format File</phrase>
+	<phrase section="mime" code="gz">GZIP File</phrase>
+	<phrase section="mime" code="tar">TAR File</phrase>
+	<phrase section="mime" code="zip">ZIP File</phrase>
+	<phrase section="mime" code="rar">RAR File</phrase>
+	<phrase section="mime" code="bz2">BZ2 File</phrase>
+	<phrase section="mime" code="bz">BZ File</phrase>
+	<phrase section="mime" code="jar">JAR File</phrase>
+	<phrase section="mime" code="doc">MS Word Doc</phrase>
+	<phrase section="mime" code="docx">MS Word Doc</phrase>
+	<phrase section="mime" code="jpg">JPEG Image</phrase>
+	<phrase section="mime" code="jpeg">JPEG Image</phrase>
+	<phrase section="mime" code="txt">Text File</phrase>
+	<phrase section="mime" code="wav">WAV File</phrase>
+	<phrase section="mime" code="mov">QuickTime Movie</phrase>
+	<phrase section="mime" code="ppt">PowerPoint Doc</phrase>
+	<phrase section="mime" code="pptx">PowerPoint Doc</phrase>
+	<phrase section="mime" code="xls">Excel File</phrase>
+	<phrase section="mime" code="xlsx">Excel File</phrase>
+	<phrase section="mime" code="ram">Real Audio File</phrase>
+	<phrase section="mime" code="ico">Icon File</phrase>
+	<phrase section="mime" code="gif">GIF Image</phrase>
+	<phrase section="mime" code="mpg">MPEG Video</phrase>
+	<phrase section="mime" code="mpeg">MPEG Video</phrase>
+	<phrase section="mime" code="mp3">MPEG Audio</phrase>
+	<phrase section="mime" code="php">PHP Script File</phrase>
+	<phrase section="mime" code="swf">Macromedia Flash File</phrase>
+
+
+
+
+
+
+
+
+
+
+
+
+	<phrase section="tickets" code="selectdepartmenttitle">Select a department</phrase>
+	<phrase section="tickets" code="selectdepartmentdesc">If you can't find a solution to your problem in our knowledgebase, you can submit a ticket by selecting the appropriate department below.</phrase>
+	<phrase section="tickets" code="submitticketdepartments">Departments</phrase>
+	<phrase section="tickets" code="errstinvaliddepartmentid">Invalid department ID specified; please select a valid department.</phrase>
+	<phrase section="tickets" code="yourticketdetailstitle">Your ticket details</phrase>
+	<phrase section="tickets" code="yourticketdetailsdesc">Enter your ticket details below. If you are reporting a problem, please remember to provide as much information that is relevant to the issue as possible.</phrase>
+	<phrase section="tickets" code="st_messagedetails">Message Details</phrase>
+	<phrase section="tickets" code="st_department">Department</phrase>
+	<phrase section="tickets" code="st_ticketid">Ticket ID</phrase>
+	<phrase section="tickets" code="st_fullname">Full Name</phrase>
+	<phrase section="tickets" code="st_email">Email</phrase>
+	<phrase section="tickets" code="st_priority">Priority</phrase>
+	<phrase section="tickets" code="st_type">Type</phrase>
+	<phrase section="tickets" code="st_subject">Subject</phrase>
+	<phrase section="tickets" code="st_subjectconfirm">Subject: </phrase>
+	<phrase section="tickets" code="sterr_invaliddepartment">Invalid department specified; please start over.</phrase>
+	<phrase section="tickets" code="sterr_invalidtype">Invalid ticket type specified; please start over.</phrase>
+	<phrase section="tickets" code="sterr_invalidpriority">Invalid ticket priority specified; please start over.</phrase>
+	<phrase section="tickets" code="ticketsubmittedtitle">Your request has been received</phrase>
+	<phrase section="tickets" code="ticketsubmitteddesc">We have received your request and will get back to you with further details shortly. You can login to the support center or check your mailbox for further updates.</phrase>
+	<phrase section="tickets" code="uploadfiles">Upload File(s)</phrase>
+	<phrase section="tickets" code="taddfile">Add File</phrase>
+	<phrase section="tickets" code="invalidattachments">Your attachments have been rejected (due to size/extension restrictions): %s</phrase>
+	<phrase section="tickets" code="ticketviewtickettitle">View Tickets</phrase>
+	<phrase section="tickets" code="ticketsurveytickettitle">Survey: #</phrase>
+	<phrase section="tickets" code="st_yourfeedback">Your feedback</phrase>
+	<phrase section="tickets" code="st_yourcomments">Comments</phrase>
+	<phrase section="tickets" code="thankyousurvey">Thank you for your feedback!</phrase>
+	<phrase section="tickets" code="surveydesc">Thank you for taking the short survey. Your feedback is very important to us and will help us improve our customer support experience!</phrase>
+	<phrase section="tickets" code="viewresolvedt">View Resolved Tickets</phrase>
+	<phrase section="tickets" code="hideresolvedt">Hide Resolved Tickets</phrase>
+	<phrase section="tickets" code="tllastupdate">Last Update</phrase>
+	<phrase section="tickets" code="tllastreplier">Last Replier</phrase>
+	<phrase section="tickets" code="trash">Trash</phrase>
+	<phrase section="tickets" code="tldepartment">Department</phrase>
+	<phrase section="tickets" code="tltype">Type</phrase>
+	<phrase section="tickets" code="tlstatus">Status</phrase>
+	<phrase section="tickets" code="tlpriority">Priority</phrase>
+	<phrase section="tickets" code="tlticketid">Ticket ID</phrase>
+	<phrase section="tickets" code="ticketpermdenied">Invalid ticket ID or you do not have permission to access this ticket</phrase>
+	<phrase section="tickets" code="unassigned">Unassigned</phrase>
+	<phrase section="tickets" code="ticketviewticketidtitle">View Ticket: #</phrase>
+	<phrase section="tickets" code="vtcreated">Created:</phrase>
+	<phrase section="tickets" code="vtupdated">Updated:</phrase>
+	<phrase section="tickets" code="vtdepartment">DEPARTMENT</phrase>
+	<phrase section="tickets" code="vtowner">OWNER</phrase>
+	<phrase section="tickets" code="vttype">TYPE</phrase>
+	<phrase section="tickets" code="vtstatus">STATUS</phrase>
+	<phrase section="tickets" code="vtpriority">PRIORITY</phrase>
+	<phrase section="tickets" code="vtpostreply">Post Reply</phrase>
+	<phrase section="tickets" code="updatedticketproperties">Successfully updated the ticket properties</phrase>
+	<phrase section="tickets" code="tppostedon">Posted on: %s</phrase>
+	<phrase section="tickets" code="tpemailto">Email To: %s</phrase>
+	<phrase section="tickets" code="tpemailforwardedto">Forwarded To: %s</phrase>
+	<phrase section="tickets" code="badgethirdparty">Third Party</phrase>
+	<phrase section="tickets" code="badgeuser">User</phrase>
+	<phrase section="tickets" code="badgestaff">Staff</phrase>
+	<phrase section="tickets" code="badgecc">Recipient</phrase>
+	<phrase section="tickets" code="badgebcc">BCC</phrase>
+	<phrase section="tickets" code="verifyticketsubmission">Verify Ticket Submission</phrase>
+	<phrase section="tickets" code="irsloading">Loading knowledgebase suggestions...</phrase>
+	<phrase section="tickets" code="irssuggestions">Knowledgebase suggestions</phrase>
+	<phrase section="tickets" code="irsdesc">The following articles from our knowledgebase might be relevant to what you're looking for.  Please take the time to read them before submitting your ticket.</phrase>
+	<phrase section="tickets" code="irsnoresults">No relevant knowledgebase articles found.</phrase>
+
+	<phrase section="ticketemails" code="arintro">Thank you for contacting us. This is an automated response confirming the receipt of your ticket. One of our agents will get back to you as soon as possible. For your records, the details of the ticket are listed below. When replying, please make sure that the ticket ID is kept in the subject line to ensure that your replies are tracked appropriately.</phrase>
+	<phrase section="ticketemails" code="articketid">Ticket ID: </phrase>
+	<phrase section="ticketemails" code="arsubject">Subject: </phrase>
+	<phrase section="ticketemails" code="ardepartment">Department: </phrase>
+	<phrase section="ticketemails" code="arpassword">Password: </phrase>
+	<phrase section="ticketemails" code="artype">Type: </phrase>
+	<phrase section="ticketemails" code="arstatus">Status: </phrase>
+	<phrase section="ticketemails" code="arpriority">Priority: </phrase>
+	<phrase section="ticketemails" code="aremail">Email: </phrase>
+	<phrase section="ticketemails" code="arsubfooter">You can check the status of or reply to this ticket online at: </phrase>
+	<phrase section="ticketemails" code="acpendingintro">This message concerns your ticket #%s. We have not received any response back from you in %s hours, and would like to know if you consider this issue to be resolved. If you have any further questions, simply respond to this e-mail.</phrase>
+	<phrase section="ticketemails" code="acpendingsubfooter">Please note that the ticket will automatically be closed within %s hours if no response is received from you. The ticket will not be closed in the case that you send another reply. You can check the status of or reply to this ticket online at: </phrase>
+	<phrase section="ticketemails" code="acfinalintro">This message is regarding your ticket ID #%s. We are changing the status of this ticket to '%s' as we have not received a response from you in %s hours.</phrase>
+	<phrase section="ticketemails" code="acfinalsubfooter">If you have any further questions then do let us know. You can check the status of or reply to this ticket online at: </phrase>
+	<phrase section="ticketemails" code="arfooter">Kind regards,</phrase>
+	<phrase section="ticketemails" code="ticketdetails">Ticket Details</phrase>
+	<phrase section="ticketemails" code="tickethistory">Ticket History</phrase>
+	<phrase section="ticketemails" code="thstaff">Staff</phrase>
+	<phrase section="ticketemails" code="thclient">Client</phrase>
+	<phrase section="ticketemails" code="ththirdparty">Third Party</phrase>
+	<phrase section="ticketemails" code="thcc">Recipient (CC)</phrase>
+	<phrase section="ticketemails" code="thbcc">Recipient (BCC)</phrase>
+	<phrase section="ticketemails" code="thattachments">Attachments</phrase>
+	<phrase section="ticketemails" code="threcipient">Recipient</phrase>
+	<phrase section="ticketemails" code="thpostedon">Posted On:</phrase>
+	<phrase section="ticketemails" code="watcherprefix">%s (%s) replied with:</phrase>
+	<phrase section="ticketemails" code="regemailrejectintro">Your ticket has not been accepted into the system. You are required to create an account before you can create any tickets via email. Please register at the following URL:</phrase>
+	<phrase section="ticketemails" code="regemailrejectfooter">Once registered, you will be able to submit tickets directly by sending us an email. We are sorry for any inconvenience this may have caused.</phrase>
+	<phrase section="ticketemails" code="regemailrejectsub">Registration required: Unable to create ticket</phrase>
+	<phrase section="ticketemails" code="validationemailrejectsub">Account not validated: Unable to create ticket</phrase>
+	<phrase section="ticketemails" code="validationmailrejectintro_staff">Your ticket has not been accepted into the system. Although a support desk account exists for your email address, all accounts must be manually approved by a support desk administrator. Until this has been done, you will not be able to send email messages to the support desk.</phrase>
+	<phrase section="ticketemails" code="validationmailrejectintro_generic">Your ticket has not been accepted into the system. Although a support desk account exists for your email address, the account has not yet been validated.</phrase>
+	<phrase section="ticketemails" code="validationemailrejectfooter">Once your account has been validated, you will be able to submit tickets directly by sending us an email. We are sorry for any inconvenience this may have caused.</phrase>
+	<phrase section="ticketemails" code="surveyintro">This email concerns your recent ticket</phrase>
+	<phrase section="ticketemails" code="surveydescription1">As part of our commitment to improving your customer support experience, we would like to know how you think we are doing.</phrase>
+	<phrase section="ticketemails" code="surveydescription2">You are invited to complete a short satisfaction survey consisting of just a few multiple-choice questions.</phrase>
+	<phrase section="ticketemails" code="surveydescription3">It should take you no more than a minute to complete (we promise!).</phrase>
+	<phrase section="ticketemails" code="surveycta">To take the survey, please click on the following link: </phrase>
+	<phrase section="ticketemails" code="surveysubfooter">Your feedback is very important to us and we really appreciate your time.</phrase>
+	<phrase section="ticketemails" code="surveyfooter">Thank you in advance,</phrase>
+
+
+	<phrase section="news" code="subscriberregistered">%s is already subscribed to the news feed.</phrase>
+	<phrase section="news" code="thankyousubscribervalidate">Thank you. Please check your email to confirm your subscription.</phrase>
+	<phrase section="news" code="thankyousubscriber">Thank you for subscribing to our news feed.</phrase>
+	<phrase section="news" code="nwsubintro">Thank you for subscribing to our news feed. You will need to validate your subscription in order to receive updates. Please click on the link below to activate your subscription.</phrase>
+	<phrase section="news" code="nwsubfooter">Please let us know if we can be of any further assistance,</phrase>
+	<phrase section="news" code="nwsubconintro">Your subscription to our news feed has been confirmed. You will now receive automatic updates whenever a new article is posted. You may unsubscribe at any point in time by clicking on the link below.</phrase>
+	<phrase section="news" code="nwvalidatesubscriptionsub">Validate your news subscription</phrase>
+	<phrase section="news" code="nwsubconfirmsub">News subscription confirmed</phrase>
+	<phrase section="news" code="invalidsubscriberhash">Invalid subscriber hash</phrase>
+	<phrase section="news" code="news">News</phrase>
+	<phrase section="news" code="olderposts"><![CDATA[&laquo; Older Posts]]></phrase>
+	<phrase section="news" code="newerposts"><![CDATA[Newer Posts &raquo;]]></phrase>
+	<phrase section="news" code="newsnotfound">News item not found.</phrase>
+
+
+	<phrase section="troubleshooter" code="troubleshooter">Troubleshooter</phrase>
+	<phrase section="troubleshooter" code="troubleshooterdesc">Troubleshooter wizards guide you through a series of steps in order to diagnose and resolve common problems. Begin by choosing a troubleshooter category.</phrase>
+	<phrase section="troubleshooter" code="trattachments">Attachments</phrase>
+	<phrase section="troubleshooter" code="trnextsteps">Next Steps</phrase>
+	<phrase section="troubleshooter" code="trnext"><![CDATA[Next &raquo;]]></phrase>
+	<phrase section="troubleshooter" code="trback"><![CDATA[&laquo; Back]]></phrase>
+	<phrase section="troubleshooter" code="trcategoryviews"> (%d Views)</phrase>
+
+
+
+	<phrase section="knowledgebase" code="knowledgebase">Knowledgebase</phrase>
+	<phrase section="knowledgebase" code="mostpopular">Most Popular</phrase>
+	<phrase section="knowledgebase" code="recentarticles">Recent Articles</phrase>
+	<phrase section="knowledgebase" code="articlehelpful">This article was helpful</phrase>
+	<phrase section="knowledgebase" code="articlenothelpful">This article was not helpful</phrase>
+	<phrase section="knowledgebase" code="articlevotes">votes</phrase>
+	<phrase section="knowledgebase" code="kbattachments">Attachments</phrase>
+	<phrase section="knowledgebase" code="kbnopermission">You do not have the permissions required to view this article, or the article does not exist.</phrase>
+
+</swiftlanguage>

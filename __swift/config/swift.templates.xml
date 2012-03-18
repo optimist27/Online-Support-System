@@ -1,0 +1,3655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swifttemplate>
+	<title>Default</title>
+	<author>Kayako Infotech Ltd.</author>
+	<version>0</version>
+
+	<category name="template_general" module="core" icon="icon_template.gif">
+		<template name="clientcss" date=""><![CDATA[
+body  { margin: 0; padding: 0; background: url("<{$_themePath}>images/mainbackground.gif") white; FONT-FAMILY: verdana, arial, helvetica, sans-serif; }
+.bodymain { min-width: 1020px; }
+#main { background-color: white; margin: 0.8em; border: 1px solid #cdc6b6; position: relative; clear: both; }
+
+label { cursor: pointer; }
+
+a:visited { COLOR: #333333; TEXT-DECORATION: none; outline: none; }
+a:hover { COLOR: red !important; TEXT-DECORATION: none; outline: none; }
+a:link { COLOR: #333333; TEXT-DECORATION: none; outline: none; }
+
+.bluelink:visited { color: #277dca; TEXT-DECORATION: none; outline: none; }
+.bluelink:hover { COLOR: red !important; TEXT-DECORATION: none; outline: none; }
+.bluelink { color: #277dca !important; font-family: Verdana, Arial, Helvetica, Georgia, serif; text-decoration: none; font-size: 12px; font-weight: bold; outline: none; }
+
+.redtext { COLOR: red; }
+.graytext { COLOR: #333333; }
+
+.chatlink:visited { COLOR: #277dc9; TEXT-DECORATION: none; outline: none; }
+.chatlink:hover { COLOR: red !important; TEXT-DECORATION: none; outline: none; }
+.chatlink:link { COLOR: #277dc9; TEXT-DECORATION: none; outline: none; }
+
+.smalltext { font-size: 11px; font-family: Verdana, Tahoma, sans-serif; }
+.linkedselectcontainer { PADDING: 4px 0 0 20px;	BACKGROUND: URL(<{$_themePath}>images/linkdownarrow_blue.gif) no-repeat 0 10px; }
+
+.searchboxcontainer { border: 4px SOLID rgba(204, 204, 204, 0.6); -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; }
+.searchbox { border: 1px SOLID #cccccc; }
+.searchbuttoncontainer { float: right; height: 35px; vertical-align: top; }
+.searchbutton { -moz-border-radius: 7px 7px 7px 7px; width: 70px; height: 15px; -webkit-border-radius: 7px 7px 7px 7px; border-radius: 7px 7px 7px 7px; background: #7bc17a; color: white !important; display: inline-block; font-size: 11px; font-weight: bold; padding: 6px 12px 6px 12px; text-decoration: none; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); margin: 4px 5px 0px 0px; CURSOR: pointer; }
+.searchbutton:hover { background: #88cc85; color: white !important; }
+.searchbutton span { background: URL(<{$_themePath}>images/searchpointer.png); display: inline; float: right; margin: 1px 0 0 5px; height: 13px; width: 12px; }
+.searchinputcontainer { height: 35px; outline: none; display: inline-block; width: 80%; }
+.searchquery { width: 100%; margin: 1px 0 0 0; background: url(<{$_themePath}>images/icon_search.png) no-repeat 8px 6px; padding: 5px 6px 7px 30px; border: 0px; color: #d5d5d5; font-size: 18px; font-family: 'Lucida Grande','Helvetica Neue',Helvetica,Arial,Verdana,sans-serif; height: 20px; }
+.searchqueryactive { color: #666666 !important; }
+
+#topbanner { position: relative; height: 5em; } /* if you don't manually set this height, ie gets the weirdest bug ever: the .widgetrow a:hover rule triggers the logo moving ~10 px left, for no apparent reason. suppressing that :hover rule or setting this height removes the effect. */
+.topbannerchat { margin-top: 8px; float: left; }
+#topbanneravatarcontainer { float: right; width: 100px; height: 100px; }
+#logo { margin: 0.3em 0 0.3em 0.3em; }
+
+#toptoolbar               { margin: 0; padding: 0; background: #6895ab url("<{$_themePath}>images/navbarbackground.png") repeat-x; font-size: 70%; width: 100%; border-top: 1px solid #40738b; position: relative; color: #333; float: left; clear: both; }
+#toptoolbar a             { color: white; font-weight: bold; font-family: 'trebuchet ms', verdana, helvetica, sans-serif; font-size: 16px; text-decoration: none; text-shadow:0 1px 0 rgba(0, 0, 0, 0.6); }
+#toptoolbarrightarea      { float: right; display: inline-block; margin-top: 0.2em; margin-right: 0.4em; height: 100%; }
+#toptoolbarrightareainset { display: inline-block; }
+#toptoolbar select        { border: 1px solid #cdc2ab; font-family: verdana, tahoma, sans-serif; font-size: 1em; margin: 5px 5px 0 0; }
+
+#toptoolbarlinklist { margin: 0; padding: 0; }
+#toptoolbarlinklist ul         {  }
+#toptoolbarlinklist li         { list-style-type: none; display: inline-block; float: left; margin: 0.2em 0 0 .8em; padding: 0; clear: none; }
+#toptoolbarlinklist li:hover   { background: url("<{$_themePath}>images/topbarhoverarrow.png") no-repeat bottom center transparent; }
+#toptoolbarlinklist li.current { background: url("<{$_themePath}>images/topbarcurrentarrow.png") no-repeat bottom center transparent; }
+
+#leftloginsubscribebox, .leftnavboxbox { margin: 10px 0 10px 10px; }
+#leftlivechatbox                           { text-align: center; float: left; margin-left: 17%; padding-top: 6px;}
+#leftloginbox, #leftsubscribebox                              { border: solid #cdc6b6; border-width: 0 1px 1px 1px; }
+#leftloginbox .inputframe, #leftsubscribebox .inputframe                  { vertical-align: middle; }
+
+#leftloginbox .maitem,  #leftsubscribebox .maitem { padding: 0.5em 0.5em 0.5em 25px; vertical-align: middle; font-size: 70%; border-bottom: 1px solid #ddddc7; border-top: 1px solid #ffffff; background-color: #f8f4eb; }
+#leftloginbox .maitem:hover,  #leftsubscribebox .maitem:hover { background-color: #ffefbb; border-bottom: 1px solid #e5c365; cursor: pointer; }
+
+#leftloginbox .maprofile                  { background: #f8f4eb URL(<{$_themePath}>images/icon_myprofile.gif) no-repeat 4px 4px; }
+#leftloginbox .maorganization             { background: #f8f4eb URL(<{$_themePath}>images/icon_userorganization.png) no-repeat 4px 4px; }
+#leftloginbox .machangepassword             { background: #f8f4eb URL(<{$_themePath}>images/icon_lock.gif) no-repeat 4px 4px; }
+#leftloginbox .mapreferences              { background: #f8f4eb URL(<{$_themePath}>images/icon_preferences.gif) no-repeat 4px 4px; }
+#leftloginbox .mabilling              { background: #f8f4eb URL(<{$_themePath}>images/icon_creditcards.png) no-repeat 4px 4px; }
+#leftloginbox .malogout              { border-bottom: none !important; background: #f8f4eb URL(<{$_themePath}>images/icon_logout.png) no-repeat 4px 4px; }
+
+#leftloginbox input.loginstyled, input.loginstyledlabel            { width: 98%; background: white url("<{$_themePath}>images/inputtextbg.gif") repeat-x top left; border: 1px solid #cdc2ab; padding: 2px; margin: 1px; font-size: 70%; font-family: Verdana, Tahoma, sans-serif; }
+#leftloginbox input.loginstyledlabel            { color: #878787; }
+#leftloginbox #leftloginboxrememberme      { width: 1.5em; margin: 0; padding: 0; vertical-align: middle; }
+#leftloginboxremembermetext                { font-size: 70%; vertical-align: middle; }
+
+#leftsubscribebox input.emailstyled, input.emailstyledlabel            { width: 98%; background: white url("<{$_themePath}>images/inputtextbg.gif") repeat-x top left; border: 1px solid #cdc2ab; padding: 2px; margin: 1px; font-size: 70%; font-family: Verdana, Tahoma, sans-serif; }
+#leftsubscribebox input.emailstyledlabel            { color: #878787; }
+
+.leftnavboxtitle       { position: relative; }
+.leftnavboxtitleleftgap { background: url("<{$_themePath}>images/navboxtl.gif") no-repeat top left; display: inline-block; width: 3px; margin: 0; padding: 0; height: 1.5em; }
+.leftnavboxtitlebulk   { background: url("<{$_themePath}>images/navboxtr.gif") no-repeat top right; position: absolute; left: 3px; right: 0; height: 1.5em; vertical-align: middle; }
+.leftnavboxtitletext   { background: url("<{$_themePath}>images/doublearrowsnav.gif") no-repeat 2px 2px; padding-left: 1.7em; padding-top: 0; font-size: 11px; font-family: verdana, arial, helvetica, sans-serif; vertical-align: middle; }
+
+.leftnavboxcontent         { border: 1px solid #cdc6b6; }
+.leftnavboxcontent a       { display: block; text-decoration: none; color: black; font-family: Verdana, Tahoma, sans-serif; font-size: 11px; border-bottom: 1px solid #f5f5f5; text-indent: 20px; padding: 0.375em; background-image: url("<{$_themePath}>images/icon_folderyellow.gif"); background-repeat: no-repeat; background-position: 0.375em 0.25em; line-height: 140%; }
+.leftnavboxcontent a:hover { background-color: #fff8e9; color: #476ca4; }
+
+#toptoolbarlinklist a { display: inline-block; border: 0; padding: 0.3em 0.7em 0.6em 2.3em; margin: 0; background-position: 14px 0.45em; background-repeat: no-repeat; }
+
+a.toptoolbarlink           { background-image: url("<{$_themePath}>images/space.gif");}
+a.toptoolbarlink:hover           { color: #fff6cf !important; text-shadow:0 1px 0 rgba(0, 0, 0, 1) !important; }
+
+#maincore        { position: relative; padding: 0; clear: both; width:100%; }
+#maincoreleft    { float: left; left: 0px; width: 14em; height: 100%; }
+#maincorecontent { margin-left: 14.5em; height: 100%; padding: 0.75em; }
+
+#coresearchinput { vertical-align: middle; margin: 3px; padding: 1px 0 0 23px; border: 1px solid #40738b; height: 23px; color: #285063; font-family: calibri, candara, verdana, tahoma, sans-serif; font-size: 1.4em; width: 280px; background: url("<{$_themePath}>images/icon_search.gif") no-repeat 3px 3px white; vertical-align: middle; }
+
+#breadcrumbbar        { border: 1px solid #cdc6b6; font-size: 11px; }
+.breadcrumb           { background: white url("<{$_themePath}>images/breadcrumbbg.png") no-repeat right center; color: #666; display: inline-block; padding: 0.4em 1em 0.5em 0.5em; }
+.breadcrumb:hover     { background: white url("<{$_themePath}>images/breadcrumbbghover.png") no-repeat right center; }
+.breadcrumb.lastcrumb { font-weight: bold; background-image: url("<{$_themePath}>images/breadcrumbbghover.png");}
+
+#bottomfooter   { text-align: center; margin-top: 2em; clear: both; font-size: 70%; }
+.bottomfooterpadding   { padding: 4px 4px 8px 4px; }
+#bottomfooter a { text-decoration: none; color: #333;}
+
+.blockgray   { BACKGROUND: #333333; }
+.blockred     { BACKGROUND: #ce1707; }
+.blockgreen   { BACKGROUND: #639d0c; }
+.blockyellow  { BACKGROUND: #fbc22d; }
+.blockpink    { BACKGROUND: #ec8ff1; }
+.blockorange  { BACKGROUND: #fe9309; }
+.blockblue  { BACKGROUND: #3b5998; BODER-BOTTOM: 1px SOLID #00376a; }
+
+.blockred, .blockgreen, .blockyellow, .blockpink, .blockorange, .blockblue, .blockgray  {
+	HEIGHT: 10px;
+	PADDING: 4px 6px 4px 6px;
+	TEXT-ALIGN: center;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	DISPLAY: inline;
+	COLOR: #FFFFFF;
+	FONT: 11px Verdana, "lucida grande", Tahoma, Arial, Helvetica;
+}
+
+#corewidgetbox { margin-top: 2em; margin-bottom: 1.5em; padding-left: 3px; }
+
+.widgetrow         { width: 100%; position: relative;}
+.widgetrowitem       { DISPLAY: block; CURSOR: pointer; width: 240px; margin: 0 1.5em 1em 0; clear: none; text-decoration: none; display: inline-block; vertical-align: middle; -moz-border-radius: 7px; -webkit-border-radius: 7px; border: 1px solid #c9cfd7; background: #fcfaf4; padding: 0.8em 1em 0.8em 0.3em; -moz-box-shadow: 0.05em 0.05em 0.3em 0.01em #dedede; -webkit-box-shadow: 0.05em 0.05em 0.3em 0.01em #dedede; box-shadow: 0.05em 0.05em 0.3em 0.01em #dedede;}
+.widgetrowitem:focus { outline:none; background-color:#eee; }
+.widgetrowitem:hover { background-color: #f9fde9; border-color: #b7d4ae; }
+.widgetrow a .widgetitemtitle   {  }
+
+.defaultwidget       { background-image: url("<{$_themePath}>images/space.gif"); }
+
+.widgetrow a { width: 180px; padding: 10px 1em 18px 2.8em; margin: 0 1.5em 1em 0; background-repeat: no-repeat; background-position: 9px 7px; color: #277DC9; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; }
+.widgetrow a:hover { color: #277DC9 !important; text-shadow:0 1px 0 rgba(239, 243, 222, 1) !important;}
+
+#leftloginsubscribeboxlogintab        .tabtext { background-image: url("<{$_themePath}>images/icon_tabuser.gif"); }
+#leftloginsubscribeboxsubscribetab    .tabtext { background-image: url("<{$_themePath}>images/icon_tabmail.gif"); }
+
+.tabrow  { background: url("<{$_themePath}>images/tabborderpx.png") repeat-x bottom left; margin: 0; padding: 0; }
+.tabtext { padding: 0 1em 0 2em; background-repeat: no-repeat; background-position: 0.25em 0; }
+
+.atab { display: inline-block; clear: none; margin: 0; padding: 0; height: 100%; text-decoration: none; color: #333; font-weight: bold; font-size: 11px; font-family: verdana, candara, sans-serif; cursor: pointer; }
+
+.atab.inactive, .atab.inactive { background: url("<{$_themePath}>images/tabborderpx.png") repeat-x bottom left; margin: 0; padding: 0; color: #a0947b; }
+.atabbasic { cursor: inherit !important; }
+
+.tableftgap { border-bottom: 1px solid white; background-image: url("<{$_themePath}>images/activetab_left.gif"); background-repeat: no-repeat; background-position: top right; width: 3px; display: inline-block; padding: 5px 0 4px 0; margin: 0 0 0 5px; height: 100%; }
+.tabbulk    { border-bottom: 1px solid white; background-image: url("<{$_themePath}>images/activetab_right_bulk.gif"); background-repeat: no-repeat; background-position: top right; display: inline-block; padding: 5px 3px 4px 0; margin: 0; height: 100%; }
+.tabbulk:hover { color: black !important; }
+
+.inactive .tableftgap { background-image: url("<{$_themePath}>images/inactivetab_left.gif");       border-bottom: 1px solid #cdc6b6; }
+.inactive .tabbulk    { background-image: url("<{$_themePath}>images/inactivetab_right_bulk.gif"); border-bottom: 1px solid #cdc6b6; }
+
+:hover.inactive .tableftgap { background-image: url("<{$_themePath}>images/hoverinactivetab_left.gif"); }
+:hover.inactive .tabbulk    { background-image: url("<{$_themePath}>images/hoverinactivetab_right_bulk.gif"); color: black; }
+
+.zebraeven { background-color: #fefefe; }
+.zebraodd  { background-color: #f7f5e7; }
+
+.inputframe { padding: 0.25em 0.5em 0.25em 0.25em; }
+
+.switchingpanel        { display: none; }
+.switchingpanel.active { display: block; }
+
+.vdivider { margin: 0.4em 0.4em; height: 0px; border: solid #ddddc7; border-width: 1px 0 0 0; }
+
+.customfieldrequired { COLOR: red; MARGIN-LEFT: 6px; }
+
+#logintext { float:left; font-size: 70%; margin-top: 0.75em; margin-left: 0.7em; }
+
+#loginsubscribebuttons { text-align: right; display: block; }
+
+.rebutton, .rebuttonblue, .rebuttonred { border: 0 solid white; background: url("<{$_themePath}>images/button1_sprite.png") no-repeat top left; background-position: 0 0; height: 24px; width: 79px; color: black; font-family: verdana, tahoma, sans-serif; font-size: 11px; margin: 5px 5px 5px 0; padding: 4px 0 15px 0; vertical-align: middle; cursor: pointer; }
+
+.infotextcontainer { FONT-SIZE: 12px; FONT-STYLE: italic; }
+
+.sprite-button1 { background-position: 0 0; }
+.sprite-button1blue { background-position: 0 -74px; }
+.sprite-button1green { background-position: 0 -148px; }
+.sprite-button1hover { background-position: 0 -222px; }
+.sprite-button1red { background-position: 0 -296px; }
+
+.rebuttonblue { background-position: 0 -74px; }
+.rebuttonred { background-position: 0 -296px; }
+.rebuttonblue:hover { background-position: 0 -148px; }
+.rebuttonred:hover  { background-position: 0 -148px; }
+.rebutton:hover { background-position: 0 -148px; }
+.sprite-buttonwide { background-position: 0 0; }
+.sprite-buttonwidehover { background-position: 0 -95px; }
+.sprite-buttonwide2 { background-position: 0 0; }
+.sprite-buttonwide2hover { background-position: 0 -86px; }
+
+.rebuttonwide2 { border: 0 solid white; background: url("<{$_themePath}>images/buttonwide2_sprite.png") no-repeat top left; background-position: 0 0; height: 36px; width: 95px; color: #333333; font-family: candara, trebuchet ms, tahoma, verdana, tahoma, sans-serif; font-size: 16px; font-weight: bold; margin: 5px 5px 5px 0; padding: 5px 0 10px 0; vertical-align: middle; cursor: pointer; }
+.rebuttonwide2:hover { background-position: 0 -86px; }
+
+
+.datecontainerparent { WIDTH: 54px; HEIGHT: 88px; }
+
+.monthholder { BACKGROUND: URL(<{$_themePath}>images/calendartop.gif) no-repeat; DISPLAY: block; TEXT-ALIGN: center; VERTICAL-ALIGN: middle; PADDING: 0px; COLOR: #FFFFFF; FONT: bold 11px Verdana,Arial,Helvetica; WIDTH: 54px; HEIGHT: 22px; text-shadow:0 1px 0 rgba(112, 165, 232, 0.5); }
+
+.monthsub { PADDING-TOP: 4px; }
+
+.dateholder { BACKGROUND: URL(<{$_themePath}>images/calendarbottom.gif) no-repeat; DISPLAY: block; TEXT-ALIGN: center; VERTICAL-ALIGN: middle; PADDING: 0px; COLOR: #555555; FONT: 10px Verdana,Arial,Helvetica; WIDTH: 54px; HEIGHT: 66px; }
+
+.datesub { PADDING-TOP: 6px; PADDING-BOTTOM: 6px; }
+
+.datecontainer { FONT: 28px Trebuchet MS, Calibri, Verdana, Arial, Helvetica; padding-top: 3px; }
+
+.boxcontainer { margin: 16px 0 16px 0; padding: 10px; BACKGROUND: #F2F2EB; -moz-border-radius: 12px 12px 0 0; -webkit-border-radius: 12px 12px 0 0; border-radius: 12px 12px 0 0; }
+
+.boxcontainerlabel { font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, sans-serif; font-size: 22px; font-weight: bold; color: #4e4e4e; margin-bottom: 8px; TEXT-SHADOW: 0 1px 0 rgba(255, 255, 255, 0.85); }
+
+.boxcontainercontent { border: 2px SOLID #e2e2d6; background: white; padding: 10px; font-size: 12px;}
+
+.boxcontainercontenttight { border: 2px SOLID #e2e2d6; background: white; font-size: 12px; }
+
+
+.hlineheader { width: 100%; margin: 0; padding: 0; white-space: nowrap; color: #277dca; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia,serif; text-decoration: none; font-size: 14px; font-weight: none; }
+.hlineheader th { margin: 0; padding: 0 8px 0 0; }
+.hlineheader td { font-size: 50%; margin: 0; padding: 0; }
+td.hlinelower { border-top: 1px solid #ececec; width: 100%; }
+.hlinegray { color: #626262 !important; }
+
+
+.subcontent { padding: 4px 0px 4px 4px; }
+.captchaholder { padding: 4px 0 4px 0; }
+
+.dialogerror { display: none; background-color: #ff969b; -moz-border-radius: 6px; -webkit-border-radius: 6px; padding: 6px; margin: 16px 0 16px 0; }
+.dialogerrorsub { border: 1px solid #dfdfd3; padding: 2px; background: white; }
+.dialogerrorcontent { border: 1px solid #dfdfd3; padding: 6px 6px 6px 34px; background: white; color: #4e4e4e; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia,serif; text-decoration: none; font-size: 16px; font-weight: bold; background: URL(<{$_themePath}>images/icon_error.png) no-repeat 4px 2px;}
+
+.dialoginfo { display: none; background-color: #b3eab8; -moz-border-radius: 6px; -webkit-border-radius: 6px; padding: 6px; margin: 16px 0 16px 0; }
+.dialoginfosub { border: 1px solid #dfdfd3; padding: 2px; background: white; }
+.dialoginfocontent { border: 1px solid #dfdfd3; padding: 6px 6px 6px 38px; background: white; color: #4e4e4e; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia,serif; text-decoration: none; font-size: 16px; font-weight: bold; background: URL(<{$_themePath}>images/icon_info.png) no-repeat 4px 0px;}
+
+/*
+* Begin SWIFT General CSS
+*/
+
+.error { BORDER: 1px dotted red !important; background-image: none !important; background: #ffeef0 !important; DISPLAY: block; MARGIN-TOP: 5px; PADDING: 4px; }
+
+.swifttexterror { BORDER: 1px dotted red !important; background-image: none !important; background: #ffeef0 !important; }
+.swifttext { WIDTH: 300px; BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; BORDER: 1px SOLID #cdc2ab; PADDING: 2px 2px 2px 2px; MARGIN: 0px; vertical-align: middle; }
+.swifttextsmall { WIDTH: 80px; BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; BORDER: 1px SOLID #cdc2ab; PADDING: 4px 4px 4px 4px; MARGIN: 0px; vertical-align: middle; }
+.swifttextlarge { WIDTH: 300px; BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; BORDER: 1px SOLID #cdc2ab; PADDING: 4px 4px 4px 4px; MARGIN: 0px; vertical-align: middle; }
+.swifttextwide { WIDTH: 100%; BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; BORDER: 1px SOLID #cdc2ab; PADDING: 4px 4px 4px 4px; MARGIN: 0px; vertical-align: middle; }
+.swifttextdisabled { BACKGROUND-COLOR: #ddd6c7; COLOR: #808080; BORDER: 1px SOLID #c3baa7; PADDING: 2px 2px 2px 2px; vertical-align: middle; }
+.swifttextarea { BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; BORDER: 1px SOLID #cdc2ab; padding: 2px 2px 2px 2px; vertical-align: middle; WIDTH: 550px;}
+.swiftselect { BORDER: 1px SOLID #cdc2ab; BACKGROUND-COLOR: #FFFFFF; COLOR: #000000; margin: 0px; padding: 1px; vertical-align: middle; Z-INDEX: 11; }
+.swifttextareawide { WIDTH: 100%; BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; BORDER: 1px SOLID #cdc2ab; padding: 2px 2px 2px 2px; vertical-align: middle; }
+.rebuttonwide { border: 0 solid white; background-image: url("<{$_themePath}>images/buttonwide.gif"); background-repeat: no-repeat; height: 45px; width: 79px; color: black; font-family: verdana, tahoma, sans-serif; font-weight: bold; font-size: 11px; margin: 5px 5px 5px 0; padding: 4px 0 12px 0; vertical-align: middle; cursor: pointer; }
+.rebuttonwide:hover { background-image: url("<{$_themePath}>images/buttonwidehover.gif"); }
+.errorrow { PADDING: 6px; BORDER: 1px SOLID #e7bcbc; -moz-border-radius: 4px 4px 4px 4px; BACKGROUND-COLOR: #ffeef0; COLOR: #000000; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica; }
+.errorrowhidden { PADDING: 6px; DISPLAY: none; BORDER: 1px SOLID #e7bcbc; -moz-border-radius: 4px 4px 4px 4px; BACKGROUND-COLOR: #ffeef0; COLOR: #000000; FONT-SIZE: 11px; FONT-FAMILY: Verdana, Arial, Helvetica; }
+
+.swifttext, .swifttexterror, .swifttextnumeric, .swifttextwide, .swifttextareawide, .swifttextsmall, .swifttextlarge, .swiftpassword, .swifttextdisabled, .swifttextarea, .swiftselect, .swifttextlarge
+{
+	FONT-FAMILY: Calibri, Verdana, Tahoma, Helvetica;
+	FONT-SIZE: 1.4em;
+}
+
+/*
+* End SWIFT General CSS
+*/
+
+/*
+* Begin Support Center CSS
+*/
+
+.addplus { display: inline; background: url("<{$_themePath}>images/icon_add.gif") no-repeat 0px 0px; padding: 0 0 0 20px; }
+.useremailitem, .ticketattachmentitem { padding: 4px; }
+.useremailitemdelete, .ticketattachmentitemdelete { margin-right: 4px; width: 18px; display: inline-block; background: url("<{$_themePath}>images/icon_trash.gif") no-repeat 0px 1px; height: 18px; cursor: pointer; }
+
+
+/*
+* End Support Center CSS
+*/
+
+
+/*
+* Begin Chat Related CSS
+*/
+#sendemailcontainer { display: none; }
+
+#livechattab .tabtext { background-image: url("<{$_themePath}>images/icon_tablivechat.gif"); }
+
+#chattoptoolbar               { background: url("<{$_themePath}>images/toolbarbg.gif") repeat-x top left #fcfaf4; font-size: 70%; width: 100%; border-width: 1px 0; border-style: solid; border-color: #e1d9c9 white #cdc6b6 white; position: relative; color: #333; float: left; clear: both; padding-bottom: 0.3em; }
+#chattoptoolbar a             { color: black; text-decoration: none; }
+#chattoptoolbarrightarea      { float: right; display: inline-block; margin-top: 0.6em; margin-right: 0.4em; height: 100%; }
+#chattoptoolbarrightareainset { display: inline-block; margin: 0 0.2em 0 0; }
+#chattoptoolbar select        { border: 1px solid #cdc2ab; font-family: verdana, tahoma, sans-serif; font-size: 1em; }
+
+#chattoptoolbarlinklist          { margin: 0; padding: 0; }
+#chattoptoolbarlinklist li       { background: url("<{$_themePath}>images/toolbarbuttonbg.gif")       repeat-x top left #fcfaf5; list-style-type: none; display: inline-block; float: left; margin: 0.3em 0 0 0.3em; padding: 0; clear: none; }
+#chattoptoolbarlinklist li:hover { background: url("<{$_themePath}>images/toolbarbuttonbg_hover.gif") repeat-x top left #fcfaf5; }
+
+#chattoptoolbarlinklist a { display: inline-block; border: 1px solid; border-color: white #dcd2c0 #dcd2c0 white; padding: 0.4em 0.7em 0.4em 2.3em; margin: 0; background-position: 0.5em 0.3em; background-repeat: no-repeat; }
+#chattoptoolbarlinklist a:hover { border-color: #f9f0d7 #e5c365 #e5c365 #f9f0d7; }
+
+a#chattoptoolbarcloselink          { background-image: url("<{$_themePath}>images/icon_widget_close.gif")   }
+a#chattoptoolbarprintlink          { background-image: url("<{$_themePath}>images/icon_widget_print.gif")   }
+a#chattoptoolbaremaillink          { background-image: url("<{$_themePath}>images/icon_widget_email.gif")   }
+a#chattoptoolbarsoundonlink        { background-image: url("<{$_themePath}>images/icon_widget_soundon.gif") }
+a#chattoptoolbarsoundofflink       { background-image: url("<{$_themePath}>images/icon_widget_soundoff.gif")}
+li#chattoptoolbarprint             { display: none;   }
+li#chattoptoolbaremail             { display: none;   }
+li#chattoptoolbarsoundon           { display: none;   }
+li#chattoptoolbarsoundoff          { display: none;   }
+
+#main.chatview { position: fixed; margin: 0; top: 0.8em; bottom: 0.8em; left: 0.8em; right: 0.8em; }
+.chatview #bottomfooter { height: 22px; vertical-align: middle; border-top:1px solid #D9CEBC; color:#61718C; background: white url("<{$_themePath}>images/chatfooterbackground.gif") repeat-x top left; position: absolute; bottom: 0; width: 100%; padding: 4px 0px 0px 0px; }
+.chatview #chatpostcontainer { position: absolute; bottom: 22px; width: 100%; padding: 6px;}
+
+#chatcontentcontainer { z-index: 10000; overflow: auto; position: fixed; top: 16.5em; bottom: 11em; left: 30px; right: 30px; background-color: }
+#chatstatuswrapper        { z-index: 10001; position: fixed; bottom: 8.8em; height: 2em; left: 30px; right: 30px;}
+.chatstatusbar        { HEIGHT: 2em; PADDING-TOP: 7px; VERTICAL-ALIGN: middle; FONT-SIZE: 11px; FONT-WEIGHT: bold; PADDING-LEFT:20px; BACKGROUND: URL("<{$_themePath}>images/icon_chatstatusbar.gif") no-repeat left;}
+.chatstatusbarhidden        { HEIGHT: 2em; PADDING-TOP: 7px; VERTICAL-ALIGN: middle; FONT-SIZE: 11px; FONT-WEIGHT: bold; PADDING-LEFT:20px;}
+#chatcore             { background-color: #faf9f4; padding-top: 0.5em; height: 100%; width: 100%; }
+#chatbox              { background-color: white; padding: 0.8em; font-size: 70%; position: fixed; top: 17em; bottom: 3em; left: 1.5em; right: 1.5em; overflow: auto; }
+
+#chatcontrolregion { position: fixed; left: 30px; right: 30px; height: 45px; bottom: 3em; z-index: 10002; }
+#chatpostmsgwrap   { position: absolute; height: 100%; top: 0; bottom: 0; right: 6em; left: 0; }
+#chatpostmsg       { height: 100%; width: 100%; BACKGROUND: #FFFFFF URL(<{$_themePath}>images/inputtextbg.gif) REPEAT-X TOP LEFT; COLOR: #000000; FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 11px; BORDER: 1px SOLID #cdc2ab; vertical-align: middle; }
+#chatpostbutton    { position: absolute; height: 100%; top: 0; bottom: 0; right: 0; width: 80px; border: 0 solid white; background-image: url("<{$_themePath}>images/buttonwide.gif"); background-repeat: no-repeat; color: black; font-family: verdana, tahoma, sans-serif; font-weight: bold; font-size: 11px; margin: 0; padding: 0; vertical-align: middle; cursor: pointer; }
+
+.chatsystemmessage { BORDER-TOP: 1px SOLID #CCCCCC; BORDER-BOTTOM: 1px SOLID #CCCCCC; PADDING-LEFT:20px; BACKGROUND: #FFFFFF URL("<{$_themePath}>images/icon_infosquare.gif") no-repeat left; MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px; PADDING-TOP: 6px; PADDING-BOTTOM: 6px; FONT-SIZE: 12px; COLOR: #333333;}
+.chaturlmessage { BORDER-TOP: 1px SOLID #CCCCCC; BORDER-BOTTOM: 1px SOLID #CCCCCC; PADDING-LEFT:20px; BACKGROUND: #FFFFFF URL("<{$_themePath}>images/icon_pushurl.png") no-repeat left; MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px; PADDING-TOP: 6px; PADDING-BOTTOM: 6px; FONT-SIZE: 12px; COLOR: #333333;}
+.chatimagemessage { BORDER-TOP: 1px SOLID #CCCCCC; BORDER-BOTTOM: 1px SOLID #CCCCCC; PADDING-LEFT:20px; BACKGROUND: #FFFFFF URL("<{$_themePath}>images/icon_pushimage.png") no-repeat left; MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px; PADDING-TOP: 6px; PADDING-BOTTOM: 6px; FONT-SIZE: 12px; COLOR: #333333;}
+.chatcodemessage { BORDER-TOP: 1px SOLID #CCCCCC; BORDER-BOTTOM: 1px SOLID #CCCCCC; PADDING-LEFT: 6px; MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px; PADDING-TOP: 6px; PADDING-BOTTOM: 6px; FONT-SIZE: 12px; COLOR: #333333;}
+.chatonsitemessage { BORDER-TOP: 1px SOLID #CCCCCC; BORDER-BOTTOM: 1px SOLID #CCCCCC; PADDING-LEFT:20px; BACKGROUND: #FFFFFF URL("<{$_themePath}>images/icon_onsite.gif") no-repeat 0px 8px; MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px; PADDING-TOP: 6px; PADDING-BOTTOM: 6px; FONT-SIZE: 11px; COLOR: #333333;}
+.chatonsitemessagetitle { MARGIN-BOTTOM: 8px; PADDING-TOP: 2px; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #333333;}
+.chatonsitemessagewin { PADDING-LEFT:34px; BACKGROUND: #FFFFFF URL("<{$_themePath}>images/icon_windows.gif") no-repeat left; MARGIN-TOP: 8px; MARGIN-BOTTOM: 8px; PADDING-TOP: 6px; PADDING-BOTTOM: 6px; FONT-SIZE: 11px; COLOR: #333333; HEIGHT: 32px;}
+.chatonsitemessageostext { PADDING-TOP: 8px;}
+.swiftselect .deponline { height: 20px; background-repeat:no-repeat; background-position:bottom left; padding-left:20px; background: #D5FFD5 URL("<{$_themePath}>images/icon_online.gif") no-repeat left; }
+.swiftselect .depoffline { height: 20px; background-repeat:no-repeat; background-position:bottom left; padding-left:20px; background: #EDEDED URL("<{$_themePath}>images/icon_offline.gif") no-repeat left; }
+
+
+.msgwrapper { DISPLAY: block; PADDING-TOP: 1px; PADDING-BOTTOM: 1px;}
+.timestamp { DISPLAY: inline; COLOR: #676767; FONT-SIZE: 12px; PADDING-RIGHT: 5px; }
+.staffname { DISPLAY: inline; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #FF3232; }
+.staffmessage { DISPLAY: inline; FONT-SIZE: 12px; COLOR: #333333; }
+.clientname { DISPLAY: inline; FONT-SIZE: 12px; FONT-WEIGHT: bold; COLOR: #0080FF; }
+.clientmessage { DISPLAY: inline; FONT-SIZE: 12px; COLOR: #333333; }
+
+#imagezoomcontainer {width:100%; overflow:hidden;}
+#imagezoomcontainer a {position:relative; float:left; margin:5px;}
+#imagezoomcontainer a span { display:block; background-image:url(<{$_themePath}>images/icon_zoom.png); background-repeat:no-repeat; width:16px; height:16px; position:absolute; bottom:8px; right:8px;}
+#imagezoomcontainer img { border: solid 1px #999; padding:5px;}
+
+#printcontent { FONT-SIZE: 12px; FONT-FACE: Candara, Verdana, Arial, Helvetica; PADDING: 8px; }
+.chatprinthr { margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf; }
+/*
+* End Chat Related CSS
+*/
+
+
+/* BEGIN jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/ */
+div.rating-cancel,div.star-rating{float:left;width:17px;height:15px;text-indent:-999em;cursor:pointer;display:block;background:transparent;overflow:hidden}
+div.rating-cancel,div.rating-cancel a{background:url(<{$_themePath}>images/icon_ratingdelete.gif) no-repeat 0 -16px}
+div.star-rating,div.star-rating a{background:url(<{$_themePath}>images/icon_ratingstar.gif) no-repeat 0 0px}
+div.rating-cancel a,div.star-rating a{display:block;width:16px;height:100%;background-position:0 0px;border:0}
+div.star-rating-on a{background-position:0 -16px!important}
+div.star-rating-hover a{background-position:0 -32px}
+/* Read Only CSS */
+div.star-rating-readonly a{cursor:default !important}
+/* Partial Star CSS */
+div.star-rating{background:transparent!important;overflow:hidden!important}
+/* END jQuery.Rating Plugin CSS */
+
+/*
+* Begin jQuery.QLoader CSS
+*/
+
+.QOverlay {
+	DISPLAY: none;
+	background-color: #000000;
+	z-index: 9999;
+}
+
+.QLoader {
+	DISPLAY: none;
+	background-color: #CCCCCC;
+	height: 1px;
+}
+
+/*
+* End jQuery.QLoader CSS
+*/
+
+
+
+/*
+* Begin Tickets CSS
+*/
+
+.irsui
+{
+	BACKGROUND-COLOR: #FFFBF2; BORDER: 1px SOLID #FFE6B8; COLOR: #333333; -moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius: 6px 6px 6px 6px; border-radius: 6px 6px 6px 6px; PADDING: 6px; MARGIN: 10px 0 0 0;
+}
+
+.irscontainer {
+	DISPLAY: none;
+}
+
+.irstitle
+{
+    FONT-SIZE: 18px;
+    COLOR: #333333;
+    FONT-FAMILY: Calibri, Trebuchet MS, Verdana, Arial, Helvetica;
+	MAGIN-BOTTOM: 6px;
+	FONT-WEIGHT: bold;
+}
+
+.irsdesc
+{
+    COLOR: #333333;
+	MAGIN-BOTTOM: 6px;
+}
+
+.irshr
+{
+	BORDER: none;
+	COLOR: #FFEECF;
+	BACKGROUND-COLOR: #FFEECF;
+	HEIGHT: 1px;
+	MARGIN: 3 1 3 1;
+	PADDING: 0;
+}
+
+
+.headerbutton, .headerbuttongreen, .headerbuttonorange, .headerbuttonred, .headerbuttonblue, .headerbuttonyellow {
+	background: #333333 url(<{$_themePath}>images/overlay-button.png) repeat-x;
+	padding: 9px 10px 10px 10px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 13px;
+	line-height: 1;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	cursor: pointer;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	margin: -4px 0 0 6px;
+	display: inline;
+	float: left;
+}
+
+.headerbutton:active, .headerbuttongreen:active, .headerbuttonorange:active {
+	-moz-transform: translateY(1px);
+}
+
+.headerbutton:hover {
+	BACKGROUND-COLOR: #222222;
+}
+
+.headerbuttongreen {
+	BACKGROUND-COLOR: #01a934;
+}
+
+.headerbuttongreen:hover {
+	BACKGROUND-COLOR: #14c84b;
+}
+
+.headerbuttonorange {
+	BACKGROUND-COLOR: #ff5c00;
+}
+
+.headerbuttonorange:hover {
+	BACKGROUND-COLOR: #ff823c;
+}
+
+.headerbuttonred {
+	BACKGROUND-COLOR: #e33100;
+}
+
+.headerbuttonred:hover {
+	BACKGROUND-COLOR: #f3643c;
+}
+
+.headerbuttonblue {
+	BACKGROUND-COLOR: #2daebf;
+}
+
+.headerbuttonblue:hover {
+	BACKGROUND-COLOR: #41c6d7;
+}
+
+.headerbuttonyellow {
+	BACKGROUND-COLOR: #ffb515;
+}
+
+.headerbuttonyellow:hover {
+	BACKGROUND-COLOR: #ffcc5d;
+}
+
+.ticketlistproperties {
+	COLOR: white;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 1em;
+}
+
+.ticketlistpropertiescontainer {
+	PADDING: 8px;
+}
+
+.ticketlistsubject {
+	FONT-SIZE: 1.8em;
+	COLOR: #333333;
+	PADDING: 4px 0 4px 5px;
+}
+
+.ticketlistpropertiesdivider {
+	HEIGHT: 8px;
+}
+
+.ticketlistheaderrow {
+	BORDER-TOP: 1px solid #FFFFFF;
+	BORDER-BOTTOM: 1px solid #DDDDC7;
+	BACKGROUND: #F8F4EB;
+	COLOR: #333333;
+	FONT-SIZE: 1em;
+	PADDING: 8px;
+}
+
+.ticketlisttable {
+	BORDER: 1px SOLID #CDC6B6;
+}
+
+.ticketsubdepartment {
+	BACKGROUND: URL(<{$_themePath}>images/linkdownarrow.gif) no-repeat 4px 0px;
+	PADDING: 0 0 0 20px;
+	MARGIN-LEFT: 10px;
+}
+
+.ticketgeneralcontainer {
+	BACKGROUND: #ffffff;
+}
+
+.ticketgeneraltitlecontainer {
+	PADDING: 8px 8px 10px 8px;
+}
+
+.ticketbenchmarks {
+	PADDING: 6px 8px 5px 8px;
+	FONT: Tahoma, Verdana, Arial, Helvetica;
+	FONT-SIZE: 11px;
+	COLOR: #333333;
+}
+
+.ticketbenchmark {
+	DISPLAY: inline-block;
+	MARGIN-RIGHT: 12px;
+}
+
+.ticketbenchmarktitle {
+	DISPLAY: inline;
+	FLOAT: left;
+	MARGIN-RIGHT: 5px;
+}
+
+
+.ticketpostbox {
+	text-decoration: none;
+	MARGIN: 0 0 0 30px;
+	COLOR: #333333;
+	WIDTH: 150px;
+}
+
+.ticketpostinfoitem, .ticketpostinfoitemtext {
+	PADDING: 5px 0px 0px 5px;
+	BORDER-BOTTOM: #F0EADE 1px SOLID;
+	BACKGROUND-COLOR: transparent;
+	COLOR: #000000;
+	FONT-FAMILY: Verdana, Arial, Helvetica;
+	FONT-SIZE: 11px;
+	HEIGHT: 34px;
+}
+
+.ticketpostinfoitemtext {
+	CURSOR: default;
+}
+
+.ticketpostinfoitemtitle {
+	TEXT-ALIGN: left;
+	FONT-SIZE: 0.9em;
+}
+
+.ticketpostinfoitemcontent, .ticketpostinfoitemlink {
+    FONT-SIZE: 1.3em;
+    FONT-FAMILY: Calibri, Arial, Verdana, Helvetica, sans-serif;
+	FONT-WEIGHT: bold;
+	CURSOR: pointer;
+}
+
+.ticketpostinfoitemcontainer {
+	PADDING: 3px 0 3px 0;
+}
+
+.ticketpostinfoitemlink:hover {
+	COLOR: red;
+}
+
+.ticketgeneralinfocontainer {
+	PADDING: 6px 8px 5px 8px;
+	FONT: Tahoma, Verdana, Arial, Helvetica;
+	FONT-SIZE: 10px;
+	COLOR: #5a5a5a;
+}
+
+.ticketgeneraldepartment {
+	COLOR: #b24c58 !important;
+	FONT: Calibri, Tahoma, Verdana, Arial, Helvetica;
+	FONT-SIZE: 1em;
+	FONT-WEIGHT: bold;
+}
+
+.ticketgeneraltitle {
+	COLOR: #333333;
+	FONT: Calibri, Tahoma, Verdana, Arial, Helvetica;
+	FONT-SIZE: 1.8em;
+	BACKGROUND: URL(<{$_themePath}>images/linkdownarrow.gif) 10px 4px no-repeat;
+	PADDING: 0px 0 8px 25px;
+}
+
+.ticketgeneralproperties {
+	HEIGHT: 65px;
+}
+
+.ticketgeneralpropertiesselect {
+	DISPLAY: block;
+	PADDING: 4px 0 0 0;
+	TEXT-ALIGN: center;
+}
+
+.ticketgeneralpropertiesobject, .ticketgeneralpropertiesobjectwide, .ticketgeneralpropertiesobjectmed {
+	PADDING: 10px 12px 6px 12px;
+	DISPLAY: block;
+	FLOAT: left;
+	WIDTH: 160px;
+	COLOR: #ffffff;
+	FONT: Calibri, Tahoma, Verdana, Arial, Helvetica;
+	HEIGHT: 49px;
+	BACKGROUND: transparent;
+}
+
+.ticketgeneralpropertiesobjectwide {
+	WIDTH: 220px;
+}
+
+.ticketgeneralpropertiesobjectmed {
+	WIDTH: 160px;
+}
+
+.ticketgeneralpropertiestitle {
+	TEXT-ALIGN: center;
+	FONT-SIZE: 0.9em;
+}
+
+.ticketgeneralpropertiescontent {
+	PADDING: 4px 0 0 0;
+	TEXT-ALIGN: center;
+	FONT-SIZE: 1.3em;
+	FONT-WEIGHT: bold;
+}
+
+.ticketgeneralpropertiesdivider {
+	PADDING: 10px 0 0 0;
+	DISPLAY: block;
+	FLOAT: left;
+}
+
+.viewticketcontentcontainer {
+	PADDING: 0 0 0 8px;
+}
+
+.ticketpaddingcontainer {
+	PADDING: 8px;
+}
+
+.ticketpostsholder {
+}
+.ticketpostcontainer {
+	BACKGROUND: #f8f4eb;
+	BORDER-TOP: 1px SOLID #d3c7b6;
+	BORDER-LEFT: 1px SOLID #d3c7b6;
+	BORDER-RIGHT: 1px SOLID #b5a48c;
+	BORDER-BOTTOM: 1px SOLID #b5a48c;
+	MARGIN: 8px;
+	POSITION: relative;
+}
+
+
+.ticketpostbar {
+	WIDTH: 240px;
+	FLOAT: left;
+	PADDING: 10px;
+}
+
+.ticketpostbarbottom {
+	POSITION: absolute;
+	BOTTOM: 0px;
+	LEFT: 0px;
+	FONT: Georgia,Arial,sans-serif;
+	WIDTH: 240px;
+	BORDER-TOP: 1px SOLID #ded5c7;
+}
+
+.ticketpostbarname {
+	FONT: 18px Candara, Trebuchet MS, Verdana, Arial, Helvetica;
+	FONT-WEIGHT: bold;
+	COLOR: #b24c58;
+	PADDING: 0 0 0 10px;
+	TEXT-SHADOW: 0 1px 0 rgba(0, 0, 0, 0.15);
+	TEXT-ALIGN: center;
+	MARGIN-LEFT: -50px;
+}
+
+.ticketpostbardesignation {
+	FONT: 11px Candara, Trebuchet MS, Verdana, Arial, Helvetica;
+	FONT-WEIGHT: bold;
+	COLOR: #333333;
+	PADDING: 0 0 0 10px;
+	TEXT-SHADOW: 0 1px 0 rgba(0, 0, 0, 0.15);
+	TEXT-ALIGN: center;
+	MARGIN-LEFT: -50px;
+}
+
+.ticketpostavatar {
+	BACKGROUND: #f9f5ed;
+	BORDER-TOP: 1px SOLID #d3c7b6;
+	BORDER-LEFT: 1px SOLID #d3c7b6;
+	BORDER-RIGHT: 1px SOLID #b5a48c;
+	BORDER-BOTTOM: 1px SOLID #b5a48c;
+	WIDTH: 100px;
+	MARGIN: 25px 0px 10px 0px;
+	LEFT: 50%;
+	MARGIN-LEFT: -80px;
+	POSITION: relative;
+	PADDING: 6px;
+}
+
+.tpavatar {
+
+}
+
+.ticketpostbarbadgeblue, .ticketpostbarbadgered, .ticketpostbarbadgegreen {
+	FONT: 10px Verdana, Tahoma, Arial, Helvetica;
+	COLOR: #000000;
+	WIDTH: 71px;
+	HEIGHT: 21px;
+	MARGIN: 10px 0px 10px 0px;
+	LEFT: 50%;
+	MARGIN-LEFT: -57px;
+	POSITION: relative;
+}
+
+.ticketpostbarbadgeblue {
+	BACKGROUND: URL(<{$_themePath}>images/badge1blue.gif) top left no-repeat;
+}
+
+.ticketpostbarbadgered {
+	BACKGROUND: URL(<{$_themePath}>images/badge1red.gif) top left no-repeat;
+}
+
+.ticketpostbarbadgegreen {
+	BACKGROUND: URL(<{$_themePath}>images/badge1green.gif) top left no-repeat;
+}
+
+.ticketpostbarbadgeblue .tpbadgetext, .ticketpostbarbadgered .tpbadgetext, .ticketpostbarbadgegreen .tpbadgetext {
+	WIDTH: 70px;
+	TEXT-ALIGN: center;
+	PADDING: 3px 0 0 0;
+}
+
+
+.ticketpostcontentsbottom {
+	POSITION: absolute;
+	BOTTOM: 0px;
+	LEFT: 0px;
+	BORDER-TOP: 1px SOLID #ded5c7;
+	FONT: Georgia,Arial,sans-serif;
+	WIDTH: 100%;
+}
+
+.ticketpostcontentsbottom .ticketpostbottomcontents,.ticketpostbarbottom .ticketpostbottomcontents {
+	PADDING: 8px;
+	HEIGHT: 16px;
+}
+
+.ticketpostedited {
+	FONT: 11px Verdana, Arial, Helvetica;
+	FONT-WEIGHT: bold;
+	FONT-STYLE: italic;
+	PADDING: 15px 0 0 0;
+}
+
+.ticketpostbottomcontents {
+	FLOAT: left;
+}
+
+.ticketpostclearer {
+	CLEAR: both;
+}
+
+.ticketpostcontents {
+	MARGIN-LEFT: 236px;
+	BACKGROUND: #ffffff;
+	HEIGHT: auto;
+	BORDER-LEFT: 4px SOLID #ded5c7;
+	POSITION: relative;
+}
+
+.ticketpostcontentsbar {
+	POSITION: relative;
+	FLOAT: left;
+	DISPLAY: block;
+	MARGIN: 10px 0px 0 -40px;
+	BACKGROUND: #98BDC6;
+	WIDTH: 100%;
+	HEIGHT: 20px;
+	BORDER: 1px solid #6E8D94;
+	TEXT-SHADOW: 0 1px 0 rgba(139, 174, 183, 1);
+}
+
+.ticketbarquote {
+	MARGIN: 2px 3px 0 0;
+	FLOAT: right;
+	BACKGROUND: URL(<{$_themePath}>images/icon_quote.gif) no-repeat;
+	HEIGHT: 16px;
+	WIDTH: 16px;
+	CURSOR: pointer;
+}
+
+.ticketpostcontentsbar .ticketbarcontents {
+	PADDING: 3px 0 0 6px;
+	FONT: Georgia,Arial,sans-serif;
+	COLOR: #ffffff;
+}
+
+.ticketpostcontentsbar span.ticketbardatefold {
+	BACKGROUND: URL(<{$_themePath}>images/ticketdatefold.png) no-repeat center center;
+	DISPLAY: block;
+	BOTTOM: -15px;
+	LEFT: 0;
+	HEIGHT: 14px;
+	POSITION: absolute;
+	WIDTH: 19px;
+}
+
+.ticketpostcontentsattachments {
+	BORDER-BOTTOM: 1px SOLID #ded5c7;
+	FONT: Georgia,Arial,sans-serif;
+	WIDTH: 100%;
+	MARGIN-BOTTOM: 10px;
+	PADDING-BOTTOM: 6px;
+}
+
+.ticketpostcontentsattachmentitem {
+	PADDING: 4px 0 5px 18px;
+	MARGIN: 0 10px 0 0;
+	CURSOR: pointer;
+	BACKGROUND-REPEAT: no-repeat;
+	BACKGROUND-POSITION: 0px 3px;
+	DISPLAY: inline;
+}
+
+.ticketpostcontentsdetails {
+	PADDING: 50px 0 0 0;
+}
+
+.ticketpostcontentsholder {
+	PADDING: 0 0 15px 20px;
+}
+
+.ticketpostcontentsdetailscontainer {
+	FONT: Candara, Calibri, Georgia, Arial, Verdana, Helvetica, sans-serif;
+	FONT-SIZE: 14px;
+	COLOR: #333333;
+	MARGIN-BOTTOM: 30px;
+	CURSOR: text;
+}
+
+.ticketpostbottomright {
+	FLOAT: right;
+	PADDING: 8px;
+}
+
+
+/*
+* End Tickets CSS
+*/
+
+
+/*
+* Begin News CSS
+*/
+.newshr {
+	margin-bottom: 16px; height: 1px; BORDER: none; BORDER-TOP: 1px solid #cfcfcf; color: white; background-color: white;
+}
+
+.newstitle {
+	font-size: 80%; margin-left: 10px; padding: 3px; padding-top: 0px; margin-top: 0px;
+}
+
+.newstitlelink {
+	color: #277dca !important; font-family: Calibri, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; text-decoration: none; font-size: 28px; font-weight: bold;
+}
+
+.newsavatar {
+	FLOAT: right; BORDER: 1px SOLID lightgray; PADDING: 3px;
+}
+
+.newsreadmorelink {
+	color: #277dca !important; font-family: Calibri, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; text-decoration: none; font-size: 22px; font-weight: bold;
+}
+
+.newsinfo {
+	font-size: 11px; padding-top: 2px; padding-bottom: 14px; color: gray; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif;
+}
+
+.newscontents {
+	font-size: 12px;
+}
+
+a img {
+	BORDER: 0px;
+}
+
+.newsfooter {
+	TEXT-ALIGN: center;
+}
+
+/*
+* End News CSS
+*/
+
+
+
+
+/*
+* Begin Knowledgebase CSS
+*/
+
+.kbarticlecontainer, .kbsearchcontainer {
+	padding: 0 10px 16px 38px; border-bottom: 1px SOLID #ececec; margin: 0 0 30px 0; background: url(<{$_themePath}>images/icon_kbarticle.png) no-repeat 0px 1px;
+}
+
+.kbarticle, .kbsearch {
+	color: #277dca; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; font-size: 20px; font-weight: bold;
+}
+
+.kbarticletext, .kbsearchtext {
+	color: #969696; font-family: Verdana, Arial, Helvetica, Georgia, serif; font-size: 12px;
+}
+
+.kbarticlefeatured {
+	background-color: #fff4d3; border: 1px SOLID #f2ebde; -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px; background-position: 4px 6px; padding: 4px 10px 16px 42px;
+}
+
+.kbarticlelist {
+
+}
+
+.kbarticlelist .kbarticlelistitem, .kbarticlecategorylistitem {
+	background: url(<{$_themePath}>images/icon_kbarticlesmall.png) no-repeat 0px 0px; PADDING: 0px 0 0 20px; margin-top: 8px; line-height: 1.4em;
+}
+
+.kbrightstrip {
+	margin-right: 12px;
+}
+
+.kbcategorytitlecontainer {
+	margin: 0 12px 20px 0;
+}
+
+.kbcategorytitle {
+	color: #333333; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; font-size: 18px; padding: 0 0 4px 20px; border-bottom: 1px SOLID #ececec; font-weight: bold;
+	background: url(<{$_themePath}>images/icon_folderyellowfaded.gif) no-repeat 0px 1px; cursor: pointer; margin: 0 0 10px 0;
+}
+
+.kbcategorytitle:hover {
+	background-image: url(<{$_themePath}>images/icon_folderyellow.gif);
+	color: red !important;
+}
+
+.kbcategorytitle:hover > a {
+	color: red !important;
+}
+
+.kbcategorytitle .kbcategorycount {
+	font-size: 14px; margin-left: 4px; color: #989898;
+}
+
+.kbtitle {
+	font-size: 80%;
+}
+
+.kbtitlemain {
+ font-family: Calibri, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; text-decoration: none; font-size: 28px; font-weight: bold;
+}
+
+.kbinfo {
+	font-size: 11px; padding-top: 2px; padding-bottom: 14px; color: gray; font-family: Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif;
+}
+
+.kbavatar {
+	FLOAT: right; BORDER: 1px SOLID lightgray; PADDING: 3px;
+}
+
+.kbcontents {
+	font-size: 12px;
+}
+
+.kbhr {
+	margin-bottom: 16px; height: 1px; BORDER: none; BORDER-TOP: 1px solid #cfcfcf; color: white; background-color: white;
+}
+
+.kbrating {
+	margin-top: 25px;
+}
+
+.kbratinghelpful {
+	DISPLAY: inline; margin-right: 40px; CURSOR: pointer;
+}
+
+.kbratingnothelpful {
+	DISPLAY: inline; margin-right: 40px; CURSOR: pointer;
+}
+
+.kbratingstars {
+	DISPLAY: inline; FONT-SIZE: 11px; margin-right: 40px;
+}
+
+.kbratingstars span {
+	PADDING-TOP: 2px;
+}
+
+.kbattachments {
+	FONT: Georgia,Arial,sans-serif;
+	WIDTH: 100%;
+	MARGIN-BOTTOM: 10px;
+	PADDING-BOTTOM: 6px;
+}
+
+.kbattachmentitem {
+	PADDING: 4px 0 5px 18px;
+	MARGIN: 0 10px 0 0;
+	CURSOR: pointer;
+	BACKGROUND-REPEAT: no-repeat;
+	BACKGROUND-POSITION: 0px 3px;
+	DISPLAY: inline;
+}
+
+/*
+* End Knowledgebase CSS
+*/
+
+
+
+/*
+* Begin Comments CSS
+*/
+
+.commentslabel {
+	color: #333333; font-family: Calibri, Candara, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; text-decoration: none; font-size: 22px; padding-bottom: 6px;
+}
+
+.commentchild {
+	background: URL("<{$_themePath}>images/downarrow.gif") no-repeat 0px 22px; padding-left: 18px;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.commentcontentsholder {
+	font: 16px Georgia,"Times New Roman",Times,serif; margin-bottom: 20px; PADDING-BOTTOM: 12px; PADDING-TOP: 15px;
+}
+
+.commentdatelabel {
+	font: 14px Georgia,"Times New Roman",Times,serif; color: #666666;
+}
+
+.commentnamelabel {
+	font: 16px Georgia,"Times New Roman",Times,serif; color: #333333; margin-bottom: 6px; padding-top: 4px;
+}
+
+.commentavatar {
+	float: left; width: 80px;
+}
+
+.commentdataholder {
+	line-height: 16px; margin-left: 20px;
+}
+
+.commentdataholderstaff {
+	background: #fff1c8; padding: 12px 12px 0 12px; border-radius: 12px; -moz-border-radius: 12px; -webkit-border-radius: 12px;
+}
+
+/*
+* End Comments CSS
+*/
+
+
+
+/*
+* Begin Troubleshooter CSS
+*/
+
+.troubleshootercategory {
+	PADDING: 4px;
+}
+
+.troubleshootercategorycontainer {
+	BORDER: 1px SOLID WHITE;
+	CURSOR: pointer;
+}
+
+.troubleshootercategorycontainer:hover {
+	BACKGROUND: #ffefbb;
+	BORDER-COLOR: #efe8da;
+	CURSOR: pointer;
+}
+
+.troubleshootercategorytitle {
+	BACKGROUND: url("<{$_themePath}>images/icon_folderyellow.gif") no-repeat 0 0;
+	PADDING: 2px 0 4px 20px;
+}
+
+.troubleshootercategorydesc {
+	PADDING-BOTTOM: 4px;
+}
+
+.troubleshootercategoryfooter {
+	MARGIN-BOTTOM: 18px;
+	PADDING-BOTTOM: 2px;
+	BORDER-BOTTOM: 1px DASHED #CCCCCC;
+}
+
+.trsteptitle {
+	font-size: 80%;
+	PADDING-BOTTOM: 8px;
+}
+
+.trsteptitlemain {
+ font-family: Calibri, Trebuchet MS, Verdana, Arial, Helvetica, Georgia, serif; text-decoration: none; font-size: 28px; font-weight: bold;
+}
+
+.trstepcontents {
+	font-size: 12px;
+}
+
+.trstephr {
+	margin-bottom: 16px; height: 1px; BORDER: none; BORDER-TOP: 1px solid #cfcfcf; color: white; background-color: white;
+}
+
+.trattachments {
+	FONT: Georgia,Arial,sans-serif;
+	WIDTH: 100%;
+	MARGIN-BOTTOM: 10px;
+	PADDING-BOTTOM: 6px;
+}
+
+.trattachmentitem {
+	PADDING: 4px 0 5px 18px;
+	MARGIN: 0 10px 0 0;
+	CURSOR: pointer;
+	BACKGROUND-REPEAT: no-repeat;
+	BACKGROUND-POSITION: 0px 3px;
+	DISPLAY: inline;
+}
+
+.troubleshooterstepradio {
+	BACKGROUND: #fff9d7;
+}
+
+.troubleshooterstepsubject {
+	BACKGROUND: #f8f8f8;
+}
+
+/*
+* End Troubleshooter CSS
+*/
+		]]></template>
+
+		<template name="header"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=<{$_language[charset]}>" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <title><{if $_pageTitle != ""}><{$_pageTitle}><{else}><{$_companyName}><{/if}> - <{$_poweredByNotice}></title>
+    <meta name="KEYWORDS" content="Home" />
+    <!-- <meta name="description" content="DISPLAY SOME KB STUFF OR NEWS HERE" /> -->
+    <meta name="robots" content="index,follow" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<{if $_settings[nw_enablerss] == '1'}>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="<{$_swiftPath}>rss/index.php?<{$_templateGroupPrefix}>/News/Feed" />
+	<{/if}>
+	<script language="Javascript" type="text/javascript">
+	var _themePath = "<{$_themePath}>";
+	var _swiftPath = "<{$_swiftPath}>";
+	var _baseName = "<{$_baseName}>";
+	var datePickerDefaults = {showOn: "both", buttonImage: "<{$_themePath}>images/icon_calendar.gif", changeMonth: true, changeYear: true, buttonImageOnly: true, dateFormat: '<{if $_settings[dt_caltype] == 'us'}>mm/dd/yy<{else}>dd/mm/yy<{/if}>'};
+	</script>
+
+	<link rel="stylesheet" type="text/css" media="all" href="<{$_baseName}><{$_templateGroupPrefix}>/Core/Default/Compressor/css/jqueryui:popup:client:colorpicker" />
+	<script type="text/javascript" src="<{$_baseName}><{$_templateGroupPrefix}>/Core/Default/Compressor/js/jquery:jqueryplugins:jqueryui:colorpicker:coresc:popup"></script>
+  </head>
+
+
+  <body class="bodymain">
+
+    <div id="main">
+
+      <div id="topbanner"><a href="<{$_baseName}><{$_templateGroupPrefix}>"><img border="0" src="<{$_headerImageSC}>" alt="Kayako <{$_productTitle}> Logo" id="logo" /></a></div>
+
+      <div id="toptoolbar">
+
+        <span id="toptoolbarrightarea">
+		<select class="swiftselect" name="languageid" id="languageid" onchange="javascript: LanguageSwitch(false);">
+		<{foreach key=_languageID item=_languageItem from=$_languageContainer}>
+		<{if $_languageItem[isenabled] == '1'}>
+		<option value="<{$_languageID}>"<{if $_activeLanguageID == $_languageID}> selected<{/if}>><{$_languageItem[title]}></option>
+		<{/if}>
+		<{/foreach}>
+		</select>
+        </span>
+
+        <ul id="toptoolbarlinklist"><{foreach key=key item=_item from=$_widgetContainer}><{if $_item[displayinnavbar] == '1'}><li<{if $_item[isactive] == true}> class="current"<{/if}>><a class="toptoolbarlink" style="<{if $_item[defaultsmallicon] != ''}>background-image: url(<{$_item[defaultsmallicon]}>);<{/if}>" href="<{$_item[widgetlink]}>"><{$_item[defaulttitle]}></a></li><{/if}><{/foreach}></ul>
+
+      </div>
+
+      <div id="maincore">
+
+
+
+        <div id="maincoreleft">
+
+          <div id="leftloginsubscribebox">
+            <{if $_userIsLoggedIn == true}>
+            <div class="tabrow" id="leftloginsubscribeboxtabs"><a id="leftloginsubscribeboxlogintab" href="#" class="atab"><span class="tableftgap">&nbsp;</span><span class="tabbulk"><span class="tabtext"><{$_language[myaccount]}></span></span></a></div>
+            <div id="leftloginbox" class="switchingpanel active">
+              <div class="maitem maprofile" onclick="javascript: Redirect('<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/Profile');"><{$_language[maprofile]}></div>
+			  <{if ($_settings[user_orgprofileupdate] == 'allusers' && $_user[userorganizationid] != '0') || ($_user[userrole] == 2 && $_settings[user_orgprofileupdate] == 'managersonly' && $_user[userorganizationid] != '0')}>
+              <div class="maitem maorganization" onclick="javascript: Redirect('<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/MyOrganization');"><{$_language[maorganization]}></div>
+			  <{/if}>
+			  <{foreach key=_itemID item=_navbarMenuItem from=$_navbarMenuItemContainer}>
+              <div class="maitem<{if $_navbarMenuItem[class] != ''}> <{$_navbarMenuItem[class]}><{/if}>" onclick="javascript: Redirect('<{$_navbarMenuItem[link]}>');"><{$_navbarMenuItem[title]}></div>
+			  <{/foreach}>
+              <div class="maitem mapreferences" onclick="javascript: Redirect('<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/Preferences');"><{$_language[mapreferences]}></div>
+              <div class="maitem machangepassword" onclick="javascript: Redirect('<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/ChangePassword');"><{$_language[machangepassword]}></div>
+              <div class="maitem malogout" onclick="javascript: Redirect('<{$_baseName}><{$_templateGroupPrefix}>/Base/User/Logout');"><{$_language[malogout]}></div>
+            </div>
+
+            <{else}>
+            <form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/User/Login" name="LoginForm">
+            <div class="tabrow" id="leftloginsubscribeboxtabs"><a id="leftloginsubscribeboxlogintab" href="#" onclick="javascript: ActivateLoginTab();" class="atab"><span class="tableftgap">&nbsp;</span><span class="tabbulk"><span class="tabtext"><{$_language[login]}></span></span></a><{if $_canSubscribeNews == true}><a id="leftloginsubscribeboxsubscribetab" href="#" onclick="javascript: ActivateSubscribeTab();" class="atab inactive"><span class="tableftgap">&nbsp;</span><span class="tabbulk"><span class="tabtext"><{$_language[subscribe]}></span></span></a><{/if}></div>
+            <div id="leftloginbox" class="switchingpanel active">
+			  <input type="hidden" name="_redirectAction" value="<{$_redirectAction}>" />
+              <div class="inputframe zebraeven"><input class="loginstyled<{if $_userLoginEmail != ''}><{else}>label<{/if}>" value="<{if $_userLoginEmail != ''}><{$_userLoginEmail}><{else}><{$_language[loginenteremail]}><{/if}>" onfocus="javascript: ResetLabel(this, '<{$_language[loginenteremail]}>', 'loginstyled');" name="scemail" type="text"></div>
+              <div class="inputframe zebraodd"><input class="loginstyled" value="<{$_userLoginPassword}>" name="scpassword" type="password"></div>
+              <div class="inputframe zebraeven"><input id="leftloginboxrememberme" name="rememberme" value="1" type="checkbox"<{if $_userRememberMe == true}> checked<{/if}>><label for="leftloginboxrememberme"><span id="leftloginboxremembermetext"><{$_language[rememberme]}></span></label></div>
+              <hr class="vdivider">
+              <div id="logintext"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserLostPassword/Index"><{$_language[lostpassword]}></a></div>
+              <div id="loginsubscribebuttons"><input class="rebutton" value="<{$_language[login]}>" type="submit" /></div>
+            </div>
+            </form>
+            <{if $_canSubscribeNews == true}>
+	        <form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/News/Subscriber/Subscribe" name="SubscribeForm">
+			<div id="leftsubscribebox" class="switchingpanel">
+              <div class="inputframe zebraeven"><input class="emailstyledlabel" value="<{$_language[loginenteremail]}>" onfocus="javascript: ResetLabel(this, '<{$_language[loginenteremail]}>', 'emailstyled');" name="subscribeemail" type="text"></div>
+              <hr class="vdivider">
+              <div id="logintext">&nbsp;</div>
+              <div id="loginsubscribebuttons"><input class="rebutton" value="<{$_language[buttonsubmit]}>" type="submit"></div>
+			</div>
+            </form>
+			<{/if}>
+            <{/if}>
+          </div>
+
+		  <{if $_filterKnowledgebase == true}>
+			<div class="leftnavboxbox">
+				<div class="leftnavboxtitle"><span class="leftnavboxtitleleftgap">&nbsp;</span><span class="leftnavboxtitlebulk"><span class="leftnavboxtitletext"><{$_language[filterkb]}></span></span></div>
+				<div class="leftnavboxcontent">
+				<{foreach key=_knowledgebaseCategoryID item=_knowledgebaseCategory from=$_navKnowledgebaseCategoryContainer}>
+				<a class="zebraeven" href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/List/Index/<{$_knowledgebaseCategoryID}>/<{$_knowledgebaseCategory[seotitle]}>"><{$_knowledgebaseCategory[title]}><{if $_knowledgebaseCategory[totalarticles] > 0}> <span class="graytext">(<{$_knowledgebaseCategory[totalarticles]}>)</span><{/if}></a>
+				<{/foreach}>
+				</div>
+			</div>
+		  <{/if}>
+
+		  <{if $_filterNews == true}>
+			<div class="leftnavboxbox">
+				<div class="leftnavboxtitle"><span class="leftnavboxtitleleftgap">&nbsp;</span><span class="leftnavboxtitlebulk"><span class="leftnavboxtitletext"><{$_language[filternews]}></span></span></div>
+				<div class="leftnavboxcontent">
+				<{foreach key=_newsCategoryID item=_newsCategory from=$_newsCategoryContainer}>
+				<a class="zebraeven" href="<{$_baseName}><{$_templateGroupPrefix}>/News/List/Index/<{$_newsCategoryID}>"><{$_newsCategory[categorytitle]}><{if $_newsCategory[totalitems] > 0}> <span class="graytext">(<{$_newsCategory[totalitems]}>)</span><{/if}></a>
+				<{/foreach}>
+				</div>
+			</div>
+		  <{/if}>
+
+		  <{if $_settings[ls_displaystatus] == '1'}>
+		  <div id="leftlivechatbox">
+          <!-- BEGIN TAG CODE --><div><div id="proactivechatcontainernc2v4biell"></div><table border="0" cellspacing="2" cellpadding="2"><tr><td align="center" id="swifttagcontainernc2v4biell"><div style="display: inline;" id="swifttagdatacontainer"></div></td> </tr><tr><td align="center"><!-- DO NOT REMOVE --><div style="MARGIN-TOP: 2px; WIDTH: 100%; TEXT-ALIGN: center;"><span style="FONT-SIZE: 9px; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif;"><a href="http://www.kayako.com/products/live-chat-software/" style="TEXT-DECORATION: none; COLOR: #000000" target="_blank">Live Chat Software</a><span style="COLOR: #000000"> by </span>Kayako</span></div><!-- DO NOT REMOVE --></td></tr></table></div> <script type="text/javascript">var swiftscriptelemnc2v4biell=document.createElement("script");swiftscriptelemnc2v4biell.type="text/javascript";var swiftrandom = Math.floor(Math.random()*1001); var swiftuniqueid = "nc2v4biell"; var swifttagurlnc2v4biell="<{$_swiftPath}>visitor/index.php?<{$_templateGroupPrefix}>/LiveChat/HTML/HTMLButtonBase";setTimeout("swiftscriptelemnc2v4biell.src=swifttagurlnc2v4biell;document.getElementById('swifttagcontainernc2v4biell').appendChild(swiftscriptelemnc2v4biell);",1);</script><!-- END TAG CODE -->
+		  </div>
+		  <{/if}>
+
+        </div>
+
+
+
+        <div id="maincorecontent">
+
+			<!--
+			<div id="breadcrumbbar">
+				<span class="breadcrumb lastcrumb"><{$_language[home]}></span>
+			</div>
+			-->
+
+            <form method="post" id="searchform" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/Search/Index" name="SearchForm">
+			<div class="searchboxcontainer">
+				<div class="searchbox">
+					<span class="searchbuttoncontainer">
+						<a class="searchbutton" href="javascript: void(0);" onclick="$('#searchform').submit();"><span></span><{$_language[searchbutton]}></a>
+					</span>
+					<span class="searchinputcontainer"><input type="text" name="searchquery" class="searchquery" onclick="javascript: if ($(this).val() == '<{$_language[pleasetypeyourquestion]}>' || $(this).val() == '<{$_language[pleasetypeyourquery]}>') { $(this).val('').addClass('searchqueryactive'); }" value="<{if $_baseIndex == true}><{$_language[pleasetypeyourquestion]}><{else}><{$_language[pleasetypeyourquery]}><{/if}>" /></span>
+				</div>
+			</div>
+			</form>
+
+			<!-- BEGIN DIALOG PROCESSING -->
+			<{foreach key=key item=_item from=$_errorContainer}>
+			<div class="dialogerror"><div class="dialogerrorsub"><div class="dialogerrorcontent"><{$_item[message]}></div></div></div>
+			<{/foreach}>
+			<{foreach key=key item=_item from=$_infoContainer}>
+			<div class="dialoginfo"><div class="dialoginfosub"><div class="dialoginfocontent"><{$_item[message]}></div></div></div>
+			<{/foreach}>
+		]]></template>
+
+		<template name="footer"><![CDATA[</div>
+      <div id="bottomfooter" class="bottomfooterpadding"><{$_defaultFooter}></div>
+    </div>
+
+  </div>
+  </body>
+
+</html>]]></template>
+
+		<template name="homeindex"><![CDATA[
+			<div id="corewidgetbox"><div class="widgetrow"><{foreach key=key item=_item from=$_widgetContainer}><{if $_item[displayinindex] == '1'}><span onclick="javascript: window.location.href='<{$_item[widgetlink]}>';"><a href="<{$_item[widgetlink]}>" class="widgetrowitem defaultwidget" style="<{if $_item[defaulticon] != ''}>background-image: url(<{$_item[defaulticon]}>);<{/if}>"><span class="widgetitemtitle"><{$_item[defaulttitle]}></span></a></span><{/if}><{/foreach}></div></div>
+			<{if $_showIndexNews == true}>
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{if $_settings[nw_enablerss] == '1'}><div style="float: right;"><a href="<{$_swiftPath}>rss/index.php?<{$_templateGroupPrefix}>/News/Feed" title="<{$_language[rssfeed]}>" target="_blank"><img src="<{$_themePath}>images/icon_rss.png" align="absmiddle" alt="<{$_language[rssfeed]}>" border="0" /></a></div><{/if}><{$_language[latestupdates]}></div>
+
+			<div class="boxcontainercontent">
+				<{if $_newsCount > 0}>
+				<table cellpadding="0" cellspacing="0" border="0">
+				<{foreach key=newsitemid item=_newsItem from=$_newsContainer}>
+					<tr>
+						<td width="60" align="left" valign="top">
+							<div class="datecontainerparent">
+							<div class="monthholder"><div class="monthsub"><{$_newsItem[parsedmonth]}></div></div>
+							<div class="dateholder"><div class="datecontainer"><{$_newsItem[parseddate]}></div></div>
+							</div>
+						</td>
+
+						<td width="100%" valign="top">
+							<div class="newsavatar"><img src="<{$_baseName}><{$_templateGroupPrefix}>/Base/StaffProfile/DisplayAvatar/<{$_newsItem[staffid]}>/<{$_newsItem[emailhash]}>/60" align="absmiddle" border="0" /></div>
+							<div class="newstitle"><a class="newstitlelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/NewsItem/View/<{$_newsItem[newsitemid]}>/<{$_newsItem[urlextension]}>" title="<{$_newsItem[subject]}>"><{$_newsItem[subject]}></a>
+							<div class="newsinfo"><{$_language[postedby]}> <{$_newsItem[author]}> <{$_language[on]}> <{$_newsItem[date]}></div>
+					</tr>
+					<tr><td colspan="2" class="newscontents">
+						<{$_newsItem[contents]}>
+						<br />
+						<a class="newsreadmorelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/NewsItem/View/<{$_newsItem[newsitemid]}>/<{$_newsItem[urlextension]}>" title="<{$_newsItem[subject]}>"><{$_language[readmore]}></a>
+					</td></tr>
+					<tr>
+					<td colspan="2"><hr class="newshr" /><br /><br /></td>
+					</tr>
+				<{/foreach}>
+				</table>
+				<br />
+				<div class="newsfooter">
+				<a class="newsreadmorelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/List"><{$_language[viewallnews]}></a>
+				</div>
+				<{/if}>
+				<{if $_newsCount == 0}>
+				<div class="infotextcontainer">
+				<{$_language[noinfoinview]}>
+				</div>
+				<{/if}>
+			</div>
+			</div>
+			<{/if}>
+		  ]]></template>
+
+		<template name="comments"><![CDATA[
+			<div class="commentslabel"><{$_language[comments]}> (<{$_commentCount}>)</div>
+			<div id="commentscontainer">
+			<{foreach key=_commentID item=_comment from=$_commentContainer}>
+			<div style="padding-left: <{$_comment[padding]}>px;">
+				<div class="commentavatar<{if $_comment[parentcommentid] != '0'}> commentchild<{/if}>"><img src="<{$_comment[avatarurl]}>" align="absmiddle" border="0" />
+				<div style=""><{if $_canPostComments != false}><a href="javascript: void(0);" onclick="javascript: MoveCommentReply('<{$_commentID}>');"><{$_language[reply]}></a><{/if}></div>
+				</div>
+				<div class="commentdataholder" style="padding-left: <{if $_comment[parentcommentid] != '0'}>80px;<{else}>60px<{/if}>">
+					<div class="<{if $_comment[isstaff] == true}>commentdataholderstaff<{/if}>">
+						<div class="commentnamelabel"><{$_comment[fullname]}></div>
+						<div class="commentdatelabel"><{$_comment[date]}></div>
+						<div class="commentcontentsholder"><{$_comment[contents]}></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div id="commentreplycontainer_<{$_commentID}>"></div>
+			</div>
+			<{/foreach}>
+			<{if $_canCaptcha == true && $_settings[security_captchatype] == 'recaptcha'}>
+			<script type="text/javascript" src="https://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+			<{/if}>
+
+			<div id="commentparent">
+				<{if $_canPostComments != false}>
+				<div id="commentsformcontainer">
+				<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/<{$_commentsModule}>/Comments/Submit/<{$_commentsItemID}>/<{$_commentExtendedURL}>" enctype="multipart/form-data" name="CommentsForm">
+				<input type="hidden" name="parentcommentid" id="commentformparentcommentid" value="0" />
+				<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[postnewcomment]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+				<table width="100%" border="0" cellspacing="1" cellpadding="4">
+					<{if $_commentsFullName == ''}>
+					<tr>
+						<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[commentfullname]}></td>
+						<td><input name="fullname" type="text" size="25" class="swifttextlarge" value="<{$_commentsPostFullName}>" /></td>
+					</tr>
+					<{/if}>
+					<{if $_commentsEmail == ''}>
+					<tr>
+						<td align="left" valign="middle" class="zebraodd"><{$_language[commentemail]}></td>
+						<td><input name="email" type="text" size="25" class="swifttextlarge" value="<{$_commentsPostEmail}>" /></td>
+					</tr>
+					<{/if}>
+					<tr>
+						<td align="left" valign="top" class="zebraodd"><{$_language[commentdata]}></td>
+						<td><textarea name="comments" class="swifttextarea" rows="4" cols="20"><{$_commentsPostData}></textarea></td>
+					</tr>
+				</table>
+				<{if $_canCaptcha == true}>
+				<table class="hlineheader"><tr><th rowspan="2"><{$_language[captchaverification]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+				<div class="subcontent"><{$_language[captchadesc]}></div>
+				<{$_captchaHTML}>
+				<br />
+				<{/if}>
+				<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonsubmit]}>" type="submit" name="button" /></div>
+				<{if $_commentsFullName != ''}><input type="hidden" name="fullname" value="<{$_commentsFullName}>" /><{/if}>
+				<{if $_commentsEmail != ''}><input type="hidden" name="email" value="<{$_commentsEmail}>" /><{/if}>
+				</form>
+				</div>
+				<{/if}>
+			</div>
+			</div>
+		  ]]></template>
+
+		<template name="customfields"><![CDATA[
+		<{foreach key=key item=_customFieldGroup from=$_customFields}>
+		<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_customFieldGroup[title]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<{foreach key=key item=_customField from=$_customFieldGroup[_fields]}>
+				<{if $_customField[fieldtype] == 'custom' && $_customField[valuetype] != 'static'}>
+				<!-- PLACE CUSTOM FIELD TYPE HTML CODE HERE -->
+				<{else}>
+				<tr>
+					<td width="<{if $_isLiveChat}>100<{else}>200<{/if}>" align="left" valign="middle" class="<{if $_isLiveChat}><{else}>zebraodd<{/if}>"><{$_customField[title]}>:<{if $_customField[isrequired] == '1'}><span class="customfieldrequired">*</span><{/if}></td>
+					<td><{if $_customField[valuetype] == 'static'}><{$_customField[fieldvalue]}><{else}>
+					<{if $_customField[fieldtype] == 'text'}>
+					<input name="<{$_customField[fieldname]}>" type="text" autocomplete="off" size="20" class="swifttextlarge" value="<{$_customField[fieldvalue]}>">
+					<{elseif $_customField[fieldtype] == 'textarea'}>
+					<textarea name="<{$_customField[fieldname]}>" class="swifttextarea" rows="5" cols="100"><{$_customField[fieldvalue]}></textarea>
+					<{elseif $_customField[fieldtype] == 'password'}>
+					<input name="<{$_customField[fieldname]}>" type="password" autocomplete="off" size="20" class="swifttextlarge swiftpassword" value="<{$_customField[fieldvalue]}>">
+					<{elseif $_customField[fieldtype] == 'checkbox'}>
+						<{foreach key=optionkey item=_customFieldOption from=$_customField[fieldvalue]}>
+						<label for="<{$_customField[fieldname]}>[<{$optionkey}>]"><input type="checkbox" id="<{$_customField[fieldname]}>[<{$optionkey}>]" name="<{$_customField[fieldname]}>[<{$optionkey}>]" value="<{$_customFieldOption[value]}>"<{if $_customFieldOption[checked] == 1}> checked<{/if}> /> <{$_customFieldOption[title]}></label><br />
+						<{/foreach}>
+					<{elseif $_customField[fieldtype] == 'radio'}>
+						<{foreach key=optionkey item=_customFieldOption from=$_customField[fieldvalue]}>
+						<label for="<{$_customField[fieldname]}>[<{$optionkey}>]"><input type="radio" id="<{$_customField[fieldname]}>[<{$optionkey}>]" name="<{$_customField[fieldname]}>" value="<{$_customFieldOption[value]}>"<{if $_customFieldOption[checked] == 1}> checked<{/if}> /> <{$_customFieldOption[title]}></label><br />
+						<{/foreach}>
+					<{elseif $_customField[fieldtype] == 'select'}>
+						<select name="<{$_customField[fieldname]}>" class="swiftselect">
+						<{foreach key=optionkey item=_customFieldOption from=$_customField[fieldvalue]}>
+						<option value="<{$_customFieldOption[value]}>"<{if $_customFieldOption[selected] == 1}> selected<{/if}>><{$_customFieldOption[title]}></option>
+						<{/foreach}>
+						</select>
+					<{elseif $_customField[fieldtype] == 'selectmultiple'}>
+						<select name="<{$_customField[fieldname]}>[]" class="swiftselect" multiple>
+						<{foreach key=optionkey item=_customFieldOption from=$_customField[fieldvalue]}>
+						<option value="<{$_customFieldOption[value]}>"<{if $_customFieldOption[selected] == 1}> selected<{/if}>><{$_customFieldOption[title]}></option>
+						<{/foreach}>
+						</select>
+					<{elseif $_customField[fieldtype] == 'selectlinked'}>
+						<select name="<{$_customField[fieldname]}>[0]" class="swiftselect" onChange="javascript: LinkedSelectChanged(this, '<{$_customField[fieldname]}>');">
+						<{foreach key=optionkey item=_customFieldOption from=$_customField[fieldvalue]}>
+						<option value="<{$_customFieldOption[value]}>"<{if $_customFieldOption[selected] == 1}> selected<{/if}>><{$_customFieldOption[title]}></option>
+						<{/foreach}>
+						</select>
+						<{if $_customField[fieldvaluelinked] != false}>
+							<{foreach key=linkedoptionkey item=_customFieldOptionContainer from=$_customField[fieldvaluelinked]}>
+								<div id="selectsuboptioncontainer_<{$linkedoptionkey}>" class="linkedselectcontainer linkedselectcontainer_<{$_customField[fieldname]}>" style="display: <{if $_customFieldOptionContainer[display] == true}>block<{else}>none<{/if}>;">
+								<select name="<{$_customField[fieldname]}>[1][<{$linkedoptionkey}>]" class="swiftselect">
+								<{foreach key=optionkey item=_customFieldOption from=$_customFieldOptionContainer[_options]}>
+								<option value="<{$_customFieldOption[value]}>"<{if $_customFieldOption[selected] == 1}> selected<{/if}>><{$_customFieldOption[title]}></option>
+								<{/foreach}>
+								</select>
+								</div>
+							<{/foreach}>
+						<{/if}>
+					<{elseif $_customField[fieldtype] == 'file'}>
+					<input name="<{$_customField[fieldname]}>" type="file" size="20" class="swifttextlarge" /><{if $_customField[fieldvalue] != ''}><br /><{$_customField[fieldvalue]}><{/if}>
+					<{elseif $_customField[fieldtype] == 'date'}>
+					<table border="0" cellpadding="0" cellspacing="0"><tr><td><input type="text" name="<{$_customField[fieldname]}>" id="<{$_customField[fieldname]}>" size="12" value="<{$_customField[fieldvalue]}>" class="swifttextsmall"/></td><td width="2"><img src="<{$_themePath}>images/space.gif" width="2" border="0"/></td><td align="left" valign="top"><div style="padding: 4px 0 0 4px;"><a href="javascript: void(0);" onclick="javascript: ClearDateField('<{$_customField[fieldname]}>');"><img src="<{$_themePath}>images/icon_calendarcross.gif" border="0" /></a></div></td></tr></table><script type="text/javascript">QueueFunction(function(){ $("#<{$_customField[fieldname]}>").datepicker(datePickerDefaults); });</script>
+					<{/if}>
+
+					<{/if}>
+					<{if $_customField[description] != '' && $_customField[valuetype] == 'field'}><br /><span class="smalltext"><{$_customField[description]}></span><{/if}></td>
+				</tr>
+				<{/if}>
+				<{/foreach}>
+			</table>
+		<br/>
+		<{/foreach}>
+		]]></template>
+
+		<template name="profileform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/ProfileSubmit" enctype="multipart/form-data" name="ProfileForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[profiletitle]}></div>
+
+			<div class="boxcontainercontent">
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[generalinformation]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="100" align="center" valign="middle"><img src="<{$_userAvatarImage}>" border="0" /></td>
+					<td align="left" valign="middle">
+						<table width="100%" border="0" cellspacing="1" cellpadding="4">
+							<tr>
+								<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[prfullname]}></td>
+								<td><select class="swiftselect" name="salutation"><option value="0"<{if $_userSalutation == '0'}> selected<{/if}>>&nbsp;</option><option value="1"<{if $_userSalutation == '1'}> selected<{/if}>><{$_language[salutationmr]}></option><option value="2"<{if $_userSalutation == '2'}> selected<{/if}>><{$_language[salutationmiss]}></option><option value="3"<{if $_userSalutation == '3'}> selected<{/if}>><{$_language[salutationmrs]}></option><option value="4"<{if $_userSalutation == '4'}> selected<{/if}>><{$_language[salutationdr]}></option></select> <input name="fullname" type="text" size="20" class="swifttextlarge" value="<{$_userFullName}>" /></td>
+							</tr>
+							<{if $_canUpdateOrganization == true}>
+							<tr>
+								<td align="left" valign="middle" class="zebraodd"><{$_language[prorganization]}></td>
+								<td><input name="userorganization" type="text" size="20" class="swifttextlarge" /></td>
+							</tr>
+							<{/if}>
+							<{if $_userOrganizationName != ''}>
+							<tr>
+								<td align="left" valign="middle" class="zebraodd"><{$_language[prorganization]}></td>
+								<td><{$_userOrganizationName}></td>
+							</tr>
+							<{/if}>
+							<tr>
+								<td align="left" valign="middle" class="zebraodd"><{$_language[prtitleposition]}></td>
+								<td><input name="userdesignation" type="text" size="20" value="<{$_userDesignation}>" class="swifttextlarge" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+
+			<br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[profiledetails]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[prphone]}></td>
+					<td><input name="phone" type="text" size="20" class="swifttextlarge" value="<{$_userPhone}>" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[prprofileimage]}></td>
+					<td><input name="profileimage" type="file" size="20" class="swifttextlarge" /></td>
+				</tr>
+			</table>
+			<br />
+			<{RenderTemplate name="customfields"}>
+
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[emailaccounts]}> [<div class="addplus"><a href="#" onclick="javascript: AddProfileEmail();"><{$_language[praddemail]}></a></div>]</th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<div id="profileemailcontainer">
+			<{foreach key=key item=_item from=$_userEmailContainer}>
+			<div class="useremailitem"><div class="useremailitemdelete" onclick="javascript: $(this).parent().remove();">&nbsp;</div><{$_item[email]}> <input type="hidden" name="emaillist[]" value="<{$_item[email]}>" /></div>
+			<{/foreach}>
+			</div>
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonupdate]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="myorganizationform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/MyOrganizationSubmit" enctype="multipart/form-data" name="MyOrganizationForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[myorganization]}></div>
+
+			<div class="boxcontainercontent">
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[orgprofile]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[orgname]}></td>
+					<td><{$_userOrganizationName}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgaddress]}></td>
+					<td><textarea name="address" rows"3" cols="35" class="swifttextarea"><{$_userOrganizationAddress}></textarea></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgcity]}></td>
+					<td><input name="city" type="text" size="20" value="<{$_userOrganizationCity}>" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgstate]}></td>
+					<td><input name="state" type="text" size="20" value="<{$_userOrganizationState}>" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgzip]}></td>
+					<td><input name="postalcode" type="text" size="20" value="<{$_userOrganizationZIP}>" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgcountry]}></td>
+					<td><select name="country" class="swiftselect"><{foreach key=key item=_item from=$_countryContainer}><option value="<{$_item[value]}>"<{if $_item[selected] == true}> selected<{/if}>><{$_item[title]}></option><{/foreach}></select></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgphone]}></td>
+					<td><input name="phone" type="text" size="20" value="<{$_userOrganizationPhone}>" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgfax]}></td>
+					<td><input name="fax" type="text" size="20" value="<{$_userOrganizationFax}>" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[orgwebsite]}></td>
+					<td><input name="website" type="text" size="20" value="<{$_userOrganizationWebsite}>" class="swifttextlarge" /></td>
+				</tr>
+			</table>
+			<br/>
+			<{RenderTemplate name="customfields"}>
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonupdate]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="changepasswordform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/ChangePasswordSubmit" name="ChangePasswordForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[changepasswordtitle]}></div>
+
+			<div class="boxcontainercontent">
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[passworddetails]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[existingpassword]}></td>
+					<td><input name="existingpassword" type="password" size="20" value="" class="swifttextlarge swiftpassword" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[newpassword]}></td>
+					<td><input name="newpassword" type="password" size="20" value="" class="swifttextlarge swiftpassword" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[newpasswordrepeat]}></td>
+					<td><input name="newpasswordrepeat" type="password" size="20" value="" class="swifttextlarge swiftpassword" /></td>
+				</tr>
+			</table>
+			<br />
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonupdate]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="preferencesform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserAccount/PreferencesSubmit" name="PreferencesForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[preferencestitle]}></div>
+
+			<div class="boxcontainercontent">
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[generaloptions]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[prtimezone]}></td>
+					<td><select name="timezone" class="swiftselect"><{foreach key=key item=_item from=$_timeZoneContainer}><option value="<{$_item[value]}>"<{if $_item[selected] == true}> selected<{/if}>><{$_item[title]}></option><{/foreach}></select></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[prenabledst]}></td>
+					<td><input type="radio" name="enabledst" value="1"<{if $_enableDST == true}> checked<{/if}> /> <{$_language[yes]}> <input type="radio" name="enabledst" value="0"<{if $_enableDST == false}> checked<{/if}> /> <{$_language[no]}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[prlanguage]}></td>
+					<td><select name="languageid" class="swiftselect"><{foreach key=key item=_item from=$_userLanguageContainer}><option value="<{$_item[languageid]}>"<{if $_item[selected] == true}> selected<{/if}>><{$_item[title]}></option><{/foreach}></select></td>
+				</tr>
+			</table>
+			<br />
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonupdate]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="lostpasswordresetform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserLostPassword/ResetSubmit/<{$_userVerifyHashID}>" name="LostPasswordForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[lostpasswordtitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[lostpasswordresetdesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[accountinformation]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[regpassword]}></td>
+					<td><input name="password" type="password" size="20" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regpasswordrepeat]}></td>
+					<td><input name="passwordrepeat" type="password" size="20" class="swifttextlarge" /></td>
+				</tr>
+			</table>
+			<br />
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonsubmit]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="lostpasswordform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserLostPassword/Submit" name="LostPasswordForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[lostpasswordtitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[lostpassworddesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[accountinformation]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[regemail]}></td>
+					<td><input name="email" type="text" size="25" class="swifttextlarge" value="<{$_userEmail}>" /></td>
+				</tr>
+			</table>
+			<br />
+
+			<{if $_canCaptcha == true}>
+			<table class="hlineheader"><tr><th rowspan="2"><{$_language[captchaverification]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<div class="subcontent"><{$_language[captchadesc]}></div>
+			<{$_captchaHTML}>
+			<br />
+			<{/if}>
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonsubmit]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="registerform"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Base/UserRegistration/RegisterSubmit" enctype="multipart/form-data" name="RegisterForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[registertitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[registerdesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[generalinformation]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[regfullname]}></td>
+					<td><input name="fullname" type="text" size="25" class="swifttextlarge" value="<{$_userFullName}>" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regemail]}></td>
+					<td><input name="regemail" type="text" size="25" class="swifttextlarge" value="<{$_userEmail}>" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regpassword]}></td>
+					<td><input name="regpassword" type="password" size="20" class="swifttextlarge" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regpasswordrepeat]}></td>
+					<td><input name="passwordrepeat" type="password" size="20" class="swifttextlarge" /></td>
+				</tr>
+			</table>
+			<br />
+			<{RenderTemplate name="customfields"}>
+			<{if $_canCaptcha == true}>
+			<table class="hlineheader"><tr><th rowspan="2"><{$_language[verifyregistration]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<div class="subcontent"><{$_language[captchadesc]}></div>
+			<{$_captchaHTML}>
+			<br />
+			<{/if}>
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[regsignup]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="registervalidationpending"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[validationpendingtitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[validationpendingesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[registrationdetails]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[regfullname]}></td>
+					<td><{$_userFullName}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regemail]}></td>
+					<td><{$_userEmail}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regpassword]}></td>
+					<td><{$_language[pwhidden]}></td>
+				</tr>
+			</table>
+			<br />
+
+			</div>
+			</div>]]></template>
+
+		<template name="registersuccess"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[registersuccesstitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[regsuccessdesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[registrationdetails]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[regfullname]}></td>
+					<td><{$_userFullName}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regemail]}></td>
+					<td><{$_userEmail}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[regpassword]}></td>
+					<td><{$_language[pwhidden]}></td>
+				</tr>
+			</table>
+			<br />
+
+			</div>
+			</div>]]></template>
+
+		<template name="searchresults"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[searchresults]}></div>
+
+			<div class="boxcontainercontent">
+				<{if $_searchResultCount == 0}>
+				<div class="infotextcontainer">
+				<{$_language[nosearchresults]}>
+				</div>
+				<{/if}>
+
+				<{if $_searchResultCount > 0}>
+				<{foreach key=_searchResultID item=_searchResult from=$_searchResultContainer}>
+				<div class="<{$_searchResult[cssprefix]}>container">
+				<div class="<{$_searchResult[cssprefix]}>"><a href="<{$_searchResult[url]}>"><{$_searchResult[subject]}></a></div>
+				<div class="<{$_searchResult[cssprefix]}>text"><{$_searchResult[contentstext]}></div>
+				</div>
+				<{/foreach}>
+				<{/if}>
+
+			</div>
+			</div>
+		  ]]></template>
+
+		<template name="email_text"><![CDATA[<{$_contentsText}>
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_contentsHTML}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="emailnotificationuser_text"><![CDATA[<{$_notificationContentsText}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="emailnotificationuser_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_notificationContentsHTML}>
+<br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="emailnotification_text"><![CDATA[<{$_notificationContentsText}>
+
+------------------------------------------------------
+<{$_language[notificationstaffcp]}> <{$_swiftPath}>staff
+]]></template>
+
+		<template name="emailnotification_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_notificationContentsHTML}>
+<br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[notificationstaffcp]}> <{$_swiftPath}>staff<br />
+</font>]]></template>
+
+		<template name="email_noregistration_text"><![CDATA[<{$_language[regemailrejectintro]}> <{$_basePath}><{$_templateGroupPrefix}>
+
+<{$_language[regemailrejectfooter]}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_noregistration_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_language[regemailrejectintro]}> <a href="<{$_basePath}><{$_templateGroupPrefix}>"><{$_basePath}><{$_templateGroupPrefix}></a>
+<br /><br /><{$_language[regemailrejectfooter]}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_notvalidatedgeneric_text"><![CDATA[<{$_language[validationmailrejectintro_generic]}>
+
+<{$_language[validationemailrejectfooter]}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_notvalidatedgeneric_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_language[validationmailrejectintro_generic]}>
+<br /><br /><{$_language[validationemailrejectfooter]}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_needsstaffvalidation_text"><![CDATA[<{$_language[validationmailrejectintro_staff]}>
+
+<{$_language[validationemailrejectfooter]}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_needsstaffvalidation_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_language[validationmailrejectintro_staff]}>
+<br /><br /><{$_language[validationemailrejectfooter]}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_generatepassword_text"><![CDATA[<{$_language[generatepasswordintro]}>
+
+<{$_language[emailuserpw]}> <{$_userPassword}>
+
+<{$_language[generatepasswordfooter]}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_generatepassword_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_language[generatepasswordintro]}><br /><br />
+<{$_language[emailuserpw]}> <{$_userPassword}>
+<br /><br /><{$_language[generatepasswordfooter]}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+	</category>
+
+
+
+
+
+
+
+
+
+
+
+	<category name="template_tickets" module="tickets" icon="icon_tickets.gif">
+		<template name="submitticket_departments"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/Submit/RenderForm" name="SubmitTicketForm">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[selectdepartmenttitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[selectdepartmentdesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[submitticketdepartments]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<{foreach key=key item=_item from=$_departmentMap}>
+				<tr>
+					<td width="16" align="left" valign="middle" class="zebraodd"><input type="radio" name="departmentid" onclick="javascript: ToggleTicketSubDepartments('<{$_item[departmentid]}>');" value="<{$_item[departmentid]}>" id="department_<{$_item[departmentid]}>"<{if $_selectedDepartmentID == $_item[departmentid]}> checked<{/if}> /></td>
+					<td><label for="department_<{$_item[departmentid]}>"><{$_item[title_language]}></label></td>
+				</tr>
+					<{foreach key=keysub item=_subItem from=$_item[subdepartments]}>
+					<tr class="ticketsubdepartments_<{$_item[departmentid]}>" style="<{if $_displayParentDepartmentID != $_item[departmentid]}>display: none;<{/if}>">
+						<td width="16" align="left" valign="middle" class="zebraodd"><input type="radio" name="departmentid" value="<{$_subItem[departmentid]}>" id="department_<{$_subItem[departmentid]}>"<{if $_selectedDepartmentID == $_subItem[departmentid]}> checked<{/if}> /></td>
+						<td><div class="ticketsubdepartment"><label for="department_<{$_subItem[departmentid]}>"><{$_subItem[title_language]}></label></div></td>
+					</tr>
+					<{/foreach}>
+				<{/foreach}>
+			</table>
+			<br />
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonnext]}>" type="submit" name="button" /></div>
+
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="submitticket_form"><![CDATA[
+		<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/Submit/Confirmation" name="SubmitTicketForm" enctype="multipart/form-data">
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[yourticketdetailstitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[yourticketdetailsdesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[generalinformation]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<{if $_noContactDetails != '1'}>
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[st_fullname]}></td>
+					<td><input name="ticketfullname" type="text" size="25" class="swifttextlarge" value="<{$_ticketFullName}>" /></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[st_email]}></td>
+					<td><input name="ticketemail" type="text" size="25" class="swifttextlarge" value="<{$_ticketEmail}>" /></td>
+				</tr>
+				<{/if}>
+				<{if $_promptTicketType == '1'}>
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[st_type]}></td>
+					<td><select name="tickettypeid" class="swiftselect"><{foreach key=key item=_item from=$_ticketTypeContainer}>
+					<option value="<{$_item[tickettypeid]}>"<{if $_item[selected] == true}> selected="selected"<{/if}>><{escape $_item[title]}></option>
+					<{/foreach}></select></td>
+				</tr>
+				<{/if}>
+				<{if $_promptTicketPriority == '1'}>
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[st_priority]}></td>
+					<td><select name="ticketpriorityid" class="swiftselect"><{foreach key=key item=_item from=$_ticketPriorityContainer}>
+					<option value="<{$_item[priorityid]}>"<{if $_item[selected] == true}> selected="selected"<{/if}>><{escape $_item[title]}></option>
+					<{/foreach}></select></td>
+				</tr>
+				<{/if}>
+			</table>
+			<br />
+			<{RenderTemplate name="customfields"}>
+
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[st_messagedetails]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[st_subject]}></td>
+					<td width=""><input name="ticketsubject" type="text" size="45" class="swifttextwide" id="ticketsubject" value="<{$_ticketSubject}>" /></td>
+				</tr>
+			</table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td colspan="2" align="left" valign="top"><textarea name="ticketmessage" id="ticketmessage" cols="25" rows="15" class="swifttextareawide"><{$_ticketMessage}></textarea><div id="irscontainer" class="irscontainer"><div class="irsui"><div class="irstitle"><{$_language[irsloading]}></div></div></div></td>
+				</tr>
+			</table>
+			<br />
+
+			<{if $_settings[t_cenattach] == '1'}>
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[uploadfiles]}> [<div class="addplus"><a href="#ticketattachmentcontainer" onclick="javascript: AddTicketFile();"><{$_language[taddfile]}></a></div>]</th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<div id="ticketattachmentcontainer">
+			</div>
+			<{/if}>
+			<br />
+
+			<{if $_canCaptcha == true}>
+			<table class="hlineheader"><tr><th rowspan="2"><{$_language[verifyticketsubmission]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<div class="subcontent"><{$_language[captchadesc]}></div>
+			<{$_captchaHTML}>
+			<br />
+			<{/if}>
+
+			<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonsubmit]}>" type="submit" name="button" /><input type="hidden" name="departmentid" value="<{$_departmentID}>" /></div>
+
+			<{if $_canIRS == true}>
+			<script type="text/javascript">
+			StartIRS();
+			</script>
+			<{/if}>
+			</div>
+			</div>
+		</form>]]></template>
+
+		<template name="submitticket_confirmation"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[ticketsubmittedtitle]}></div>
+
+			<div class="boxcontainercontent">
+			<{$_language[ticketsubmitteddesc]}><br /><br />
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[generalinformation]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td width="200" align="left" valign="middle" class="zebraodd"><{$_language[st_ticketid]}></td>
+					<td>#<{$_ticketDisplayID}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[st_fullname]}></td>
+					<td><{$_ticketFullName}></td>
+				</tr>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[st_email]}></td>
+					<td><{$_ticketEmail}></td>
+				</tr>
+				<{if $_ticketTypeTitle != ''}>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[st_type]}></td>
+					<td><{$_ticketTypeTitle}></td>
+				</tr>
+				<{/if}>
+				<{if $_ticketPriorityTitle != ''}>
+				<tr>
+					<td align="left" valign="middle" class="zebraodd"><{$_language[st_priority]}></td>
+					<td><{$_ticketPriorityTitle}></td>
+				</tr>
+				<{/if}>
+			</table>
+			<br />
+
+			<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[st_subjectconfirm]}><{$_ticketSubject}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+			<table width="100%" border="0" cellspacing="1" cellpadding="4">
+				<tr>
+					<td align="left" valign="top"><{$_ticketMessage}></td>
+				</tr>
+			</table>
+			<br />
+			</div>
+			</div>
+			]]></template>
+
+		<template name="viewtickets_list"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{if $_resolvedTicketCount > 0 && $_showResolvedTickets == false}><div style="float: right"><div class="headerbuttongreen" onclick="javascript:window.location.href = '<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Index/1';"><{$_language[viewresolvedt]}> (<{$_resolvedTicketCount}>)</div></div><{elseif $_showResolvedTickets == true}><div style="float: right"><div class="headerbuttongreen" onclick="javascript:window.location.href = '<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Index/0';"><{$_language[hideresolvedt]}></div></div><{/if}><{$_language[ticketviewtickettitle]}></div>
+
+			<div class="boxcontainercontent">
+
+				<table border="0" cellpadding="3" cellspacing="1" width="100%">
+				<tr>
+				<td class="ticketlistheaderrow" align="left" valign="middle" width="150"><{$_language[tlticketid]}></td>
+				<td class="ticketlistheaderrow" align="center" valign="middle" width="200"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Sort/lastactivity/<{$_sortOrderFlip}>"><{$_language[tllastupdate]}>&nbsp;<{if $_sortBy == 'lastactivity'}><{if $_sortOrder == 'asc'}><img src="<{$_themePath}>images/sortasc.gif" border="0"/><{elseif $_sortOrder == 'desc'}><img src="<{$_themePath}>images/sortdesc.gif" border="0"/><{/if}><{/if}></a></td>
+				<td class="ticketlistheaderrow" align="center" valign="middle" width=""><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Sort/lastreplier/<{$_sortOrderFlip}>"><{$_language[tllastreplier]}>&nbsp;<{if $_sortBy == 'lastreplier'}><{if $_sortOrder == 'asc'}><img src="<{$_themePath}>images/sortasc.gif" border="0"/><{elseif $_sortOrder == 'desc'}><img src="<{$_themePath}>images/sortdesc.gif" border="0"/><{/if}><{/if}></a></td>
+				<td class="ticketlistheaderrow" align="center" valign="middle" width="180"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Sort/department/<{$_sortOrderFlip}>"><{$_language[tldepartment]}>&nbsp;<{if $_sortBy == 'departmentid'}><{if $_sortOrder == 'asc'}><img src="<{$_themePath}>images/sortasc.gif" border="0"/><{elseif $_sortOrder == 'desc'}><img src="<{$_themePath}>images/sortdesc.gif" border="0"/><{/if}><{/if}></a></td>
+				<td class="ticketlistheaderrow" align="center" valign="middle" width="120"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Sort/type/<{$_sortOrderFlip}>"><{$_language[tltype]}>&nbsp;<{if $_sortBy == 'tickettypeid'}><{if $_sortOrder == 'asc'}><img src="<{$_themePath}>images/sortasc.gif" border="0"/><{elseif $_sortOrder == 'desc'}><img src="<{$_themePath}>images/sortdesc.gif" border="0"/><{/if}><{/if}></a></td>
+				<td class="ticketlistheaderrow" align="center" valign="middle" width="120"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Sort/status/<{$_sortOrderFlip}>"><{$_language[tlstatus]}>&nbsp;<{if $_sortBy == 'ticketstatusid'}><{if $_sortOrder == 'asc'}><img src="<{$_themePath}>images/sortasc.gif" border="0"/><{elseif $_sortOrder == 'desc'}><img src="<{$_themePath}>images/sortdesc.gif" border="0"/><{/if}><{/if}></a></td>
+				<td class="ticketlistheaderrow" align="center" valign="middle" width="120"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/ViewList/Sort/priority/<{$_sortOrderFlip}>"><{$_language[tlpriority]}>&nbsp;<{if $_sortBy == 'priorityid'}><{if $_sortOrder == 'asc'}><img src="<{$_themePath}>images/sortasc.gif" border="0"/><{elseif $_sortOrder == 'desc'}><img src="<{$_themePath}>images/sortdesc.gif" border="0"/><{/if}><{/if}></a></td>
+				</tr>
+
+				<{foreach key=_ticketID item=_ticket from=$_ticketContainer}>
+				<tr>
+				<td class="ticketlistsubject" align="left" valign="middle" colspan="7"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[ticketid]}>"><{$_ticket[subject]}></a></td>
+				</tr>
+				<tr class="ticketlistproperties" style="background: <{$_ticket[statusbgcolor]}>;">
+				<td class="ticketlistpropertiescontainer" align="left" valign="middle"><{$_ticket[displayticketid]}></td>
+				<td class="ticketlistpropertiescontainer" align="center" valign="middle"><{$_ticket[lastactivity]}></td>
+				<td class="ticketlistpropertiescontainer" align="center" valign="middle"><{$_ticket[lastreplier]}></td>
+				<td class="ticketlistpropertiescontainer" align="center" valign="middle"><{$_ticket[department]}></td>
+				<td class="ticketlistpropertiescontainer" align="center" valign="middle"><{$_ticket[type]}></td>
+				<td class="ticketlistpropertiescontainer" align="center" valign="middle"><{$_ticket[status]}></td>
+				<td class="ticketlistpropertiescontainer" style="background: <{$_ticket[prioritybgcolor]}>;" align="center" valign="middle"><{$_ticket[priority]}></td>
+				</tr>
+				<tr class="ticketlistpropertiesdivider">
+				<td colspan="7">&nbsp;</td>
+				</tr>
+				<{/foreach}>
+
+				</table>
+			</div>
+			</div>
+			]]></template>
+
+		<template name="viewticket"><![CDATA[
+			<script type="text/javascript">
+			$(function () {
+				<{$_benchmarkJSCode}>
+			});
+			</script>
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><div style="float: right"><{if $_canChangeTicketProperties != false}><div class="headerbutton" onclick="javascript: $('#ticketpropertiesform').submit();"><{$_language[buttonupdate]}></div><{/if}><div class="headerbuttongreen" onclick="javascript: $('#postreplycontainer').show(); $('#replycontents').focus();"><{$_language[vtpostreply]}></div></div><{$_language[ticketviewticketidtitle]}><{$_ticketContainer[displayticketid]}></div>
+
+			<div class="boxcontainercontenttight">
+
+				<form name="ticketpropertiesform" id="ticketpropertiesform" method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/Ticket/Update/<{$_ticketContainer[ticketid]}>">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody>
+
+				<tr>
+					<td>
+						<div class="ticketgeneralcontainer"><div class="ticketgeneraltitlecontainer"><div class="ticketgeneraldepartment"><{$_ticketDepartmentFullTitle}></div><div class="ticketgeneraltitle"><{$_ticketContainer[subject]}></div></div><div class="ticketgeneralinfocontainer"><{$_language[vtcreated]}> <{$_ticketContainer[dateline]}>&nbsp;&nbsp;&nbsp;&nbsp;<{$_language[vtupdated]}> <{$_ticketContainer[lastactivity]}></div>
+						<{if $_ticketBenchmarkCount > 0}>
+						<div class="ticketbenchmarks">
+						<{foreach key=_benchmarkID item=_ticketBenchmark from=$_ticketBenchmarkContainer}>
+						<div class="ticketbenchmark"><div class="ticketbenchmarktitle"><{$_ticketBenchmark[benchmarktitle]}></div>
+						<{for name=_benchmarkScale from=1 to=$_ticketBenchmark[benchmarkscale]}>
+						<input name="benchmark_<{$_benchmarkID}>_<{$_ticketContainer[ticketid]}>" type="radio" class="rating" value="<{$_benchmarkScale}>" <{if $_ticketBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketBenchmark[result] == '$_benchmarkScale'}> checked="checked"<{/if}> />
+						<{/for}>
+						</div>
+						<{/foreach}>
+						</div>
+						<{/if}>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td style="background-color: <{$_ticketContainer[statusbgcolor]}>;">
+						<div class="ticketgeneralcontainer"><div style="background-color: <{$_ticketContainer[statusbgcolor]}>;" class="ticketgeneralproperties">
+
+						<div class="ticketgeneralpropertiesobject"><div class="ticketgeneralpropertiestitle"><{$_language[vtdepartment]}></div><div class="ticketgeneralpropertiescontent"><{$_ticketContainer[department]}></div></div>
+
+						<div class="ticketgeneralpropertiesdivider"><img border="0" align="middle" src="<{$_themePath}>images/ticketpropertiesdivider.png"></div>
+
+						<div class="ticketgeneralpropertiesobject"><div class="ticketgeneralpropertiestitle"><{$_language[vtowner]}></div><div class="ticketgeneralpropertiescontent"><{$_ticketContainer[owner]}></div></div>
+
+						<div class="ticketgeneralpropertiesdivider"><img border="0" align="middle" src="<{$_themePath}>images/ticketpropertiesdivider.png"></div>
+
+						<div class="ticketgeneralpropertiesobject"><div class="ticketgeneralpropertiestitle"><{$_language[vttype]}></div><div class="ticketgeneralpropertiescontent"><{$_ticketContainer[type]}></div></div>
+
+						<div class="ticketgeneralpropertiesdivider"><img border="0" align="middle" src="<{$_themePath}>images/ticketpropertiesdivider.png"></div>
+
+						<div class="ticketgeneralpropertiesobject"><div class="ticketgeneralpropertiestitle"><{$_language[vtstatus]}></div>
+						<{if $_canChangeTicketProperties != false}>
+						<div class="ticketgeneralpropertiesselect"><select class="swiftselect" name="ticketstatusid">
+						<{foreach key=_optionID item=_option from=$_ticketStatusContainer}>
+						<option value="<{$_option[value]}>"<{if $_option[selected] == true}> selected<{/if}>><{$_option[title]}></option>
+						<{/foreach}></select></div>
+						<{else}>
+						<div class="ticketgeneralpropertiescontent"><{$_ticketContainer[status]}></div>
+						<{/if}>
+						</div>
+
+						<div class="ticketgeneralpropertiesdivider"><img border="0" align="middle" src="<{$_themePath}>images/ticketpropertiesdivider.png"></div>
+
+						<div class="ticketgeneralpropertiesobject" style="background-color: <{$_ticketContainer[prioritybgcolor]}>;"><div class="ticketgeneralpropertiestitle"><{$_language[vtpriority]}></div>
+
+						<{if $_canChangeTicketProperties != false}>
+						<div class="ticketgeneralpropertiesselect"><select class="swiftselect" name="ticketpriorityid">
+						<{foreach key=_optionID item=_option from=$_ticketPriorityContainer}>
+						<option value="<{$_option[value]}>"<{if $_option[selected] == true}> selected<{/if}>><{$_option[title]}></option>
+						<{/foreach}></select></div>
+						<{else}>
+						<div class="ticketgeneralpropertiescontent"><{$_ticketContainer[priority]}></div>
+						<{/if}>
+						</div>
+
+						<div class="ticketgeneralpropertiesdivider"><img border="0" align="middle" src="<{$_themePath}>images/ticketpropertiesdivider.png"></div>
+
+						</div></div>
+					</td>
+				</tr>
+
+				</tbody></table>
+				<br />
+
+				<div class="viewticketcontentcontainer">
+				<{RenderTemplate name="customfields"}>
+				</div>
+				</form>
+
+
+
+				<div id="postreplycontainer" style="display: <{if $_expandPostReply === true}>block<{else}>none<{/if}>;">
+				<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/Ticket/Reply/<{$_ticketContainer[ticketid]}>" name="TicketReplyForm" enctype="multipart/form-data">
+					<div class="ticketpaddingcontainer">
+					<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[st_messagedetails]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+					<table width="100%" border="0" cellspacing="1" cellpadding="4">
+						<tr>
+							<td colspan="2" align="left" valign="top"><textarea name="replycontents" cols="25" rows="15" id="replycontents" class="swifttextareawide"></textarea></td>
+						</tr>
+					</table>
+					<br />
+
+					<{if $_settings[t_cenattach] == '1'}>
+					<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[uploadfiles]}> [<div class="addplus"><a href="#ticketattachmentcontainer" onclick="javascript: AddTicketFile();"><{$_language[taddfile]}></a></div>]</th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+					<div id="ticketattachmentcontainer">
+					</div>
+					<{/if}>
+					<br />
+
+					<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonsend]}>" type="submit" name="button" /></div>
+					</div>
+				</form>
+				</div>
+
+
+				<div class="ticketpostsholder">
+
+					<{foreach key=_ticketPostID item=_ticketPost from=$_ticketPostContainer}>
+					<div class="ticketpostcontainer">
+						<div class="ticketpostbar">
+							<div class="ticketpostbarname"><{$_ticketPost[fullname]}></div>
+							<{if $_ticketPost[designation] != ''}><div class="ticketpostbardesignation"><{$_ticketPost[designation]}></div><{/if}>
+							<div class="<{$_ticketPost[badgeclass]}>"><div class="tpbadgetext"><{$_ticketPost[badgetext]}></div></div>
+							<{if $_ticketPost[avatar] != ''}><div class="ticketpostavatar"><div class="tpavatar"><img src="<{$_ticketPost[avatar]}>" align="absmiddle" border="0" /></div></div><{/if}>
+							<{if $_ticketPostBenchmarkCount > 0 && $_ticketPost[creatorlabel] == 'staff'}>
+							<div class="ticketpostbox">
+							<{foreach key=_benchmarkID item=_ticketPostBenchmark from=$_ticketPostBenchmarkContainer}>
+							<div class="ticketpostinfoitem"><div class="ticketpostinfoitemtitle"><{$_ticketPostBenchmark[benchmarktitle]}></div>
+							<{for name=_benchmarkScale from=1 to=$_ticketPostBenchmark[benchmarkscale]}>
+							<input name="benchmark_<{$_benchmarkID}>_<{$_ticketPostID}>" type="radio" class="rating" value="<{$_benchmarkScale}>" <{if $_ticketPostBenchmarkResults[$_benchmarkID][$_ticketPostID][isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketPostBenchmarkResults[$_benchmarkID][$_ticketPostID][benchmarkresult] == '$_benchmarkScale'}> checked="checked"<{/if}> />
+							<{/for}>
+							</div>
+							<{/foreach}>
+							</div>
+							<{/if}>
+						</div>
+
+						<div style="min-height: <{$_ticketPost[minimumheight]}>px;" class="ticketpostcontents">
+
+							<div class="ticketpostcontentsbar"><div onclick="javascript: QuoteTicketPost('<{$_ticketContainer[ticketid]}>', '<{$_ticketPost[ticketpostid]}>'); self.scrollTo(0, 0); return false;" class="ticketbarquote"></div><div class="ticketbarcontents"><{$_ticketPost[posttitle]}></div><span class="ticketbardatefold"></span></div>
+
+							<div class="ticketpostcontentsdetails">
+								<{if $_ticketPost[hasattachments] == '1'}><div class="ticketpostcontentsattachments"><{/if}>
+								<{foreach key=_attachmentID item=_ticketAttachment from=$_ticketPost[attachments]}>
+								<div class="ticketpostcontentsattachmentitem" onclick="javascript: PopupSmallWindow('<{$_ticketAttachment[link]}>');" style="background-image: URL('<{$_themePath}>images/<{$_ticketAttachment[icon]}>');">&nbsp;<{$_ticketAttachment[name]}> (<{$_ticketAttachment[size]}>)</div>
+								<{/foreach}>
+								<{if $_ticketPost[hasattachments] == '1'}></div><{/if}>
+								<div class="ticketpostcontentsholder"><div class="ticketpostcontentsdetailscontainer"><{$_ticketPost[contents]}></div></div>
+							</div>
+
+							<div class="ticketpostcontentsbottom"><span class="ticketpostbottomright">&nbsp;</span><div class="ticketpostbottomcontents"><{$_ticketPost[postfooter]}>&nbsp;</div></div>
+						</div>
+
+						<div class="ticketpostbarbottom"><div class="ticketpostbottomcontents">&nbsp;&nbsp;</div></div>
+
+						<div class="ticketpostclearer"></div>
+					</div>
+					<{/foreach}>
+
+				</div>
+
+			</div>
+			</div>
+			]]></template>
+
+		<template name="ticketsurvey"><![CDATA[
+			<script type="text/javascript">
+			$(function () {
+				$('input.rating').rating();
+			});
+			</script>
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[ticketsurveytickettitle]}><{$_ticketContainer[displayticketid]}></div>
+
+			<div class="boxcontainercontenttight">
+
+				<form name="ticketsurveyform" id="ticketsurveyform" method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Tickets/Survey/SurveySubmit/<{$_ticketContainer[ticketid]}>/<{$_ticketContainer[tickethash]}>">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody>
+				<tr>
+					<td>
+						<div class="ticketgeneralcontainer"><div class="ticketgeneraltitlecontainer"><div class="ticketgeneraldepartment"><{$_ticketDepartmentFullTitle}></div><div class="ticketgeneraltitle"><{$_ticketContainer[subject]}></div></div><div class="ticketgeneralinfocontainer"><{$_language[vtcreated]}> <{$_ticketContainer[dateline]}>&nbsp;&nbsp;&nbsp;&nbsp;<{$_language[vtupdated]}> <{$_ticketContainer[lastactivity]}></div></div>
+					</td>
+				</tr>
+				</tbody></table>
+
+				<div id="surveycontainer">
+					<div class="ticketpaddingcontainer">
+					<{$_language[surveydesc]}><br /><br />
+					<{if $_ticketBenchmarkCount > 0}>
+					<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[st_yourfeedback]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+					<table width="100%" border="0" cellspacing="1" cellpadding="4">
+						<{foreach key=_benchmarkID item=_ticketBenchmark from=$_ticketBenchmarkContainer}>
+						<tr>
+							<td width="200" align="left" valign="middle" class="zebraodd"><{$_ticketBenchmark[benchmarktitle]}></td>
+							<td><input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="1"<{if $_ticketBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketBenchmark[result] == '1'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="2"<{if $_ticketBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketBenchmark[result] == '2'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="3"<{if $_ticketBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketBenchmark[result] == '3'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="4"<{if $_ticketBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketBenchmark[result] == '4'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="5"<{if $_ticketBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_ticketBenchmark[result] == '5'}> checked="checked"<{/if}> /></td>
+						</tr>
+						<{/foreach}>
+					</table>
+					<br />
+					<{/if}>
+
+					<table class="hlineheader"><tr><th rowspan="2" nowrap><{$_language[st_yourcomments]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+					<table width="100%" border="0" cellspacing="1" cellpadding="4">
+						<tr>
+							<td colspan="2" align="left" valign="top"><textarea name="replycontents" cols="25" rows="5" id="replycontents" class="swifttextareawide"></textarea></td>
+						</tr>
+					</table>
+					<br />
+
+					<div class="subcontent"><input class="rebuttonwide2" value="<{$_language[buttonsend]}>" type="submit" name="button" /></div>
+					</div>
+				</div>
+				</form>
+
+
+			</div>
+			</div>
+			]]></template>
+
+		<template name="irssuggestions">
+      <![CDATA[
+<div class="irsui">
+	<div class="irstitle"><{$_language[irssuggestions]}></div>
+		<{if $_irsResults == true}>
+		<div class="irsdesc"><{$_language[irsdesc]}></div>
+		<HR class="irshr">
+
+		<{foreach key=_kbArticleID item=_knowledgebaseArticle from=$_knowledgebaseArticleContainer}>
+		<div class="kbarticlecontainer">
+		<div class="kbarticle"><a target="_blank" href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/Article/View/<{$_knowledgebaseArticle[kbarticleid]}>/0/<{$_knowledgebaseArticle[seosubject]}>"><{$_knowledgebaseArticle[subject]}></a></div>
+		<div class="kbarticletext"><{$_knowledgebaseArticle[contentstext]}></div>
+		</div>
+		<{/foreach}>
+
+		<{else}>
+		  <HR class="irshr"><br />
+		  <div class="irsdesc"><{$_language[irsnoresults]}></div>
+		<{/if}>
+</div>]]></template>
+
+		<template name="email_surveytext"><![CDATA[<{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,
+
+<{$_language[surveyintro]}>: <{$_ticket[subject]}> (<{$_ticket[displayticketid]}>)
+
+<{$_language[surveydescription1]}>
+
+<{$_language[surveydescription2]}>
+
+<{$_language[surveydescription3]}>
+
+<{$_language[surveycta]}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Survey/Index/<{$_ticket[displayticketid]}>/<{$_ticket[tickethash]}>
+
+<{$_language[surveysubfooter]}>
+
+<{$_language[surveyfooter]}>
+
+<{$_companyName}><{if $_ticketSignatureText != ""}>
+<{$_ticketSignatureText}><{/if}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_surveyhtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,<br />
+<br />
+<{$_language[surveyintro]}>: <{$_ticket[subject]}> (<{$_ticket[displayticketid]}>)<br />
+<br />
+<{$_language[surveydescription1]}><br />
+<br />
+<{$_language[surveydescription2]}><br />
+<br />
+<{$_language[surveydescription3]}><br />
+<br />
+<{$_language[surveycta]}><a href="<{$_basePath}><{$_templateGroupPrefix}>/Tickets/Survey/Index/<{$_ticket[displayticketid]}>/<{$_ticket[tickethash]}>"><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Survey/Index/<{$_ticket[ticketid]}>/<{$_ticket[tickethash]}></a><br />
+<br />
+<{$_language[surveysubfooter]}><br />
+<br />
+<{$_language[surveyfooter]}><br />
+<br />
+<{$_companyName}><{if $_ticketSignatureHTML != ""}><br /><{$_ticketSignatureHTML}><{/if}>
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_ticketautorespondertext"><![CDATA[<{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,
+
+<{$_language[arintro]}>
+
+	<{$_language[articketid]}><{$_ticket[displayticketid]}>
+	<{$_language[arsubject]}><{$_ticket[subject]}>
+	<{$_language[ardepartment]}><{$_ticketDepartmentTitle}>
+	<{$_language[artype]}><{$_ticketTypeTitle}>
+	<{$_language[arstatus]}><{$_ticketStatusTitle}>
+	<{$_language[arpriority]}><{$_ticketPriorityTitle}>
+
+<{$_language[arsubfooter]}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[displayticketid]}>
+
+<{$_language[arfooter]}>
+
+<{$_companyName}><{if $_ticketSignatureText != ""}>
+<{$_ticketSignatureText}><{/if}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_ticketautoresponderhtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,<br />
+<br />
+<{$_language[arintro]}><br />
+<br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[articketid]}></b><{$_ticket[displayticketid]}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arsubject]}></b><{$_ticket[subject]}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[ardepartment]}></b><{$_ticketDepartmentTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[artype]}></b><{$_ticketTypeTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arstatus]}></b><{$_ticketStatusTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arpriority]}></b><{$_ticketPriorityTitle}><br />
+<br />
+<{$_language[arsubfooter]}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[displayticketid]}><br />
+<br />
+<{$_language[arfooter]}><br />
+<br />
+<{$_companyName}><{if $_ticketSignatureHTML != ""}><br /><{$_ticketSignatureHTML}><{/if}>
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_ticketautoclosependingtext"><![CDATA[<{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,
+
+<{$_autoClosePendingIntro}>
+
+	<{$_language[articketid]}><{$_ticket[displayticketid]}>
+	<{$_language[arsubject]}><{$_ticket[subject]}>
+	<{$_language[ardepartment]}><{$_ticketDepartmentTitle}>
+	<{$_language[artype]}><{$_ticketTypeTitle}>
+	<{$_language[arstatus]}><{$_ticketStatusTitle}>
+	<{$_language[arpriority]}><{$_ticketPriorityTitle}>
+
+<{$_autoClosePendingSubFooter}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[displayticketid]}>
+
+<{$_language[arfooter]}>
+
+<{$_companyName}><{if $_ticketSignatureText != ""}>
+<{$_ticketSignatureText}><{/if}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_ticketautoclosependinghtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,<br />
+<br />
+<{$_autoClosePendingIntro}><br />
+<br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[articketid]}></b><{$_ticket[displayticketid]}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arsubject]}></b><{$_ticket[subject]}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[ardepartment]}></b><{$_ticketDepartmentTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[artype]}></b><{$_ticketTypeTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arstatus]}></b><{$_ticketStatusTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arpriority]}></b><{$_ticketPriorityTitle}><br />
+<br />
+<{$_autoClosePendingSubFooter}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[displayticketid]}><br />
+<br />
+<{$_language[arfooter]}><br />
+<br />
+<{$_companyName}><{if $_ticketSignatureHTML != ""}><br /><{$_ticketSignatureHTML}><{/if}>
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_ticketautoclosefinaltext"><![CDATA[<{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,
+
+<{$_autoCloseFinalIntro}>
+
+	<{$_language[articketid]}><{$_ticket[displayticketid]}>
+	<{$_language[arsubject]}><{$_ticket[subject]}>
+	<{$_language[ardepartment]}><{$_ticketDepartmentTitle}>
+	<{$_language[artype]}><{$_ticketTypeTitle}>
+	<{$_language[arstatus]}><{$_ticketStatusTitle}>
+	<{$_language[arpriority]}><{$_ticketPriorityTitle}>
+
+<{$_autoCloseFinalSubFooter}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[displayticketid]}>
+
+<{$_language[arfooter]}>
+
+<{$_companyName}><{if $_ticketSignatureText != ""}>
+<{$_ticketSignatureText}><{/if}>
+
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_ticketautoclosefinalhtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{if $_ticket[replyto] != '' && $_ticket[creator] == 1}><{$_ticket[replyto]}><{else}><{$_ticket[fullname]}><{/if}>,<br />
+<br />
+<{$_autoCloseFinalIntro}><br />
+<br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[articketid]}></b><{$_ticket[displayticketid]}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arsubject]}></b><{$_ticket[subject]}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[ardepartment]}></b><{$_ticketDepartmentTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[artype]}></b><{$_ticketTypeTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arstatus]}></b><{$_ticketStatusTitle}><br />
+&nbsp;&nbsp;&nbsp;<b><{$_language[arpriority]}></b><{$_ticketPriorityTitle}><br />
+<br />
+<{$_autoCloseFinalSubFooter}><{$_basePath}><{$_templateGroupPrefix}>/Tickets/Ticket/View/<{$_ticket[displayticketid]}><br />
+<br />
+<{$_language[arfooter]}><br />
+<br />
+<{$_companyName}><{if $_ticketSignatureHTML != ""}><br /><{$_ticketSignatureHTML}><{/if}>
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_ticketstaffreplytext"><![CDATA[<{$_staffReplyText}>
+
+<{if $_settings[t_enhistory] == 1 && $_isNewTicket == false}>
+<{$_language[tickethistory]}>
+===================
+<{foreach key=key item=_ticketPost from=$_ticketPostList}>
+<{if $_ticketPost[ticketpostid] != $_ticket[lastpostid]}>
+<{$_ticketPost[fullname]}> (<{$_ticketPost[creator]}>) <{$_language[thpostedon]}> <{$_ticketPost[date]}>
+
+===============================================================
+<{$_ticketPost[contents][0]}>
+
+<{/if}>
+<{/foreach}>
+
+<{/if}>
+<{$_language[ticketdetails]}>
+---------------------------------
+<{$_language[articketid]}><{$_ticket[displayticketid]}>
+<{$_language[ardepartment]}><{$_ticketDepartmentTitle}>
+<{$_language[artype]}><{$_ticketTypeTitle}>
+<{$_language[arstatus]}><{$_ticketStatusTitle}>
+<{$_language[arpriority]}><{$_ticketPriorityTitle}>
+
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_ticketstaffreplyhtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_staffReplyHTML}>
+<br /><br />
+<{if $_settings[t_enhistory] == 1 && $_isNewTicket == false}>
+<fieldset style="margin-bottom: 6px; color: #333333;FONT: 11px Verdana, Tahoma;PADDING:3px;">
+<legend><{$_language[tickethistory]}></legend>
+<{foreach key=key item=_ticketPost from=$_ticketPostList}>
+<{if $_ticketPost[ticketpostid] != $_ticket[lastpostid]}>
+<b><{$_ticketPost[fullname]}></b> (<{$_ticketPost[creator]}>) <{$_language[thpostedon]}> <{$_ticketPost[date]}>
+<hr style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<br />
+<{$_ticketPost[contents][1]}>
+
+<br /><br />
+<{/if}>
+<{/foreach}>
+</fieldset>
+<{/if}>
+
+<{$_language[ticketdetails]}><br />
+<hr style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[articketid]}><{$_ticket[displayticketid]}><br />
+<{$_language[ardepartment]}><{$_ticketDepartmentTitle}><br />
+<{$_language[artype]}><{$_ticketTypeTitle}><br />
+<{$_language[arstatus]}><font color="<{$_ticketStatus[statuscolor]}>"><{$_ticketStatusTitle}></font><br />
+<{$_language[arpriority]}><font color="<{$_ticketPriority[frcolorcode]}>"><{$_ticketPriorityTitle}></font><br />
+<br />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_ticketforwardtext"><![CDATA[<{$_forwardReplyText}>
+
+<{if $_settings[t_enhistory] == 1 && $_isNewTicket == false}>
+<{$_language[tickethistory]}>
+===================
+<{foreach key=key item=_ticketPost from=$_ticketPostList}>
+<{if $_ticketPost[ticketpostid] != $_ticket[lastpostid]}>
+<{$_ticketPost[fullname]}> (<{$_ticketPost[creator]}>) <{$_language[thpostedon]}> <{$_ticketPost[date]}>
+
+===============================================================
+<{$_ticketPost[contents][0]}>
+
+<{/if}>
+<{/foreach}>
+
+<{/if}>
+<{$_language[ticketdetails]}>
+---------------------------------
+<{$_language[articketid]}><{$_ticket[displayticketid]}>
+<{$_language[ardepartment]}><{$_ticketDepartmentTitle}>
+<{$_language[artype]}><{$_ticketTypeTitle}>
+<{$_language[arstatus]}><{$_ticketStatusTitle}>
+<{$_language[arpriority]}><{$_ticketPriorityTitle}>
+
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_ticketforwardhtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_forwardReplyHTML}>
+<br /><br />
+<{if $_settings[t_enhistory] == 1 && $_isNewTicket == false}>
+<fieldset style="margin-bottom: 6px; color: #333333;FONT: 11px Verdana, Tahoma;PADDING:3px;">
+<legend><{$_language[tickethistory]}></legend>
+<{foreach key=key item=_ticketPost from=$_ticketPostList}>
+<{if $_ticketPost[ticketpostid] != $_ticket[lastpostid]}>
+<b><{$_ticketPost[fullname]}></b> (<{$_ticketPost[creator]}>) <{$_language[thpostedon]}> <{$_ticketPost[date]}>
+<hr style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<br />
+<{$_ticketPost[contents][1]}>
+
+<br /><br />
+<{/if}>
+<{/foreach}>
+</fieldset>
+<{/if}>
+
+<{$_language[ticketdetails]}><br />
+<hr style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[articketid]}><{$_ticket[displayticketid]}><br />
+<{$_language[ardepartment]}><{$_ticketDepartmentTitle}><br />
+<{$_language[artype]}><{$_ticketTypeTitle}><br />
+<{$_language[arstatus]}><font color="<{$_ticketStatus[statuscolor]}>"><{$_ticketStatusTitle}></font><br />
+<{$_language[arpriority]}><font color="<{$_ticketPriority[frcolorcode]}>"><{$_ticketPriorityTitle}></font><br />
+<br />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+		<template name="email_ticketuserreplytext"><![CDATA[<{$_userReplyText}>
+
+<{if $_settings[t_enhistory] == 1 && $_isNewTicket == false}>
+<{$_language[tickethistory]}>
+===================
+<{foreach key=key item=_ticketPost from=$_ticketPostList}>
+<{if $_ticketPost[ticketpostid] != $_ticket[lastpostid]}>
+<{$_ticketPost[fullname]}> (<{$_ticketPost[creator]}>) <{$_language[thpostedon]}> <{$_ticketPost[date]}>
+
+===============================================================
+<{$_ticketPost[contents][0]}>
+
+<{/if}>
+<{/foreach}>
+
+<{/if}>
+<{$_language[ticketdetails]}>
+---------------------------------
+<{$_language[articketid]}><{$_ticket[displayticketid]}>
+<{$_language[ardepartment]}><{$_ticketDepartmentTitle}>
+<{$_language[artype]}><{$_ticketTypeTitle}>
+<{$_language[arstatus]}><{$_ticketStatusTitle}>
+<{$_language[arpriority]}><{$_ticketPriorityTitle}>
+
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}>
+]]></template>
+
+		<template name="email_ticketuserreplyhtml"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_userReplyHTML}>
+<br /><br />
+<{if $_settings[t_enhistory] == 1 && $_isNewTicket == false}>
+<fieldset style="margin-bottom: 6px; color: #333333;FONT: 11px Verdana, Tahoma;PADDING:3px;">
+<legend><{$_language[tickethistory]}></legend>
+<{foreach key=key item=_ticketPost from=$_ticketPostList}>
+<{if $_ticketPost[ticketpostid] != $_ticket[lastpostid]}>
+<b><{$_ticketPost[fullname]}></b> (<{$_ticketPost[creator]}>) <{$_language[thpostedon]}> <{$_ticketPost[date]}>
+<hr style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<br />
+<{$_ticketPost[contents][1]}>
+
+<br /><br />
+<{/if}>
+<{/foreach}>
+</fieldset>
+<{/if}>
+
+<{$_language[ticketdetails]}><br />
+<hr style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[articketid]}><{$_ticket[displayticketid]}><br />
+<{$_language[ardepartment]}><{$_ticketDepartmentTitle}><br />
+<{$_language[artype]}><{$_ticketTypeTitle}><br />
+<{$_language[arstatus]}><font color="<{$_ticketStatus[statuscolor]}>"><{$_ticketStatusTitle}></font><br />
+<{$_language[arpriority]}><font color="<{$_ticketPriority[frcolorcode]}>"><{$_ticketPriorityTitle}></font><br />
+<br />
+<{$_language[supportcenterfield]}> <{$_basePath}><{$_templateGroupPrefix}><br />
+</font>]]></template>
+
+	</category>
+
+
+
+
+
+
+
+
+
+
+
+	<category name="template_chat" module="livechat" icon="icon_livesupport.gif">
+
+		<template name="inlinechatdiv"><![CDATA[
+<div style="FLOAT: left; WIDTH: <{$_inlineChatDivWidth}>px; BACKGROUND: #FFFFFF; BORDER: SOLID 1px #bcb5a6;">
+<iframe width="<{$_settings[livesupport_chatwidth]}>" height="<{$_settings[livesupport_chatheight]}>" scrolling="auto" frameborder="0" src="" name="inlinechatframe" id="inlinechatframe">ERROR: No IFRAME Support Detected</iframe>
+</div><div style="FLOAT: left; MARGIN-LEFT: -8px; MARGIN-TOP: -8px;"><a href="javascript: closeInlineProactiveRequest_<{$_randomSuffix}>();"><img src="<{$_themePath}>images/icon_close.png" border="0" align="absmiddle" /></a></div>
+]]></template>
+
+		<template name="proactivechatdiv"><![CDATA[
+<div style="FLOAT: left; WIDTH: 500px; BACKGROUND: #FFFFFF url(<{$_themePath}>images/mainbackground.gif) REPEAT; BORDER: SOLID 1px #bcb5a6;">
+<div style="BACKGROUND: #FFFFFF url(<{$_themePath}>images/icon_proactiveuserbackground.gif) NO-REPEAT bottom left; BORDER: SOLID 1px #bcb5a6; MARGIN: 8px;">
+<div style="TEXT-ALIGN: center;"><img src="<{$_headerImageSC}>" border="0" align="absmiddle" /></div>
+<HR align="center" style="WIDTH: 80%; BORDER: none; COLOR: #bcb5a6; BACKGROUND-COLOR: #bcb5a6; HEIGHT: 1px; MARGIN-TOP: 10px; MARGIN-BOTTOM: 3px;" />
+<div style="PADDING-LEFT: 120px; TEXT-ALIGN: left; MARGIN-TOP: 30px; HEIGHT: 80px; FONT: 45px Trebuchet MS, Georgia, Verdana, Arial, Helvetica; COLOR: #333333;">
+<{$_language[proactivetitle]}>
+</div>
+<div style="PADDING-LEFT: 120px; VERTICAL-ALIGN: top; MARGIN-TOP: 0px; PADDING-TOP: 0px; HEIGHT: 200px; FONT: 18pt Trebuchet MS, Georgia, Verdana, Arial, Helvetica; COLOR: #776849;">
+<{$_language[proactivemsg]}><br />
+<div style="PADDING-TOP: 30px; PADDING-LEFT: 80px; TEXT-ALIGN: center;"><div style="BORDER: SOLID 0 #FFFFFF; TEXT-ALIGN: center; BACKGROUND: URL(<{$_themePath}>images/proactivebutton.gif) no-repeat; HEIGHT: 37px; WIDTH: 135px; COLOR: #000000; FONT-WEIGHT: bold; FONT-FAMILY: Trebuchet MS, Georgia, Helvetica, Verdana, Tahoma; FONT-SIZE: 16px; MARGIN: 0px; PADDING-TOP: 6px; PADDING-BOTTOM: 15px; VERTICAL-ALIGN: middle; CURSOR: pointer;" onmouseover="this.style.color='red';" onmouseout="this.style.color='#000000'" onclick="javascript:doProactiveRequest_<{$_randomSuffix}>();"><{$_language[proactivechatnow]}></div></div>
+</div>
+</div>
+</div><div style="FLOAT: left; MARGIN-LEFT: -8px; MARGIN-TOP: -8px;"><a href="javascript:closeProactiveRequest_<{$_randomSuffix}>();"><img src="<{$_themePath}>images/icon_close.png" border="0" align="absmiddle" /></a></div>]]></template>
+
+		<template name="chatimage" date=""><![CDATA[<a href="javascript:startChat_<{$_randomSuffix}>('0');" onMouseOver="window.status='<{$_staffStatusText}>'; return true;" onMouseOut="window.status=''; return true;"><img src="<{if $_customImage != false}><{$_customImage}><{else}><{$_themePath}>images/<{if $_staffStatus eq "online"}>staff<{$_promptPhone}>online.png<{elseif $_staffStatus eq "away"}>staff<{$_promptPhone}>away.png<{elseif $_staffStatus eq "back"}>staffbackin5.png<{else}>staff<{$_promptPhone}>offline.png<{/if}><{/if}>" border="0" alt="<{$_staffStatusText}>" title="<{$_staffStatusText}>"></a>]]></template>
+
+		<template name="chatbadge" date=""><![CDATA[
+<style type="text/css">
+#kayako_sitebadgebg:hover {
+	background-color: <{$_badgeHoverColor}> !important;
+}
+
+#kayako_sitebadgebg {
+	background-color: <{$_badgeBackgroundColor}>;
+	border-color: <{$_badgeHoverColor}> <{$_badgeBorderColor}> <{$_badgeBorderColor}> <{$_badgeBorderColor}> !important;
+}
+</style>
+<div id="kayako_sitebadgecontainer" title="<{$_staffStatusText}>" onclick="javascript: startChat_<{$_randomSuffix}>('0');" style="background: transparent none repeat scroll 0 0; bottom: 0; cursor:pointer; height: 101px; left: 0; line-height: normal; margin: 0; padding: 0; position: fixed; top: <{if $_promptType == 'call'}>25<{else}>35<{/if}>% !important; z-index: 4000000000 !important;">
+	<div id="kayako_sitebadgeholder">
+		<div id="kayako_sitebadgeindicator" style="background: transparent url(<{$_themePath}>images/icon_badge_<{if $_staffStatus eq "online"}>green<{elseif $_staffStatus eq "away"}>green2<{elseif $_staffStatus eq "back"}>yellow<{else}>gray<{/if}>.png) no-repeat scroll 0 0; width: 30px; height: 30px; line-height: normal; margin: 0; padding: 0; position: absolute; left: 10px; top: -8px; z-index: 20000;"></div>
+		<div id="kayako_sitebadgebg" id="kayako_sitebadgebg" style="background-color: <{$_badgeBackgroundColor}>; border-color: <{$_badgeHoverColor}> <{$_badgeBorderColor}> <{$_badgeBorderColor}> <{$_badgeBorderColor}> !important; background-image: url(<{$_themePath}>images/badge_<{$_badgeText}>_<{$_badgeLanguage}>_<{$_badgeTextColor}>.png); background-position: 1px 8px; background-repeat: no-repeat; -moz-border-radius: 0 1em 1em 0 !important; border-radius: 0 1em 1em 0 !important; -webkit-border-radius: 0 1em 1em 0 !important; border-style: outset outset outset none !important; border-width: 1px 1px 1px medium !important; height: 101px !important; left: 0 !important; margin: 0 !important; opacity: 0.90 !important; padding: 0 !important; position: absolute !important; top: 0 !important; width: 30px !important; z-index: 19999 !important;"></div>
+
+	</div>
+</div>
+]]></template>
+
+		<template name="chatheader" date=""><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=<{$_language[charset]}>" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<title><{if $_pageTitle != ""}><{$_pageTitle}><{else}><{$_companyName}><{/if}> - <{$_poweredByNotice}></title>
+		<meta name="KEYWORDS" content="Home" />
+		<!-- <meta name="description" content="DISPLAY SOME KB STUFF OR NEWS HERE" /> -->
+		<meta name="robots" content="index,follow" />
+
+		<link rel="shortcut icon" href="favicon.ico" />
+		<script language="Javascript" type="text/javascript">
+		var _themePath = "<{$_themePath}>";
+		var _swiftPath = "<{$_swiftPath}>";
+		var _baseName = "<{$_baseName}>";
+		</script>
+
+		<script type="text/javascript" language="Javascript">
+		var themepath = "<{$_themePath}>";
+		var swiftpath = "<{$_swiftPath}>";
+		var _baseName = "<{$_baseName}>";
+		var _isInline = "<{$_isInline}>";
+		var _swiftLanguage = {'istyping':'<{$_language[istyping]}>', 'staffnotacceptedchat':'<{$_language[staffnotacceptedchat]}>', 'chatendsurvey':"<{$_language[chatendsurvey]}>", 'chatendednotification':"<{$_language[chatendednotification]}>", 'chatendednotificationsub':"<{$_language[chatendednotificationsub]}>"};
+		var _swiftRefreshInterval = <{$_refreshInterval}>;
+		var _swiftChatURL = "<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/Loop/_chatSessionID=<{$_chatSessionID}>/_sessionID=<{$_sessionID}>";
+		var _swiftMessageURL = "<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/SubmitMessage/<{$_chatSessionID}>/<{$_sessionID}>";
+		var _swiftChatEndURL = "<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/End/<{$_chatSessionID}>/<{$_sessionID}>";
+		var _swiftChatSurvey = "<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/Survey/<{$_chatSessionID}>/<{$_sessionID}>";
+		var _swiftChatEmailURL = "<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/SendEmail/<{$_chatSessionID}>/<{$_sessionID}>";
+		var _swiftChatPrintURL = "<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/PrintChat/<{$_chatSessionID}>/<{$_sessionID}>";
+		var _userFullName = "<{$_userFullName}>";
+		var _swiftDisplayTimestamps = "<{$_settings[livechat_timestamps]}>";
+		</script>
+
+		<link rel="stylesheet" type="text/css" media="all" href="<{$_baseName}><{$_templateGroupPrefix}>/Core/Default/Compressor/css/popup:client" />
+		<script type="text/javascript" src="<{$_baseName}><{$_templateGroupPrefix}>/Core/Default/Compressor/js/jquery:jqueryplugins:coresc:popup"></script>
+		<{if $_inChat == true || $_chatLanding == true}>
+		<script type="text/javascript" language="Javascript" src="<{$_themePath}>livesupport.js"></script>
+
+		<script type="text/javascript">
+			if (_isInline != '1')
+			{
+				window.onbeforeunload = LiveChatBeforeUnload;
+			}
+		</script>
+		<{/if}>
+	</head>
+
+	<body onload="<{if $_inChat == true}>OnChatLoaded();<{else}>OnLoaded();<{/if}>">
+
+			<div id="soundcontainer"></div>
+		<div id="main" class="chatview">
+			<div id="topbanner"><div class="topbannerchat"><img src="<{$_headerImageSC}>" alt="Kayako <{$_productTitle}> Logo" id="logo" /></div><div id="topbanneravatarcontainer"><img src="<{$_themePath}>images/space.gif" id="topbanneravatar" width="100" height="100" border="0" /></div></div>
+			<div id="chattoptoolbar">
+				<span id="chattoptoolbarrightarea">
+				<span id="chattoptoolbarrightareainset">
+				<{if $_displayLanguageSelection == true}>
+				<{$_language[languagefield]}></span>
+					<select class="swiftselect" name="languageid" id="languageid" onchange="javascript: LanguageSwitch(true);">
+					<{foreach key=_languageID item=_languageItem from=$_languageContainer}>
+					<{if $_languageItem[isenabled] == '1'}>
+					<option value="<{$_languageID}>"<{if $_activeLanguageID == $_languageID}> selected<{/if}>><{$_languageItem[title]}></option>
+					<{/if}>
+					<{/foreach}>
+					</select>
+				<{elseif $_displayClockTicker == true}>
+				<div id="chattoptoolbarrightclockticker">00:00</div></span>
+				<{else}>
+				<div id="chattoptoolbarrightclockticker">&nbsp;</div></span>
+				<{/if}>
+				</span>
+
+				<ul id="chattoptoolbarlinklist"><{if $_isInline == false}><li><a id="chattoptoolbarcloselink" href="#" onclick="javascript: CloseChat();" title="<{$_language[close]}>"><{$_language[close]}></a></li><{/if}><li id="chattoptoolbarprint"><a id="chattoptoolbarprintlink" href="#" onclick="javascript: PrintChat();" title="<{$_language[lcprint]}>"><{$_language[lcprint]}></a></li><li id="chattoptoolbaremail"><a id="chattoptoolbaremaillink" href="#" onclick="javascript: EmailChat();" title="<{$_language[lcemail]}>"><{$_language[lcemail]}></a></li><li id="chattoptoolbarsoundon"><a id="chattoptoolbarsoundonlink" href="#" onclick="javascript: SwitchSoundOff();" title="<{$_language[lcsoundon]}>"><{$_language[lcsoundon]}></a></li><li id="chattoptoolbarsoundoff"><a id="chattoptoolbarsoundofflink" href="#" onclick="javascript: SwitchSoundOn();" title="<{$_language[lcsoundoff]}>"><{$_language[lcsoundoff]}></a></li></ul>
+			</div>
+
+			<div id="sendemailcontainer">
+			<form name="chatsendemailform" method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/LiveChat/Chat/SendEmail" target="_top" onsubmit="return ValidateChatSendEmailForm();">
+			<table width="100%"  border="0" cellspacing="1" cellpadding="2">
+				<tr>
+					<td align="left" valign="middle" colspan="2"><{$_language[chatsendemaildesc]}></td>
+				</tr>
+				<tr>
+					<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldemail]}></td>
+					<td align="left" valign="middle"><input type="text" name="email" id="chatsendemail" class="swifttext" value="<{$_email}>"></td>
+				</tr>
+				<tr>
+					<td class="fieldtitle" align="left" valign="middle">&nbsp;</td>
+					<td align="left" valign="middle"><input type="submit" class="rebuttonblue" value="<{$_language[send]}>" /> <input type="button" class="rebuttonred" onclick="javascript: CloseEmailDialog();" value="<{$_language[cancel]}>" /><div id="chatsendemailerror" class="errorrowhidden"><{$_language[requiredfieldempty]}></div><div id="chatsendemailinvaliderror" class="errorrowhidden"><{$_language[emailinvalid]}></div></td>
+				</tr>
+			</table>
+			</form>
+			</div>
+
+			<div id="maincore">
+
+			<div id="chatcore">
+				<div class="tabrow" id="leftloginsubscribeboxtabs"><a id="livechattab" href="#" class="atab atabbasic"><span class="tableftgap">&nbsp;</span><span class="tabbulk"><span class="tabtext"><{if $_promptType == 'call'}><{$_language[clicktocalltab]}><{elseif $_extendedPromptType == 'message'}><{$_language[leaveamessage]}><{else}><{$_language[livechat]}><{/if}><{if $_inChat == true}> &raquo; <{$_departmentBreadcrumb}><{/if}></span></span></a></div>
+				<div id="chatbox" class="switchingpanel active">
+
+				<!-- BEGIN DIALOG PROCESSING -->
+				<{foreach key=key item=_item from=$_errorContainer}>
+				<div class="dialogerror"><div class="dialogerrorsub"><div class="dialogerrorcontent"><{$_item[message]}></div></div></div>
+				<{/foreach}>
+				<{foreach key=key item=_item from=$_infoContainer}>
+				<div class="dialoginfo"><div class="dialoginfosub"><div class="dialoginfocontent"><{$_item[message]}></div></div></div>
+				<{/foreach}>
+
+]]></template>
+
+		<template name="chatfooter" date=""><![CDATA[
+					</div>
+				</div>
+			</div>
+			<{$_footerScript}>
+			<{if $_displayChatPostContainer == true}>
+			<div id="chatpostcontainer">
+				<form name="chatpostform" method="post" action="index.php" target="_top" onSubmit="return ProcessLiveChatSubmit();">
+				<div id="chatcontrolregion">
+					<div id="chatpostmsgwrap"><textarea name="msg" id="chatpostmsg" onKeyPress="return HandlePostEnter(event);" onKeyUp="return HandlePostKeyUp(event);" disabled="disabled"></textarea></div>
+					<input id="chatpostbutton" type="submit" name="Submit" value="<{$_language[send]}>"></input>
+				</div>
+
+				</form>
+			</div>
+			<{/if}>
+			<div id="bottomfooter"><a href="http://www.kayako.com" class="bottomfooterlink" target="_blank"><{$_poweredByNotice}></a></div>
+		</div>
+		<script type='text/javascript'>
+QueryLoader.init();
+</script>
+	</body>
+
+</html>]]></template>
+
+		<template name="chatdepartmentlist" date=""><![CDATA[<select name="departmentid" class="swiftselect">
+<{foreach key=key item=_item from=$_departmentStatusContainer[online]}>
+<option value='<{$_item[departmentid]}>' class='deponline'><{$_item[displaytitle]}> - <{$_language[online]}></option>
+<{/foreach}>
+<{foreach key=key item=_item from=$_departmentStatusContainer[offline]}>
+<option value='<{$_item[departmentid]}>' class='depoffline'><{$_item[displaytitle]}> - <{$_language[offline]}></option>
+<{/foreach}>
+</select>]]></template>
+
+		<template name="chatlanding" date=""><![CDATA[<{RenderTemplate name="chatheader"}>
+<form name="chatform" id="chatform" method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/LiveChat/Chat/Start" target="_top" enctype="multipart/form-data" onsubmit="return ValidateChatForm(false);">
+<{if $_promptType == 'call'}><{$_language[livechatheadercall]}><{else}><{$_language[livechatheader]}><{/if}><br /><br />
+<table width="100%"  border="0" cellspacing="1" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle"><{$_language[fielddepartment]}></td>
+		<td width="" align="left" valign="middle"><{RenderTemplate name="chatdepartmentlist"}></td>
+	</tr>
+	<tr>
+		<td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+		<td>&nbsp;</td>
+	</tr>
+	<{if $_getFullname == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldfullname]}></td>
+		<td align="left" valign="middle"><input type="text" name="fullname" id="chatfullname" class="swifttext required" value="<{$_fullName}>"></td>
+	</tr>
+	<{/if}>
+	<{if $_getEmail == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldemail]}></td>
+		<td align="left" valign="middle"><input type="text" name="email" id="chatemail" class="swifttext required email" value="<{$_email}>"></td>
+	</tr>
+	<{/if}>
+	<{if $_promptType == 'call'}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldphone]}></td>
+		<td><select name="countrycode" class="swiftselect required"><{foreach key=key item=_item from=$_countryList}><option value="<{$_item[value]}>"<{if $_item[selected] == true}> selected<{/if}>><{$_item[title]}></option><{/foreach}></select></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle">&nbsp;</td>
+		<td><input type="text" name="phonenumber" id="phonenumber" class="swifttext required" value="" /></td>
+	</tr>
+	<{/if}>
+	<{if $_getSubject == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldchatsubject]}></td>
+		<td align="left" valign="middle"><textarea name="subject" id="chatsubject" class="swifttextwide" rows="2" cols="30" maxlength="255"><{$_subject}></textarea></td>
+	</tr>
+	<{/if}>
+	</table>
+	<{RenderTemplate name="customfields"}>
+	<table width="100%"  border="0" cellspacing="1" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle">&nbsp;</td>
+		<td align="left" valign="middle"><input type="submit" class="rebuttonblue" value="<{if $_promptType == 'call'}><{$_language[callme]}><{else}><{$_language[buttonstartchat]}><{/if}>" /></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="2"><div id="chaterror" class="errorrowhidden"><{$_language[requiredfieldempty]}></div><div id="chatemailerror" class="errorrowhidden"><{$_language[emailinvalid]}></div></td>
+	</tr>
+</table>
+<{if $_getFullname != ""}><input type="hidden" name="fullname" value="<{$_getFullname}>"><{/if}>
+<{if $_getEmail != ""}><input type="hidden" name="email" value="<{$_getEmail}>"><{/if}>
+<{if $_getUserID != ""}><input type="hidden" name="userid" value="<{$_getUserID}>"><{/if}>
+<input type="hidden" name="sessionid" value="<{$_getSessionID}>">
+<input type="hidden" name="prompttype" value="<{$_promptType}>">
+</form>
+<{RenderTemplate name="chatfooter"}>]]></template>
+
+		<template name="chatcore" date=""><![CDATA[<{RenderTemplate name="chatheader"}>
+<div id="chatcontentcontainer">
+</div>
+
+<div id="chatstatuswrapper">
+<div id="chatstatusbar" class="chatstatusbarhidden">
+</div>
+</div>
+
+
+<{RenderTemplate name="chatfooter"}>]]></template>
+
+		<template name="leavemessage" date=""><![CDATA[<{RenderTemplate name="chatheader"}>
+<form name="messageform" id="messageform" method="post" action="<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/MessageSubmit/_sessionID=<{$_getSessionID}>" target="_top" onsubmit="return ValidateChatForm(true);">
+<{$_language[leavemessageheader]}><br /><br />
+<table width="100%" border="0" cellspacing="3" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle"><{$_language[fielddepartment]}></td>
+		<td width="" align="left" valign="middle"><{RenderTemplate name="chatdepartmentlist"}></td>
+	</tr>
+	<tr>
+		<td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+		<td>&nbsp;</td>
+	</tr>
+	<{if $_getFullname == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldfullname]}></td>
+		<td align="left" valign="middle"><input type="text" name="fullname" id="chatfullname" class="swifttext required" value="<{$_fullName}>"></td>
+	</tr>
+	<{/if}>
+	<{if $_getEmail == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldemail]}></td>
+		<td align="left" valign="middle"><input type="text" name="email" id="chatemail" class="swifttext required email" value="<{$_email}>"></td>
+	</tr>
+	<{/if}>
+	<{if $_getSubject == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldsubject]}></td>
+		<td align="left" valign="middle"><input type="text" name="subject" id="chatsubject" class="swifttextwide required" value="<{$_subject}>"></td>
+	</tr>
+	<{/if}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="top"><{$_language[fieldmessage]}></td>
+		<td align="left" valign="middle"><textarea name="message" id="chatmessage" class="swifttextareawide required" rows="7" cols="30"><{$_message}></textarea></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle">&nbsp;</td>
+		<td align="left" valign="middle"><input type="submit" class="rebuttonblue" value="<{$_language[send]}>" /><div id="chaterror" class="errorrowhidden"><{$_language[requiredfieldempty]}></div><div id="chatemailerror" class="errorrowhidden"><{$_language[emailinvalid]}></div></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="2"></td>
+	</tr>
+</table>
+<{if $_getFullname != ""}><input type="hidden" name="fullname" value="<{$_getFullname}>"><{/if}>
+<{if $_getEmail != ""}><input type="hidden" name="email" value="<{$_getEmail}>"><{/if}>
+<{if $_getSubject != ""}><input type="hidden" name="subject" value="<{$_getSubject}>"><{/if}>
+<{if $_getUserID != ""}><input type="hidden" name="userid" value="<{$_getUserID}>"><{/if}>
+<input type="hidden" name="sessionid" value="<{$_getSessionID}>">
+</form>
+<{RenderTemplate name="chatfooter"}>]]></template>
+
+		<template name="leavemessageconfirmation" date=""><![CDATA[<{RenderTemplate name="chatheader"}>
+<{$_language[leavemessageconfirmheader]}><br /><br />
+<table width="100%" border="0" cellspacing="3" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle"><{$_language[fielddepartment]}></td>
+		<td width="" align="left" valign="middle"><{$_messageDepartmentTitle}></td>
+	</tr>
+	<tr>
+		<td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldfullname]}></td>
+		<td align="left" valign="middle"><{$_messageFullName}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldemail]}></td>
+		<td align="left" valign="middle"><{$_messageEmail}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldsubject]}></td>
+		<td align="left" valign="middle"><{$_messageSubject}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="top"><{$_language[fieldmessage]}></td>
+		<td align="left" valign="middle"><{$_messageContents}></td>
+	</tr>
+</table>
+<{RenderTemplate name="chatfooter"}>]]></template>
+
+		<template name="chatsurvey" date=""><![CDATA[<{RenderTemplate name="chatheader"}>
+<script type="text/javascript">
+$(function () {
+	$('input.rating').rating();
+});
+</script>
+<form name="surveyform" id="surveyform" method="post" action="<{$_swiftPath}>visitor/index.php?/LiveChat/Chat/SurveySubmit/<{$_chatSessionID}>/<{$_sessionID}>/" target="_top" onsubmit="return ValidateSurveyForm();">
+<{$_language[surveyheader]}><br /><br />
+<table width="100%" border="0" cellspacing="3" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle"><{$_language[fielddepartment]}></td>
+		<td width="" align="left" valign="middle"><{$_surveyDepartmentTitle}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldrating]}></td>
+		<td align="left" valign="middle"><input name="messagerating" type="radio" class="rating {split:2}" value="0.5" /> <input name="messagerating" type="radio" class="rating {split:2}" value="1" /> <input name="messagerating" type="radio" class="rating {split:2}" value="1.5" /> <input name="messagerating" type="radio" class="rating {split:2}" value="2" /> <input name="messagerating" type="radio" class="rating {split:2}" value="2.5" /> <input name="messagerating" type="radio" class="rating {split:2}" value="3" /> <input name="messagerating" type="radio" class="rating {split:2}" value="3.5" /> <input name="messagerating" type="radio" class="rating {split:2}" value="4" /> <input name="messagerating" type="radio" class="rating {split:2}" value="4.5" /> <input name="messagerating" type="radio" class="rating {split:2}" value="5" /></td>
+	</tr>
+	<{foreach key=_benchmarkID item=_chatBenchmark from=$_chatBenchmarkContainer}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_chatBenchmark[benchmarktitle]}></td>
+		<td><input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="1"<{if $_chatBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_chatBenchmark[result] == '1'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="2"<{if $_chatBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_chatBenchmark[result] == '2'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="3"<{if $_chatBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_chatBenchmark[result] == '3'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="4"<{if $_chatBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_chatBenchmark[result] == '4'}> checked="checked"<{/if}> /> <input name="benchmark[<{$_benchmarkID}>]" type="radio" class="rating" value="5"<{if $_chatBenchmark[isdisabled] == true}> disabled="disabled" <{/if}><{if $_chatBenchmark[result] == '5'}> checked="checked"<{/if}> /></td>
+	</tr>
+	<{/foreach}>
+	<{if $_getFullname == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldfullname]}></td>
+		<td align="left" valign="middle"><input type="text" name="fullname" id="chatfullname" class="swifttext" value="<{$_fullName}>"></td>
+	</tr>
+	<{/if}>
+	<{if $_getEmail == ""}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldemail]}></td>
+		<td align="left" valign="middle"><input type="text" name="email" id="chatemail" class="swifttext" value="<{$_email}>"></td>
+	</tr>
+	<{/if}>
+	<tr>
+		<td class="fieldtitle" align="left" valign="top"><{$_language[fieldcomments]}></td>
+		<td align="left" valign="middle"><textarea name="message" id="chatmessage" class="swifttextareawide" rows="5" cols="30"><{$_message}></textarea></td>
+	</tr>
+	</table>
+	<{RenderTemplate name="customfields"}>
+	<table width="100%"  border="0" cellspacing="1" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle">&nbsp;</td>
+		<td align="left" valign="middle"><input type="submit" class="rebuttonblue" value="<{$_language[send]}>" /><div id="chaterror" class="errorrowhidden"><{$_language[requiredfieldempty]}></div><div id="chatemailerror" class="errorrowhidden"><{$_language[emailinvalid]}></div></td>
+	</tr>
+</table>
+<{if $_getFullname != ""}><input type="hidden" name="fullname" value="<{$_getFullname}>"><{/if}>
+<{if $_getEmail != ""}><input type="hidden" name="email" value="<{$_getEmail}>"><{/if}>
+<{if $_getSubject != ""}><input type="hidden" name="subject" value="<{$_getSubject}>"><{/if}>
+<{if $_getUserID != ""}><input type="hidden" name="userid" value="<{$_getUserID}>"><{/if}>
+<input type="hidden" name="sessionid" value="<{$_sessionID}>">
+<input type="hidden" name="departmentid" value="<{$_departmentID}>">
+</form>
+<{RenderTemplate name="chatfooter"}>]]></template>
+
+		<template name="chatsurveyconfirmation" date=""><![CDATA[<{RenderTemplate name="chatheader"}>
+<script type="text/javascript" language="Javascript">
+$(function(){
+	$('input.rating').rating();
+});
+
+</script>
+<{$_language[surveyconfirmheader]}><br /><br />
+<table width="100%" border="0" cellspacing="3" cellpadding="2">
+	<tr>
+		<td width="100" class="fieldtitle" align="left" valign="middle"><{$_language[fielddepartment]}></td>
+		<td width="" align="left" valign="middle"><{$_surveyDepartmentTitle}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldrating]}></td>
+		<td align="left" valign="middle"><input name="messagerating" type="radio" class="rating {split:2}" value="0.5" disabled="disabled"<{if $_messageRating == '0.5'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="1" disabled="disabled"<{if $_messageRating == '1'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="1.5" disabled="disabled"<{if $_messageRating == '1.5'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="2" disabled="disabled"<{if $_messageRating == '2'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="2.5" disabled="disabled"<{if $_messageRating == '2.5'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="3" disabled="disabled"<{if $_messageRating == '3'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="3.5" disabled="disabled"<{if $_messageRating == '3.5'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="4" disabled="disabled"<{if $_messageRating == '4'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="4.5" disabled="disabled"<{if $_messageRating == '4.5'}> checked="checked"<{/if}> /> <input name="messagerating" type="radio" class="rating {split:2}" value="5" disabled="disabled"<{if $_messageRating == '5'}> checked="checked"<{/if}> /></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldfullname]}></td>
+		<td align="left" valign="middle"><{$_surveyFullName}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="middle"><{$_language[fieldemail]}></td>
+		<td align="left" valign="middle"><{$_surveyEmail}></td>
+	</tr>
+	<tr>
+		<td class="fieldtitle" align="left" valign="top"><{$_language[fieldcomments]}></td>
+		<td align="left" valign="middle"><{$_surveyComments}></td>
+	</tr>
+</table>
+<{RenderTemplate name="chatfooter"}>]]></template>
+
+		<template name="livechat_email_text"><![CDATA[<{$_emailNotes}>
+<{$_language[fielddepartment]}> <{$_chatDepartment}>
+<{$_language[fieldfullname]}> <{$_chatFullName}>
+<{$_language[fieldemail]}> <{$_chatEmail}>
+<{$_language[fieldchatsubject]}> <{$_chatSubject}>
+<{$_language[fieldchatstaff]}> <{$_chatStaff}>
+------------------------------------------------------
+<{foreach key=key item=_item from=$_chatConversation}>
+<{if $_settings[livechat_timestamps] == true}><{$_item[timestamp]}> <{/if}><{if $_item[msgtype] == 'system'}> * <{$_item[message]}><{else}><{$_item[name]}>: <{$_item[message]}><{/if}>
+<{/foreach}>
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_swiftPath}>
+]]></template>
+
+		<template name="livechat_email_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_emailNotesHTML}><br />
+<b><{$_language[fielddepartment]}></b> <{$_chatDepartment}><br />
+<b><{$_language[fieldfullname]}></b> <{$_chatFullName}><br />
+<b><{$_language[fieldemail]}></b> <{$_chatEmail}><br />
+<b><{$_language[fieldchatsubject]}></b> <{$_chatSubject}><br />
+<b><{$_language[fieldchatstaff]}></b> <{$_chatStaff}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{foreach key=key item=_item from=$_chatConversation}>
+<{if $_settings[livechat_timestamps] == true}><{$_item[timestamp]}> <{/if}><font color="<{if $_item[msgtype] == 'client'}>blue<{elseif $_item[msgtype] == 'staff'}>red<{else}>green<{/if}>"><{if $_item[msgtype] == 'system'}><b><{$_item[message]}></b></font><{else}><{$_item[name]}>:</font> <{$_item[message]}><{/if}><br />
+<{/foreach}>
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_swiftPath}><br />
+</font>]]></template>
+
+		<template name="printchat"><![CDATA[<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "https://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=<{$_language[charset]}>" />
+
+    <title><{$_companyName}> - <{$_poweredByNotice}></title>
+    <meta name="KEYWORDS" content="Home" />
+    <!-- <meta name="description" content="DISPLAY SOME KB STUFF OR NEWS HERE" /> -->
+    <meta name="robots" content="index,follow" />
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+	<script language="Javascript" type="text/javascript">
+	var _themePath = "<{$_themePath}>";
+	var _swiftPath = "<{$_swiftPath}>";
+	var _baseName = "<{$_baseName}>";
+	</script>
+
+	<link rel="stylesheet" type="text/css" media="all" href="<{$_baseName}><{$_templateGroupPrefix}>/Core/Default/Compressor/css/client" />
+	<script type="text/javascript" src="<{$_baseName}><{$_templateGroupPrefix}>/Core/Default/Compressor/js/jquery:jqueryplugins:coresc"></script>
+
+  </head>
+
+
+  <body style="background-image: none;" onload="javascript: window.print();">
+
+    <div id="main">
+
+      <div id="topbanner"><img src="<{$_headerImageSC}>" alt="Kayako <{$_productTitle}> Logo" id="logo" /></div>
+	  <div id="printcontent">
+		<b><{$_language[fielddepartment]}></b> <{$_chatDepartment}><br />
+		<b><{$_language[fieldfullname]}></b> <{$_chatFullName}><br />
+		<b><{$_language[fieldemail]}></b> <{$_chatEmail}><br />
+		<b><{$_language[fieldchatsubject]}></b> <{$_chatSubject}><br />
+		<b><{$_language[fieldchatstaff]}></b> <{$_chatStaff}><br />
+		<HR class="chatprinthr" />
+		<{foreach key=key item=_item from=$_chatConversation}>
+		<{if $_settings[livechat_timestamps] == true}><{$_item[timestamp]}> <{/if}><font color="<{if $_item[msgtype] == 'client'}>blue<{elseif $_item[msgtype] == 'staff'}>red<{else}>green<{/if}>"><{if $_item[msgtype] == 'system'}><b><{$_item[message]}></b></font><{else}><{$_item[name]}>:</font> <{$_item[message]}><{/if}><br />
+		<{/foreach}>
+		<HR class="chatprinthr" />
+		<{$_language[supportcenterfield]}> <{$_swiftPath}><br />
+	</div>
+	</div>
+</body>
+</html>
+]]></template>
+	</category>
+
+
+
+	<category name="template_news" module="news" icon="icon_news.gif">
+		<template name="email_subscribervalidate_text"><![CDATA[<{$_language[nwsubintro]}>
+
+<{$_swiftPath}>index.php?/News/Subscriber/Validate/<{$_hash}>
+
+<{$_language[nwsubfooter]}>
+
+<{$_companyName}>
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_swiftPath}>
+]]></template>
+
+		<template name="email_subscribervalidate_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_language[nwsubintro]}><br /><br />
+<a href="<{$_swiftPath}>index.php?/News/Subscriber/Validate/<{$_hash}>"><{$_swiftPath}>index.php?/News/Subscriber/Validate/<{$_hash}></a>
+<br /><br /><{$_language[nwsubfooter]}><br />
+<br /><{$_companyName}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_swiftPath}><br />
+</font>]]></template>
+		<template name="email_subscriberconfirm_text"><![CDATA[<{$_language[nwsubconintro]}>
+
+<{$_swiftPath}>index.php?/News/Subscriber/Unsubscribe/<{$_subscriberEmail}>
+
+<{$_language[nwsubfooter]}>
+
+<{$_companyName}>
+------------------------------------------------------
+<{$_language[supportcenterfield]}> <{$_swiftPath}>
+]]></template>
+
+		<template name="email_subscriberconfirm_html"><![CDATA[<font face="Candara, Verdana, Arial, Helvetica" size="3"><{$_language[nwsubconintro]}><br /><br />
+<a href="<{$_swiftPath}>index.php?/News/Subscriber/Unsubscribe/<{$_subscriberEmail}>"><{$_swiftPath}>index.php?/News/Subscriber/Unsubscribe/<{$_subscriberEmail}></a>
+<br /><br /><{$_language[nwsubfooter]}><br />
+<br /><{$_companyName}><br />
+<HR style="margin-bottom: 6px; height: 1px; BORDER: none; color: #cfcfcf; background-color: #cfcfcf;" />
+<{$_language[supportcenterfield]}> <{$_swiftPath}><br />
+</font>]]></template>
+
+		<template name="newslist"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{if $_settings[nw_enablerss] == '1'}><div style="float: right;"><a href="<{$_swiftPath}>rss/index.php?/News/Feed/Index/<{$_newsCategoryID}>" title="<{$_language[rssfeed]}>" target="_blank"><img src="<{$_themePath}>images/icon_rss.png" align="absmiddle" alt="<{$_language[rssfeed]}>" border="0" /></a></div><{/if}><{$_language[news]}></div>
+
+			<div class="boxcontainercontent">
+				<table cellpadding="0" cellspacing="0" border="0">
+				<{foreach key=newsitemid item=_newsItem from=$_newsContainer}>
+					<tr>
+						<td width="60" align="left" valign="top">
+							<div class="datecontainerparent">
+							<div class="monthholder"><div class="monthsub"><{$_newsItem[parsedmonth]}></div></div>
+							<div class="dateholder"><div class="datecontainer"><{$_newsItem[parseddate]}></div></div>
+							</div>
+						</td>
+
+						<td width="100%" valign="top">
+							<div class="newsavatar"><img src="<{$_baseName}><{$_templateGroupPrefix}>/Base/StaffProfile/DisplayAvatar/<{$_newsItem[staffid]}>/<{$_newsItem[emailhash]}>/60" align="absmiddle" border="0" /></div>
+							<div class="newstitle"><a class="newstitlelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/NewsItem/View/<{$_newsItem[newsitemid]}>/<{$_newsItem[urlextension]}>" title="<{$_newsItem[subject]}>"><{$_newsItem[subject]}></a>
+							<div class="newsinfo"><{$_language[postedby]}> <{$_newsItem[author]}> <{$_language[on]}> <{$_newsItem[date]}></div>
+						</td>
+					</tr>
+					<tr><td colspan="2" class="newscontents">
+						<{$_newsItem[contents]}>
+						<br />
+						<a class="newsreadmorelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/NewsItem/View/<{$_newsItem[newsitemid]}>/<{$_newsItem[urlextension]}>" title="<{$_newsItem[subject]}>"><{$_language[readmore]}></a>
+					</td></tr>
+					<tr>
+					<td colspan="2"><hr class="newshr" /><br /><br /></td>
+					</tr>
+				<{/foreach}>
+				</table>
+				<{if $_newsCount > 0}>
+				<br />
+				<div class="newsfooter">
+				<{if $_showOlderPosts == true}><a class="newsreadmorelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/List/Index/<{$_newsCategoryID}>/<{$_olderOffset}>"><{$_language[olderposts]}></a><{/if}>
+				<{if $_showNewerPosts == true}>&nbsp;&nbsp;&nbsp;<a class="newsreadmorelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/List/Index/<{$_newsCategoryID}>/<{$_newerOffset}>"><{$_language[newerposts]}></a><{/if}>
+				</div>
+				<{/if}>
+				<{if $_newsCount == 0}>
+				<div class="infotextcontainer">
+				<{$_language[noinfoinview]}>
+				</div>
+				<{/if}>
+			</div>
+			</div>
+		  ]]></template>
+		<template name="newsitem"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{if $_settings[nw_enablerss] == '1'}><div style="float: right;"><a href="<{$_swiftPath}>rss/index.php?/News/Feed" title="<{$_language[rssfeed]}>" target="_blank"><img src="<{$_themePath}>images/icon_rss.png" align="absmiddle" alt="<{$_language[rssfeed]}>" border="0" /></a></div><{/if}><{$_language[news]}></div>
+
+			<div class="boxcontainercontent">
+				<table cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="60" align="left" valign="top">
+							<div class="datecontainerparent">
+							<div class="monthholder"><div class="monthsub"><{$_newsItem[parsedmonth]}></div></div>
+							<div class="dateholder"><div class="datecontainer"><{$_newsItem[parseddate]}></div></div>
+							</div>
+						</td>
+
+						<td width="100%" valign="top">
+							<div class="newsavatar"><img src="<{$_baseName}><{$_templateGroupPrefix}>/Base/StaffProfile/DisplayAvatar/<{$_newsItem[staffid]}>/<{$_newsItem[emailhash]}>/60" align="absmiddle" border="0" /></div>
+							<div class="newstitle"><a class="newstitlelink" href="<{$_baseName}><{$_templateGroupPrefix}>/News/NewsItem/View/<{$_newsItem[newsitemid]}>/<{$_newsItem[urlextension]}>" title="<{$_newsItem[subject]}>"><{$_newsItem[subject]}></a>
+							<div class="newsinfo"><{$_language[postedby]}> <{$_newsItem[author]}> <{$_language[on]}> <{$_newsItem[date]}></div>
+						</td>
+					</tr>
+					<tr><td colspan="2" class="newscontents">
+						<{$_newsItem[contents]}>
+					</td></tr>
+					<tr>
+					<td colspan="2"><hr class="newshr" /></td>
+					</tr>
+				</table>
+
+				<{if $_newsItem[allowcomments] == '1'}>
+				<{RenderTemplate name="comments"}>
+				<{/if}>
+			</div>
+			</div>
+		  ]]></template>
+	</category>
+
+
+
+
+	<category name="template_knowledgebase" module="knowledgebase" icon="icon_knowledgebase.png">
+		<template name="knowledgebaselist"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{if $_settings[kb_enrss] == '1'}><div style="float: right;"><a href="<{$_swiftPath}>rss/index.php?/Knowledgebase/Feed/Index/<{$_knowledgebaseCategoryID}>" title="<{$_language[rssfeed]}>" target="_blank"><img src="<{$_themePath}>images/icon_rss.png" alt="<{$_language[rssfeed]}>" align="absmiddle" border="0" /></a></div><{/if}><{$_language[knowledgebase]}></div>
+
+			<div class="boxcontainercontent">
+				<{if $_showEmptyViewWarning == true}>
+				<div class="infotextcontainer">
+				<{$_language[noinfoinview]}>
+				</div>
+				<{/if}>
+
+				<{if $_showEmptyViewWarning == false}>
+				<table cellpadding="0" cellspacing="0" width="100%" border="0">
+				<tr>
+				<{foreach key=_kbCategoryID item=_knowledgebaseCategory from=$_knowledgebaseCategoryListContainer}>
+					<{if $_knowledgebaseCategory[jumptorow] == true}>
+						</tr><tr>
+					<{/if}>
+
+					<{if $_knowledgebaseCategory[title] == false}>
+						<td>&nbsp;</td>
+					<{else}>
+						<td width="<{$_knowledgebaseCategory[tdwidth]}>%" align="left" valign="top">
+						<div class="kbcategorytitlecontainer"><div class="kbcategorytitle" onclick="javascript: window.location.href='<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/List/Index/<{$_knowledgebaseCategory[kbcategoryid]}>/<{$_knowledgebaseCategory[seotitle]}>';"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/List/Index/<{$_knowledgebaseCategory[kbcategoryid]}>/<{$_knowledgebaseCategory[seotitle]}>"><{$_knowledgebaseCategory[title]}></a><span class="kbcategorycount"><{if $_knowledgebaseCategory[totalarticles] > 0}>(<{$_knowledgebaseCategory[totalarticles]}>)<{/if}></span></div>
+						<{foreach key=_kbArticleID item=_knowledgebaseArticle from=$_knowledgebaseCategory[articles]}>
+						<div class="kbarticlecategorylistitem"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/Article/View/<{$_knowledgebaseArticle[kbarticleid]}>/<{$_kbCategoryID}>/<{$_knowledgebaseArticle[seosubject]}>"><{$_knowledgebaseArticle[subject]}></a></div>
+						<{/foreach}>
+						</div>
+						</td>
+					<{/if}>
+				<{/foreach}>
+				</tr>
+				</table>
+				<{/if}>
+
+				<{if $_hasNoCategories == false}>
+				<br /><br />
+				<{/if}>
+
+				<{if $_knowledgebaseArticleCount > 0}>
+				<{foreach key=_kbArticleID item=_knowledgebaseArticle from=$_knowledgebaseArticleContainer}>
+				<div class="kbarticlecontainer<{if $_knowledgebaseArticle[isfeatured] == '1'}> kbarticlefeatured<{/if}>">
+				<div class="kbarticle"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/Article/View/<{$_knowledgebaseArticle[kbarticleid]}>/<{$_knowledgebaseCategoryID}>/<{$_knowledgebaseArticle[seosubject]}>"><{$_knowledgebaseArticle[subject]}></a></div>
+				<div class="kbarticletext"><{$_knowledgebaseArticle[contentstext]}></div>
+				</div>
+				<{/foreach}>
+				<{/if}>
+
+				<{if $_knowledgebaseCategoryID == 0 && $_showEmptyViewWarning == false}>
+				<table cellpadding="0" cellspacing="0" width="100%" border="0">
+				<tr>
+				<{if $_settings[kb_enpopulararticles] == '1'}>
+				<td width="50%" align="left" valign="top"><div class="kbrightstrip">
+				<table class="hlineheader hlinegray"><tr><th rowspan="2" nowrap><{$_language[mostpopular]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table>
+				</div>
+				<ol>
+				<{foreach key=_kbArticleID item=_knowledgebaseArticle from=$_knowledgebaseArticleContainer_Popular}>
+				<li class="kbarticlelist">
+				<div class="kbarticlelistitem"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/Article/View/<{$_knowledgebaseArticle[kbarticleid]}>/<{$_knowledgebaseCategoryID}>/<{$_knowledgebaseArticle[seosubject]}>"><{$_knowledgebaseArticle[subject]}></a></div>
+				</li>
+				<{/foreach}>
+				</ol>
+				</td>
+				<{/if}>
+
+				<{if $_settings[kb_enlatestarticles] == '1'}>
+				<td width="<{if $_settings[kb_enpopulararticles] == '1'}>50%<{else}>100%<{/if}>" align="left" valign="top">
+				<div><table class="hlineheader hlinegray"><tr><th rowspan="2" nowrap><{$_language[recentarticles]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table></div>
+				<ol>
+				<{foreach key=_kbArticleID item=_knowledgebaseArticle from=$_knowledgebaseArticleContainer_Recent}>
+				<li class="kbarticlelist">
+				<div class="kbarticlelistitem"><a href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/Article/View/<{$_knowledgebaseArticle[kbarticleid]}>/<{$_knowledgebaseCategoryID}>/<{$_knowledgebaseArticle[seosubject]}>"><{$_knowledgebaseArticle[subject]}></a></div>
+				</li>
+				<{/foreach}>
+				</ol>
+				</td>
+				<{/if}>
+				</tr>
+				</table>
+				<{/if}>
+			</div>
+			</div>
+		  ]]></template>
+		<template name="knowledgebasearticle"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[knowledgebase]}><{if $_kbCategoryContainer != false}>: <a href="<{$_baseName}><{$_templateGroupPrefix}>/Knowledgebase/List/Index/<{$_kbCategoryContainer[kbcategoryid]}>"><{$_kbCategoryContainer[title]}></a><{/if}></div>
+
+			<div class="boxcontainercontent">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top">
+							<div class="kbavatar"><img src="<{$_baseName}><{$_templateGroupPrefix}>/Base/StaffProfile/DisplayAvatar/<{$_knowledgebaseArticle[staffid]}>/<{$_knowledgebaseArticle[emailhash]}>/60" align="absmiddle" border="0" /></div>
+							<div class="kbtitle"><span class="kbtitlemain"><{$_knowledgebaseArticle[subject]}></span></div>
+							<div class="kbinfo"><{$_language[postedby]}> <{$_knowledgebaseArticle[author]}> <{$_language[on]}> <{$_knowledgebaseArticle[date]}></div>
+						</td>
+					</tr>
+					<tr><td colspan="2" class="kbcontents">
+						<{$_knowledgebaseArticle[contents]}>
+					</td></tr>
+					<tr>
+					<td colspan="2">
+
+					<{if $_knowledgebaseArticle[hasattachments] == '1'}>
+					<br /><br />
+					<div><table class="hlineheader hlinegray"><tr><th rowspan="2" nowrap><{$_language[kbattachments]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table></div>
+					<div class="kbattachments">
+					<{foreach key=_attachmentID item=_kbAttachment from=$_attachmentContainer}>
+					<div class="kbattachmentitem" onclick="javascript: PopupSmallWindow('<{$_kbAttachment[link]}>');" style="background-image: URL('<{$_themePath}>images/<{$_kbAttachment[icon]}>');">&nbsp;<{$_kbAttachment[name]}> (<{$_kbAttachment[size]}>)</div>
+					<{/foreach}>
+					</div>
+					<{/if}>
+
+
+					<{if $_knowledgebaseArticle[allowrating] == '1' && $_settings[kb_enrating] == '1'}>
+					<div id="kbratingcontainer">
+					<{RenderTemplate name="knowledgebaserating"}>
+					</div>
+					<{/if}>
+					<hr class="kbhr" /></td>
+					</tr>
+				</table>
+
+				<{if $_knowledgebaseArticle[allowcomments] == '1'}>
+				<{RenderTemplate name="comments"}>
+				<{/if}>
+			</div>
+			</div>
+		  ]]></template>
+		<template name="knowledgebaserating"><![CDATA[
+			<div class="kbrating">
+			<div class="kbratingstars"><img src="<{$_themePath}>images/icon_star_<{$_articleRating}>.gif" align="absmiddle" border="0" /><span> (<{$_knowledgebaseArticle[ratinghits]}> <{$_language[articlevotes]}>)</span></div>
+			<{if $_hasNotRated == true}>
+			<div class="kbratinghelpful" onclick="javascript: ArticleHelpful('<{$_knowledgebaseArticle[kbarticleid]}>');"><img src="<{$_themePath}>images/icon_thumbsup.gif" align="absmiddle" border="0" /> <{$_language[articlehelpful]}></div><div class="kbratingnothelpful" onclick="javascript: ArticleNotHelpful('<{$_knowledgebaseArticle[kbarticleid]}>');"><img src="<{$_themePath}>images/icon_thumbdown.gif" align="absmiddle" border="0" /> <{$_language[articlenothelpful]}></div>
+			<{/if}>
+			</div>
+		  ]]></template>
+	</category>
+
+
+
+
+
+
+	<category name="template_troubleshooter" module="troubleshooter" icon="icon_troubleshooter.gif">
+		<template name="troubleshooterlist"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[troubleshooter]}></div>
+
+			<div class="boxcontainercontent">
+				<{if $_troubleshooterCategoryCount > 0}><{$_language[troubleshooterdesc]}><br /><br /><{/if}>
+				<{foreach key=troubleshootercategoryid item=_troubleshooterCategory from=$_troubleshooterCategoryContainer}>
+					<div class="troubleshootercategorycontainer" onclick="javascript: window.location.href='<{$_baseName}><{$_templateGroupPrefix}>/Troubleshooter/Step/View/<{$_troubleshooterCategory[troubleshootercategoryid]}>';">
+						<div class="troubleshootercategory">
+							<div class="troubleshootercategorytitle"><a class="bluelink" href="<{$_baseName}><{$_templateGroupPrefix}>/Troubleshooter/Step/View/<{$_troubleshooterCategory[troubleshootercategoryid]}>"><{$_troubleshooterCategory[title]}></a><{$_troubleshooterCategory[views]}></div>
+							<div class="troubleshootercategorydesc"><{$_troubleshooterCategory[description]}></div>
+						</div>
+					</div>
+					<div class="troubleshootercategoryfooter"></div>
+				<{/foreach}>
+
+				<{if $_troubleshooterCategoryCount == 0}>
+				<div class="infotextcontainer">
+				<{$_language[noinfoinview]}>
+				</div>
+				<{/if}>
+			</div>
+			</div>
+		  ]]></template>
+
+
+		<template name="troubleshooterstep"><![CDATA[
+			<div class="boxcontainer">
+			<div class="boxcontainerlabel"><{$_language[troubleshooter]}><{if $_extendedTitle != ''}> &raquo; <a href="<{$_extendedTitleLink}>"><{$_extendedTitle}></a><{/if}></div>
+
+			<div class="boxcontainercontent">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td valign="top">
+							<div class="trsteptitle"><span class="trsteptitlemain"><{$_troubleshooterStepSubject}></span></div>
+						</td>
+					</tr>
+					<tr><td colspan="2" class="trstepcontents">
+						<{$_troubleshooterStepContents}>
+					</td></tr>
+					<tr>
+					<td colspan="2">
+
+					<{if $_troubleshooterStepHasAttachments == '1'}>
+					<br /><br />
+					<div><table class="hlineheader hlinegray"><tr><th rowspan="2" nowrap><{$_language[trattachments]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table></div>
+					<div class="trattachments">
+					<{foreach key=_attachmentID item=_trAttachment from=$_attachmentContainer}>
+					<div class="trattachmentitem" onclick="javascript: PopupSmallWindow('<{$_trAttachment[link]}>');" style="background-image: URL('<{$_themePath}>images/<{$_trAttachment[icon]}>');">&nbsp;<{$_trAttachment[name]}> (<{$_trAttachment[size]}>)</div>
+					<{/foreach}>
+					</div>
+					<{/if}>
+
+					<form method="post" action="<{$_baseName}><{$_templateGroupPrefix}>/Troubleshooter/Step/View/<{$_troubleshooterCategoryID}>" name="TroubleshooterForm">
+					<{if $_troubleshooterStepCount > 0}>
+					<br />
+					<div><table class="hlineheader hlinegray"><tr><th rowspan="2" nowrap><{$_language[trnextsteps]}></th><td>&nbsp;</td></tr><tr><td class="hlinelower">&nbsp;</td></tr></table></div>
+					<table width="100%" cellpadding="4" cellspacing="1" border="0">
+					<{foreach key=troubleshooterstepid item=_troubleshooterStep from=$_troubleshooterStepContainer}>
+					<tr>
+					<td align="left" width="16" valign="middle" class="troubleshooterstepradio"><input id="trstep<{$_troubleshooterStep[troubleshooterstepid]}>" type="radio" name="nexttroubleshooterstepid" value="<{$_troubleshooterStep[troubleshooterstepid]}>" /></td>
+					<td align="left" valign="middle" class="troubleshooterstepsubject"><label for="trstep<{$_troubleshooterStep[troubleshooterstepid]}>"><{$_troubleshooterStep[subject]}></label></td>
+					</tr>
+					<{/foreach}>
+					</table>
+					<{/if}>
+					<br />
+					<div class="subcontent"><{if $_troubleshooterStepCount > 0}><input class="rebuttonwide2" value="<{$_language[trnext]}>" type="submit" name="actiontype" />&nbsp;&nbsp;&nbsp;<{/if}><{if $_showBackButton == true}><input class="rebuttonwide2" value="<{$_language[trback]}>" onclick="javascript: $('#trisback').val('1');" type="submit" name="actiontype" /><{/if}></div><br />
+					<input type="hidden" name="troubleshooterstephistory" value="<{$_troubleshooterStepHistory}>" /><input type="hidden" name="isback" id="trisback" value="0" />
+					</form>
+
+					</td>
+					</tr>
+				</table>
+
+				<{if $_troubleshooterStepAllowComments == '1'}>
+				<hr class="trstephr" />
+				<{RenderTemplate name="comments"}>
+				<{/if}>
+
+			</div>
+			</div>
+		  ]]></template>
+
+
+	</category>
+
+
+
+
+</swifttemplate>

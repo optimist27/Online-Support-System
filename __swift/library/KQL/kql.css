@@ -1,0 +1,96 @@
+.kqldropdown {
+	BORDER-LEFT: 1px SOLID #b1b1b1;
+	BORDER-TOP: 1px SOLID #b1b1b1;
+	BORDER-RIGHT: 1px SOLID #a9a8a8;
+	BORDER-BOTTOM: 1px SOLID #a9a8a8;
+	BACKGROUND: #f9f9f9;
+	POSITION: absolute;
+	LIST-STYLE: none;
+	PADDING: 0;
+	MARGIN: 0;
+	-MOZ-BOX-SHADOW: 2px 2px 2px #ebebeb;
+	-WEBKIT-BOX-SHADOW: 2px 2px 2px #ebebeb;
+	BOX-SHADOW: 2px 2px 2px #ebebeb;
+
+}
+
+.kqldropdown li {
+	HEIGHT: 20px;
+	PADDING: 6px 8px 4px 8px;
+	BORDER-BOTTOM: 1px SOLID #e5e3e3;
+	DISPLAY: block;
+}
+
+.kqldropdown li:hover {
+	BACKGROUND: #faf5d8;
+	CURSOR: pointer;
+}
+
+.kqldropdown li.selected {
+	BACKGROUND: #faf5d8;
+}
+
+.kqlcontainer {
+	PADDING: 4px 0 4px 0;
+	MARGIN: 0;
+}
+
+.kqlcontrol {
+
+}
+
+.kqltextarea {
+	-MOZ-BOX-SHADOW: 2px 2px 2px #ebebeb;
+	-WEBKIT-BOX-SHADOW: 2px 2px 2px #ebebeb;
+	BOX-SHADOW: 2px 2px 2px #ebebeb;
+	BORDER-TOP: 1px SOLID #b2b2b2;
+	BORDER-LEFT: 1px SOLID #b2b2b2;
+	BORDER-RIGHT: 1px SOLID #979696;
+	BORDER-BOTTOM: 1px SOLID #979696;
+	FONT-FAMILY: Consolas, Monaco, 'Lucida Console', 'Courier New', Calibri, Verdana, Tahoma, Helvetica;
+	FONT-SIZE: 1.4em;
+	PADDING: 4px;
+	BACKGROUND: #FFFFFF;
+}
+
+.kqlerror {
+/*	BACKGROUND: #fad8d8; */
+}
+
+.kqltoolbar {
+	MARGIN-BOTTOM: 2px;
+}
+
+.kqlstatusimage, .kqlstatusimageok, .kqlstatusimageerror {
+	WIDTH: 16px;
+	HEIGHT: 16px;
+	MARGIN-RIGHT: 2px;
+	DISPLAY: block;
+	FLOAT: left;
+}
+
+.kqlstatusimageok {
+	BACKGROUND: URL(%themepath%images/icon_check.gif) no-repeat;
+}
+
+.kqlstatusimageerror {
+	BACKGROUND: URL(%themepath%images/icon_exclamation.gif) no-repeat;
+}
+
+.kqlstatus {
+	DISPLAY: block;
+	POSITION: relative;
+	BOTTOM: 1px;
+}
+
+.kqlstatusinfo, .kqlstatuserror {
+	FONT-FAMILY: 'Lucida Grande',Verdana,Arial,Helvetica,sans-serif;
+	FONT-SIZE: 9px;
+	HEIGHT: 14px;
+	DISPLAY: inline-block;
+}
+
+.kqlstatuserror {
+	DISPLAY: none;
+	MARGIN-LEFT: 6px;
+}

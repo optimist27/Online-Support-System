@@ -1,0 +1,71 @@
+.swiftpopup {
+	DISPLAY: none;
+	BORDER-LEFT: 1px SOLID #b1b1b1;
+	BORDER-TOP: 1px SOLID #b1b1b1;
+	BORDER-RIGHT: 1px SOLID #a9a8a8;
+	BORDER-BOTTOM: 1px SOLID #a9a8a8;
+	BACKGROUND: #FFFFFF;
+	POSITION: absolute;
+	LIST-STYLE: none;
+	PADDING: 0;
+	MARGIN: 0;
+	-MOZ-BOX-SHADOW: 2px 2px 2px #f3f3f3;
+	-WEBKIT-BOX-SHADOW: 2px 2px 2px #f3f3f3;
+	BOX-SHADOW: 2px 2px 2px #f3f3f3;
+	Z-INDEX: 10004;
+	LEFT: 0px;
+	TOP: 0px;
+}
+
+.swiftpopupdialog {
+	BORDER-TOP: none !important;
+	-MOZ-BOX-SHADOW: none !important;
+	-WEBKIT-BOX-SHADOW: none !important;
+	BOX-SHADOW: none !important;
+}
+
+.swiftpopup li {
+	HEIGHT: 20px;
+	PADDING: 6px 8px 4px 8px;
+	BORDER-BOTTOM: 1px SOLID transparent;
+	DISPLAY: block;
+}
+
+.swiftpopup li:hover {
+	BACKGROUND: #fff9c9;
+	CURSOR: pointer;
+}
+
+.swiftpopup li.separator {
+	HEIGHT: 1px !important;
+	PADDING: 0px !important;
+	BACKGROUND: #f1f1f1;
+	BORDER: none;
+}
+
+.swiftpopup li.separator:hover {
+	BACKGROUND: #f1f1f1 !important;
+	CURSOR: default !important;
+}
+
+.swiftpopup li.selected {
+	BACKGROUND: #faf5d8;
+}
+
+.swiftpopupoutline {
+	PADDING: 4px 8px 4px 8px;
+	BORDER-LEFT: 1px SOLID transparent;
+	BORDER-TOP: 1px SOLID transparent;
+	BORDER-RIGHT: 1px SOLID transparent;
+	CURSOR: pointer;
+	Z-INDEX: 10005;
+	POSITION: relative;
+	BACKGROUND: #FFFFFF;
+}
+
+.swiftpopupoutlinehover {
+	BORDER-LEFT: 1px SOLID #b1b1b1;
+	BORDER-TOP: 1px SOLID #b1b1b1;
+	BORDER-RIGHT: 1px SOLID #a9a8a8;
+	Z-INDEX: 10010;
+}

@@ -1,0 +1,1496 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<swiftsettings>
+	<group name="settings_general" module="core" ishidden="0">
+		<setting name="general_companyname" type="text" />
+		<setting name="general_producturl" type="url" />
+		<setting name="general_returnemail" type="text" />
+		<setting name="general_themeoptions" type="title" />
+		<setting name="g_cpdefaultskin" type="custom">
+			<defaultvalue>default</defaultvalue>
+			<customcode><![CDATA[
+			<select name="g_cpdefaultskin" class="swiftselect">
+				<?php echo GenerateSkinSelectOptions(); ?>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="g_displaytopheader" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="g_cpmenu" type="hidden">
+			<defaultvalue>click</defaultvalue>
+		</setting>
+		<setting name="g_jscache" type="hidden">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="g_onlusr" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="g_api" type="title" />
+		<setting name="g_enableapiinterface" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="g_generalsettings" type="title" />
+		<setting name="g_maxtagcloud" type="number">
+			<defaultvalue>10</defaultvalue>
+		</setting>
+		<setting name="g_maxsearchresults" type="number">
+			<defaultvalue>10</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_cpu" module="core" ishidden="0">
+		<setting name="cpu_optimization" type="title" />
+		<setting name="cpu_winappcompresslevel" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="cpu_winappcompresslevel" class="swiftselect">
+				<option value="0"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="0", " selected"); ?>>0 - <?php echo $_SWIFT->Language->Get('nocompression'); ?></option>
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="1", " selected"); ?>>1 - <?php echo $_SWIFT->Language->Get('reccompression'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="2", " selected"); ?>>2</option>
+				<option value="3"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="3", " selected"); ?>>3</option>
+				<option value="4"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="4", " selected"); ?>>4</option>
+				<option value="5"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="5", " selected"); ?>>5</option>
+				<option value="6"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="6", " selected"); ?>>6</option>
+				<option value="7"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="7", " selected"); ?>>7</option>
+				<option value="8"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="8", " selected"); ?>>8</option>
+				<option value="9"<?php echo IIF($_SWIFT->Settings->Get('cpu_winappcompresslevel')=="9", " selected"); ?>>9 - <?php echo $_SWIFT->Language->Get('highestcompression'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="cpu_compresswinappdata" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="cpu_logcleardays" type="number">
+			<defaultvalue>2</defaultvalue>
+		</setting>
+
+		<setting name="cpu_attachments" type="title" />
+		<setting name="cpu_attachtype" type="custom">
+			<defaultvalue>2</defaultvalue>
+			<customcode><![CDATA[
+			<select name="cpu_attachtype" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('cpu_attachtype')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('database'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('cpu_attachtype')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('files'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="cpu_attachchunksize" type="number">
+			<defaultvalue>256000</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_mail" module="core" ishidden="0">
+		<setting name="cpu_mailsettings" type="title" />
+		<setting name="cpu_headerencoding" type="custom">
+			<defaultvalue>base64</defaultvalue>
+			<customcode><![CDATA[
+			<select name="cpu_headerencoding" class="swiftselect">
+				<option value="quoted-printable"<?php echo IIF($_SWIFT->Settings->Get('cpu_headerencoding')=="quoted-printable", " selected"); ?>><?php echo $_SWIFT->Language->Get('encqp'); ?></option>
+				<option value="base64"<?php echo IIF($_SWIFT->Settings->Get('cpu_headerencoding')=="base64", " selected"); ?>><?php echo $_SWIFT->Language->Get('encbase64'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="cpu_messageencoding" type="custom">
+			<defaultvalue>quoted-printable</defaultvalue>
+			<customcode><![CDATA[
+			<select name="cpu_messageencoding" class="swiftselect">
+				<option value="quoted-printable"<?php echo IIF($_SWIFT->Settings->Get('cpu_messageencoding')=="quoted-printable", " selected"); ?>><?php echo $_SWIFT->Language->Get('encqp'); ?></option>
+				<option value="base64"<?php echo IIF($_SWIFT->Settings->Get('cpu_messageencoding')=="base64", " selected"); ?>><?php echo $_SWIFT->Language->Get('encbase64'); ?></option>
+				<option value="binary"<?php echo IIF($_SWIFT->Settings->Get('cpu_messageencoding')=="binary", " selected"); ?>><?php echo $_SWIFT->Language->Get('encbinary'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="cpu_maildefaultpriority" type="custom">
+			<defaultvalue>3</defaultvalue>
+			<customcode><![CDATA[
+			<select name="cpu_maildefaultpriority" class="swiftselect">
+				<option value="3"<?php echo IIF($_SWIFT->Settings->Get('cpu_maildefaultpriority')=="3", " selected"); ?>><?php echo $_SWIFT->Language->Get('mailprioritynormal'); ?></option>
+				<option value="5"<?php echo IIF($_SWIFT->Settings->Get('cpu_maildefaultpriority')=="5", " selected"); ?>><?php echo $_SWIFT->Language->Get('mailprioritylow'); ?></option>
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('cpu_maildefaultpriority')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('mailpriorityhigh'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="cpu_enablehtmlmails" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="cpu_enablemailqueue" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="cpu_mailqueuebatch" type="number">
+			<defaultvalue>5</defaultvalue>
+		</setting>
+		<setting name="cpu_smtp" type="title" />
+		<setting name="cpu_enablesmtp" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="cpu_smtphost" type="text" />
+		<setting name="cpu_smtpport" type="number">
+			<defaultvalue>25</defaultvalue>
+		</setting>
+		<setting name="cpu_smtpportssl" type="number">
+			<defaultvalue>465</defaultvalue>
+		</setting>
+		<setting name="cpu_smtpuseauth" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="cpu_smtpuser" type="text" />
+		<setting name="cpu_smtppass" type="password" />
+
+		<setting name="cpu_smtptype" type="custom">
+			<defaultvalue>nonssl</defaultvalue>
+			<customcode><![CDATA[
+			<select name="cpu_smtptype" class="swiftselect">
+				<option value="nonssl"<?php echo IIF($_SWIFT->Settings->Get('cpu_smtptype')=="nonssl", " selected"); ?>><?php echo $_SWIFT->Language->Get('smtpnonssl'); ?></option>
+				<option value="tls"<?php echo IIF($_SWIFT->Settings->Get('cpu_smtptype')=="tls", " selected"); ?>><?php echo $_SWIFT->Language->Get('smtptls'); ?></option>
+				<option value="ssl"<?php echo IIF($_SWIFT->Settings->Get('cpu_smtptype')=="ssl", " selected"); ?>><?php echo $_SWIFT->Language->Get('smtpssl'); ?></option>
+				<option value="sslv2"<?php echo IIF($_SWIFT->Settings->Get('cpu_smtptype')=="sslv2", " selected"); ?>><?php echo $_SWIFT->Language->Get('smtpssl2'); ?></option>
+				<option value="sslv3"<?php echo IIF($_SWIFT->Settings->Get('cpu_smtptype')=="sslv3", " selected"); ?>><?php echo $_SWIFT->Language->Get('smtpssl3'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+	</group>
+
+	<group name="settings_users" module="core" ishidden="0">
+		<setting name="user_enableemailverification" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="user_enablecaptcha" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="user_dispatchregemail" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+
+		<setting name="user_autodelete" type="title" />
+		<setting name="user_adelunveri" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="user_delcleardays" type="number">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="user_organizations" type="title" />
+		<setting name="user_orgselection" type="custom">
+			<defaultvalue>createmerge</defaultvalue>
+			<customcode><![CDATA[
+			<select name="user_orgselection" class="swiftselect">
+				<option value="dontallow"<?php echo IIF($_SWIFT->Settings->Get('user_orgselection')=="dontallow", " selected"); ?>><?php echo $_SWIFT->Language->Get('uodontallow'); ?></option>
+				<option value="createnew"<?php echo IIF($_SWIFT->Settings->Get('user_orgselection')=="createnew", " selected"); ?>><?php echo $_SWIFT->Language->Get('uocreatenew'); ?></option>
+				<option value="createmerge"<?php echo IIF($_SWIFT->Settings->Get('user_orgselection')=="createmerge", " selected"); ?>><?php echo $_SWIFT->Language->Get('uocreatemerge'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="user_orgrestrictautoadd" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="user_orgprofileupdate" type="custom">
+			<defaultvalue>allusers</defaultvalue>
+			<customcode><![CDATA[
+			<select name="user_orgprofileupdate" class="swiftselect">
+				<option value="allusers"<?php echo IIF($_SWIFT->Settings->Get('user_orgprofileupdate')=="dontallow", " selected"); ?>><?php echo $_SWIFT->Language->Get('uoallusers'); ?></option>
+				<option value="managersonly"<?php echo IIF($_SWIFT->Settings->Get('user_orgprofileupdate')=="managersonly", " selected"); ?>><?php echo $_SWIFT->Language->Get('uomanagersonly'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="user_orgdefaultclassification" type="custom">
+			<defaultvalue>user</defaultvalue>
+			<customcode><![CDATA[
+			<select name="user_orgdefaultclassification" class="swiftselect">
+				<option value="user"<?php echo IIF($_SWIFT->Settings->Get('user_orgdefaultclassification')=="user", " selected"); ?>><?php echo $_SWIFT->Language->Get('uouser'); ?></option>
+				<option value="manager"<?php echo IIF($_SWIFT->Settings->Get('user_orgdefaultclassification')=="manager", " selected"); ?>><?php echo $_SWIFT->Language->Get('uomanager'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+	</group>
+
+	<group name="settings_security" module="core" ishidden="0">
+		<setting name="security_sessioninactivity" type="text">
+			<defaultvalue>21600</defaultvalue>
+		</setting>
+		<setting name="security_sessionvar" type="hidden">
+			<defaultvalue>cookie</defaultvalue>
+			<customcode><![CDATA[
+			<select name="security_sessionvar" class="swiftselect">
+				<option value="cookie"<?php echo IIF($_SWIFT->Settings->Get('security_sessionvar')=="cookie", " selected"); ?>><?php echo $_SWIFT->Language->Get('cookie'); ?></option>
+				<option value="url"<?php echo IIF($_SWIFT->Settings->Get('security_sessionvar')=="url", " selected"); ?>><?php echo $_SWIFT->Language->Get('url'); ?></option>
+				<option value="urlcookie"<?php echo IIF($_SWIFT->Settings->Get('security_sessionvar')=="urlcookie", " selected"); ?>><?php echo $_SWIFT->Language->Get('urlcookie'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="security_visitorinactivity" type="text" module="livechat">
+			<defaultvalue>500</defaultvalue>
+		</setting>
+		<setting name="security_cookiedomain" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="security_cookiepath" type="text">
+			<defaultvalue>/</defaultvalue>
+		</setting>
+		<setting name="security_staffpasswordpolicy" type="title" />
+		<setting name="security_sppminchars" type="number">
+			<defaultvalue>8</defaultvalue>
+		</setting>
+		<setting name="security_sppminnumbers" type="number">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_sppminsymbols" type="number">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_sppmincapitalchars" type="number">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_sppexpiredays" type="number">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_captcha" type="title" />
+		<setting name="security_captchatype" type="custom">
+			<defaultvalue>local</defaultvalue>
+			<customcode><![CDATA[
+			<label for="captchalocal"><input type="radio" id="captchalocal" name="security_captchatype" value="local"<?php echo IIF($_SWIFT->Settings->Get('security_captchatype') == 'local', ' checked'); ?>> <?php echo $_SWIFT->Language->Get('captchalocal'); ?></label> &nbsp;&nbsp;<label for="captchare"><input type="radio" id="captchare" name="security_captchatype" value="recaptcha"<?php echo IIF($_SWIFT->Settings->Get('security_captchatype') == 'recaptcha', ' checked'); ?>> <?php echo $_SWIFT->Language->Get('captcharecaptcha'); ?></a>
+			]]></customcode>
+		</setting>
+		<setting name="security_recpublickey" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="security_recprivatekey" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="security_captcha" type="title" />
+		<setting name="security_commentscaptcha" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_autoapprovecomments" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_enableakismet" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="security_akismetkey" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_loginshare" module="core" ishidden="0">
+		<setting name="loginshare_staff" type="title" />
+		<setting name="loginshare_staffenable" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="loginshare_stafftitle" type="text">
+			<defaultvalue>Custom LoginShare</defaultvalue>
+		</setting>
+		<setting name="loginshare_staffurl" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="loginshare_user" type="title" />
+		<setting name="loginshare_userenable" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="loginshare_usertitle" type="text">
+			<defaultvalue>Custom LoginShare</defaultvalue>
+		</setting>
+		<setting name="loginshare_userurl" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_datetime" module="core" ishidden="0">
+		<setting name="dt_dateformat" type="text">
+			<defaultvalue>%d %B %Y</defaultvalue>
+		</setting>
+		<setting name="dt_timeformat" type="text">
+			<defaultvalue>%I:%M %p</defaultvalue>
+		</setting>
+		<setting name="dt_datetimeformat" type="text">
+			<defaultvalue>%d %B %Y %I:%M %p</defaultvalue>
+		</setting>
+		<setting name="dt_timezonephp" type="custom">
+			<defaultvalue>GMT</defaultvalue>
+			<customcode>
+        <![CDATA[
+			<select name="dt_timezonephp" class="swiftselect">
+        <option value="UTC"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "UTC", " selected"); ?>>UTC</option>
+        <option value="US/Pacific"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Pacific", " selected"); ?>>US/Pacific</option>
+        <option value="US/Mountain"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Mountain", " selected"); ?>>US/Mountain</option>
+        <option value="US/Central"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Central", " selected"); ?>>US/Central</option>
+        <option value="US/Eastern"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Eastern", " selected"); ?>>US/Eastern</option>
+        <option value="US/Alaska"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Alaska", " selected"); ?>>US/Alaska</option>
+        <option value="US/Aleutian"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Aleutian", " selected"); ?>>US/Aleutian</option>
+        <option value="US/Arizona"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Arizona", " selected"); ?>>US/Arizona</option>
+        <option value="US/East-Indiana"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/East-Indiana", " selected"); ?>>US/East-Indiana</option>
+        <option value="US/Hawaii"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Hawaii", " selected"); ?>>US/Hawaii</option>
+        <option value="US/Indiana-Starke"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Indiana-Starke", " selected"); ?>>US/Indiana-Starke</option>
+        <option value="US/Michigan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Michigan", " selected"); ?>>US/Michigan</option>
+        <option value="US/Samoa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "US/Samoa", " selected"); ?>>US/Samoa</option>
+        <option value="Canada/Atlantic"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Atlantic", " selected"); ?>>Canada/Atlantic</option>
+        <option value="Canada/Central"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Central", " selected"); ?>>Canada/Central</option>
+        <option value="Canada/East-Saskatchewan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/East-Saskatchewan", " selected"); ?>>Canada/East-Saskatchewan</option>
+        <option value="Canada/Eastern"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Eastern", " selected"); ?>>Canada/Eastern</option>
+        <option value="Canada/Mountain"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Mountain", " selected"); ?>>Canada/Mountain</option>
+        <option value="Canada/Newfoundland"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Newfoundland", " selected"); ?>>Canada/Newfoundland</option>
+        <option value="Canada/Pacific"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Pacific", " selected"); ?>>Canada/Pacific</option>
+        <option value="Canada/Saskatchewan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Saskatchewan", " selected"); ?>>Canada/Saskatchewan</option>
+        <option value="Canada/Yukon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Canada/Yukon", " selected"); ?>>Canada/Yukon</option>
+        <option value="Europe/Amsterdam"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Amsterdam", " selected"); ?>>Europe/Amsterdam</option>
+        <option value="Europe/Andorra"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Andorra", " selected"); ?>>Europe/Andorra</option>
+        <option value="Europe/Athens"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Athens", " selected"); ?>>Europe/Athens</option>
+        <option value="Europe/Belfast"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Belfast", " selected"); ?>>Europe/Belfast</option>
+        <option value="Europe/Belgrade"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Belgrade", " selected"); ?>>Europe/Belgrade</option>
+        <option value="Europe/Berlin"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Berlin", " selected"); ?>>Europe/Berlin</option>
+        <option value="Europe/Bratislava"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Bratislava", " selected"); ?>>Europe/Bratislava</option>
+        <option value="Europe/Brussels"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Brussels", " selected"); ?>>Europe/Brussels</option>
+        <option value="Europe/Bucharest"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Bucharest", " selected"); ?>>Europe/Bucharest</option>
+        <option value="Europe/Budapest"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Budapest", " selected"); ?>>Europe/Budapest</option>
+        <option value="Europe/Chisinau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Chisinau", " selected"); ?>>Europe/Chisinau</option>
+        <option value="Europe/Copenhagen"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Copenhagen", " selected"); ?>>Europe/Copenhagen</option>
+        <option value="Europe/Dublin"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Dublin", " selected"); ?>>Europe/Dublin</option>
+        <option value="Europe/Gibraltar"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Gibraltar", " selected"); ?>>Europe/Gibraltar</option>
+        <option value="Europe/Guernsey"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Guernsey", " selected"); ?>>Europe/Guernsey</option>
+        <option value="Europe/Helsinki"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Helsinki", " selected"); ?>>Europe/Helsinki</option>
+        <option value="Europe/Isle_of_Man"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Isle_of_Man", " selected"); ?>>Europe/Isle_of_Man</option>
+        <option value="Europe/Istanbul"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Istanbul", " selected"); ?>>Europe/Istanbul</option>
+        <option value="Europe/Jersey"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Jersey", " selected"); ?>>Europe/Jersey</option>
+        <option value="Europe/Kaliningrad"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Kaliningrad", " selected"); ?>>Europe/Kaliningrad</option>
+        <option value="Europe/Kiev"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Kiev", " selected"); ?>>Europe/Kiev</option>
+        <option value="Europe/Lisbon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Lisbon", " selected"); ?>>Europe/Lisbon</option>
+        <option value="Europe/Ljubljana"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Ljubljana", " selected"); ?>>Europe/Ljubljana</option>
+        <option value="Europe/London"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/London", " selected"); ?>>Europe/London</option>
+        <option value="Europe/Luxembourg"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Luxembourg", " selected"); ?>>Europe/Luxembourg</option>
+        <option value="Europe/Madrid"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Madrid", " selected"); ?>>Europe/Madrid</option>
+        <option value="Europe/Malta"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Malta", " selected"); ?>>Europe/Malta</option>
+        <option value="Europe/Mariehamn"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Mariehamn", " selected"); ?>>Europe/Mariehamn</option>
+        <option value="Europe/Minsk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Minsk", " selected"); ?>>Europe/Minsk</option>
+        <option value="Europe/Monaco"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Monaco", " selected"); ?>>Europe/Monaco</option>
+        <option value="Europe/Moscow"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Moscow", " selected"); ?>>Europe/Moscow</option>
+        <option value="Europe/Nicosia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Nicosia", " selected"); ?>>Europe/Nicosia</option>
+        <option value="Europe/Oslo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Oslo", " selected"); ?>>Europe/Oslo</option>
+        <option value="Europe/Paris"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Paris", " selected"); ?>>Europe/Paris</option>
+        <option value="Europe/Podgorica"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Podgorica", " selected"); ?>>Europe/Podgorica</option>
+        <option value="Europe/Prague"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Prague", " selected"); ?>>Europe/Prague</option>
+        <option value="Europe/Riga"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Riga", " selected"); ?>>Europe/Riga</option>
+        <option value="Europe/Rome"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Rome", " selected"); ?>>Europe/Rome</option>
+        <option value="Europe/Samara"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Samara", " selected"); ?>>Europe/Samara</option>
+        <option value="Europe/San_Marino"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/San_Marino", " selected"); ?>>Europe/San_Marino</option>
+        <option value="Europe/Sarajevo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Sarajevo", " selected"); ?>>Europe/Sarajevo</option>
+        <option value="Europe/Simferopol"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Simferopol", " selected"); ?>>Europe/Simferopol</option>
+        <option value="Europe/Skopje"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Skopje", " selected"); ?>>Europe/Skopje</option>
+        <option value="Europe/Sofia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Sofia", " selected"); ?>>Europe/Sofia</option>
+        <option value="Europe/Stockholm"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Stockholm", " selected"); ?>>Europe/Stockholm</option>
+        <option value="Europe/Tallinn"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Tallinn", " selected"); ?>>Europe/Tallinn</option>
+        <option value="Europe/Tirane"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Tirane", " selected"); ?>>Europe/Tirane</option>
+        <option value="Europe/Tiraspol"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Tiraspol", " selected"); ?>>Europe/Tiraspol</option>
+        <option value="Europe/Uzhgorod"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Uzhgorod", " selected"); ?>>Europe/Uzhgorod</option>
+        <option value="Europe/Vaduz"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Vaduz", " selected"); ?>>Europe/Vaduz</option>
+        <option value="Europe/Vatican"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Vatican", " selected"); ?>>Europe/Vatican</option>
+        <option value="Europe/Vienna"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Vienna", " selected"); ?>>Europe/Vienna</option>
+        <option value="Europe/Vilnius"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Vilnius", " selected"); ?>>Europe/Vilnius</option>
+        <option value="Europe/Volgograd"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Volgograd", " selected"); ?>>Europe/Volgograd</option>
+        <option value="Europe/Warsaw"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Warsaw", " selected"); ?>>Europe/Warsaw</option>
+        <option value="Europe/Zagreb"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Zagreb", " selected"); ?>>Europe/Zagreb</option>
+        <option value="Europe/Zaporozhye"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Zaporozhye", " selected"); ?>>Europe/Zaporozhye</option>
+        <option value="Europe/Zurich"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Europe/Zurich", " selected"); ?>>Europe/Zurich</option>
+        <option value="Brazil/Acre"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Brazil/Acre", " selected"); ?>>Brazil/Acre</option>
+        <option value="Brazil/DeNoronha"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Brazil/DeNoronha", " selected"); ?>>Brazil/DeNoronha</option>
+        <option value="Brazil/East"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Brazil/East", " selected"); ?>>Brazil/East</option>
+        <option value="Brazil/West"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Brazil/West", " selected"); ?>>Brazil/West</option>
+        <option value="Australia/ACT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/ACT", " selected"); ?>>Australia/ACT</option>
+        <option value="Australia/Adelaide"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Adelaide", " selected"); ?>>Australia/Adelaide</option>
+        <option value="Australia/Brisbane"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Brisbane", " selected"); ?>>Australia/Brisbane</option>
+        <option value="Australia/Broken_Hill"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Broken_Hill", " selected"); ?>>Australia/Broken_Hill</option>
+        <option value="Australia/Canberra"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Canberra", " selected"); ?>>Australia/Canberra</option>
+        <option value="Australia/Currie"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Currie", " selected"); ?>>Australia/Currie</option>
+        <option value="Australia/Darwin"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Darwin", " selected"); ?>>Australia/Darwin</option>
+        <option value="Australia/Eucla"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Eucla", " selected"); ?>>Australia/Eucla</option>
+        <option value="Australia/Hobart"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Hobart", " selected"); ?>>Australia/Hobart</option>
+        <option value="Australia/LHI"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/LHI", " selected"); ?>>Australia/LHI</option>
+        <option value="Australia/Lindeman"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Lindeman", " selected"); ?>>Australia/Lindeman</option>
+        <option value="Australia/Lord_Howe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Lord_Howe", " selected"); ?>>Australia/Lord_Howe</option>
+        <option value="Australia/Melbourne"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Melbourne", " selected"); ?>>Australia/Melbourne</option>
+        <option value="Australia/North"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/North", " selected"); ?>>Australia/North</option>
+        <option value="Australia/NSW"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/NSW", " selected"); ?>>Australia/NSW</option>
+        <option value="Australia/Perth"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Perth", " selected"); ?>>Australia/Perth</option>
+        <option value="Australia/Queensland"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Queensland", " selected"); ?>>Australia/Queensland</option>
+        <option value="Australia/South"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/South", " selected"); ?>>Australia/South</option>
+        <option value="Australia/Sydney"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Sydney", " selected"); ?>>Australia/Sydney</option>
+        <option value="Australia/Tasmania"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Tasmania", " selected"); ?>>Australia/Tasmania</option>
+        <option value="Australia/Victoria"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Victoria", " selected"); ?>>Australia/Victoria</option>
+        <option value="Australia/West"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/West", " selected"); ?>>Australia/West</option>
+        <option value="Australia/Yancowinna"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Australia/Yancowinna", " selected"); ?>>Australia/Yancowinna</option>
+        <option value="Poland"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Poland", " selected"); ?>>Poland</option>
+        <option value="Portugal"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Portugal", " selected"); ?>>Portugal</option>
+        <option value="Iran"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Iran", " selected"); ?>>Iran</option>
+        <option value="Israel"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Israel", " selected"); ?>>Israel</option>
+        <option value="Jamaica"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Jamaica", " selected"); ?>>Jamaica</option>
+        <option value="Japan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Japan", " selected"); ?>>Japan</option>
+        <option value="Hongkong"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Hongkong", " selected"); ?>>Hongkong</option>
+        <option value="Singapore"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Singapore", " selected"); ?>>Singapore</option>
+        <option value="Turkey"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Turkey", " selected"); ?>>Turkey</option>
+        <option value="Asia/Aden"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Aden", " selected"); ?>>Asia/Aden</option>
+        <option value="Asia/Almaty"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Almaty", " selected"); ?>>Asia/Almaty</option>
+        <option value="Asia/Amman"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Amman", " selected"); ?>>Asia/Amman</option>
+        <option value="Asia/Anadyr"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Anadyr", " selected"); ?>>Asia/Anadyr</option>
+        <option value="Asia/Aqtau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Aqtau", " selected"); ?>>Asia/Aqtau</option>
+        <option value="Asia/Aqtobe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Aqtobe", " selected"); ?>>Asia/Aqtobe</option>
+        <option value="Asia/Ashgabat"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Ashgabat", " selected"); ?>>Asia/Ashgabat</option>
+        <option value="Asia/Ashkhabad"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Ashkhabad", " selected"); ?>>Asia/Ashkhabad</option>
+        <option value="Asia/Baghdad"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Baghdad", " selected"); ?>>Asia/Baghdad</option>
+        <option value="Asia/Bahrain"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Bahrain", " selected"); ?>>Asia/Bahrain</option>
+        <option value="Asia/Baku"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Baku", " selected"); ?>>Asia/Baku</option>
+        <option value="Asia/Bangkok"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Bangkok", " selected"); ?>>Asia/Bangkok</option>
+        <option value="Asia/Beirut"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Beirut", " selected"); ?>>Asia/Beirut</option>
+        <option value="Asia/Bishkek"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Bishkek", " selected"); ?>>Asia/Bishkek</option>
+        <option value="Asia/Brunei"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Brunei", " selected"); ?>>Asia/Brunei</option>
+        <option value="Asia/Calcutta"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Calcutta", " selected"); ?>>Asia/Calcutta</option>
+        <option value="Asia/Choibalsan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Choibalsan", " selected"); ?>>Asia/Choibalsan</option>
+        <option value="Asia/Chongqing"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Chongqing", " selected"); ?>>Asia/Chongqing</option>
+        <option value="Asia/Chungking"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Chungking", " selected"); ?>>Asia/Chungking</option>
+        <option value="Asia/Colombo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Colombo", " selected"); ?>>Asia/Colombo</option>
+        <option value="Asia/Dacca"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Dacca", " selected"); ?>>Asia/Dacca</option>
+        <option value="Asia/Damascus"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Damascus", " selected"); ?>>Asia/Damascus</option>
+        <option value="Asia/Dhaka"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Dhaka", " selected"); ?>>Asia/Dhaka</option>
+        <option value="Asia/Dili"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Dili", " selected"); ?>>Asia/Dili</option>
+        <option value="Asia/Dubai"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Dubai", " selected"); ?>>Asia/Dubai</option>
+        <option value="Asia/Dushanbe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Dushanbe", " selected"); ?>>Asia/Dushanbe</option>
+        <option value="Asia/Gaza"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Gaza", " selected"); ?>>Asia/Gaza</option>
+        <option value="Asia/Harbin"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Harbin", " selected"); ?>>Asia/Harbin</option>
+        <option value="Asia/Hong_Kong"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Hong_Kong", " selected"); ?>>Asia/Hong_Kong</option>
+        <option value="Asia/Hovd"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Hovd", " selected"); ?>>Asia/Hovd</option>
+        <option value="Asia/Irkutsk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Irkutsk", " selected"); ?>>Asia/Irkutsk</option>
+        <option value="Asia/Istanbul"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Istanbul", " selected"); ?>>Asia/Istanbul</option>
+        <option value="Asia/Jakarta"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Jakarta", " selected"); ?>>Asia/Jakarta</option>
+        <option value="Asia/Jayapura"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Jayapura", " selected"); ?>>Asia/Jayapura</option>
+        <option value="Asia/Jerusalem"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Jerusalem", " selected"); ?>>Asia/Jerusalem</option>
+        <option value="Asia/Kabul"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Kabul", " selected"); ?>>Asia/Kabul</option>
+        <option value="Asia/Kamchatka"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Kamchatka", " selected"); ?>>Asia/Kamchatka</option>
+        <option value="Asia/Karachi"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Karachi", " selected"); ?>>Asia/Karachi</option>
+        <option value="Asia/Kashgar"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Kashgar", " selected"); ?>>Asia/Kashgar</option>
+        <option value="Asia/Katmandu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Katmandu", " selected"); ?>>Asia/Katmandu</option>
+        <option value="Asia/Krasnoyarsk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Krasnoyarsk", " selected"); ?>>Asia/Krasnoyarsk</option>
+        <option value="Asia/Kuala_Lumpur"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Kuala_Lumpur", " selected"); ?>>Asia/Kuala_Lumpur</option>
+        <option value="Asia/Kuching"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Kuching", " selected"); ?>>Asia/Kuching</option>
+        <option value="Asia/Kuwait"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Kuwait", " selected"); ?>>Asia/Kuwait</option>
+        <option value="Asia/Macao"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Macao", " selected"); ?>>Asia/Macao</option>
+        <option value="Asia/Macau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Macau", " selected"); ?>>Asia/Macau</option>
+        <option value="Asia/Magadan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Magadan", " selected"); ?>>Asia/Magadan</option>
+        <option value="Asia/Makassar"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Makassar", " selected"); ?>>Asia/Makassar</option>
+        <option value="Asia/Manila"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Manila", " selected"); ?>>Asia/Manila</option>
+        <option value="Asia/Muscat"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Muscat", " selected"); ?>>Asia/Muscat</option>
+        <option value="Asia/Nicosia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Nicosia", " selected"); ?>>Asia/Nicosia</option>
+        <option value="Asia/Novosibirsk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Novosibirsk", " selected"); ?>>Asia/Novosibirsk</option>
+        <option value="Asia/Omsk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Omsk", " selected"); ?>>Asia/Omsk</option>
+        <option value="Asia/Oral"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Oral", " selected"); ?>>Asia/Oral</option>
+        <option value="Asia/Phnom_Penh"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Phnom_Penh", " selected"); ?>>Asia/Phnom_Penh</option>
+        <option value="Asia/Pontianak"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Pontianak", " selected"); ?>>Asia/Pontianak</option>
+        <option value="Asia/Pyongyang"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Pyongyang", " selected"); ?>>Asia/Pyongyang</option>
+        <option value="Asia/Qatar"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Qatar", " selected"); ?>>Asia/Qatar</option>
+        <option value="Asia/Qyzylorda"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Qyzylorda", " selected"); ?>>Asia/Qyzylorda</option>
+        <option value="Asia/Rangoon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Rangoon", " selected"); ?>>Asia/Rangoon</option>
+        <option value="Asia/Riyadh"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Riyadh", " selected"); ?>>Asia/Riyadh</option>
+        <option value="Asia/Saigon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Saigon", " selected"); ?>>Asia/Saigon</option>
+        <option value="Asia/Sakhalin"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Sakhalin", " selected"); ?>>Asia/Sakhalin</option>
+        <option value="Asia/Samarkand"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Samarkand", " selected"); ?>>Asia/Samarkand</option>
+        <option value="Asia/Seoul"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Seoul", " selected"); ?>>Asia/Seoul</option>
+        <option value="Asia/Shanghai"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Shanghai", " selected"); ?>>Asia/Shanghai</option>
+        <option value="Asia/Singapore"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Singapore", " selected"); ?>>Asia/Singapore</option>
+        <option value="Asia/Taipei"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Taipei", " selected"); ?>>Asia/Taipei</option>
+        <option value="Asia/Tashkent"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Tashkent", " selected"); ?>>Asia/Tashkent</option>
+        <option value="Asia/Tbilisi"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Tbilisi", " selected"); ?>>Asia/Tbilisi</option>
+        <option value="Asia/Tehran"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Tehran", " selected"); ?>>Asia/Tehran</option>
+        <option value="Asia/Tel_Aviv"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Tel_Aviv", " selected"); ?>>Asia/Tel_Aviv</option>
+        <option value="Asia/Thimbu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Thimbu", " selected"); ?>>Asia/Thimbu</option>
+        <option value="Asia/Thimphu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Thimphu", " selected"); ?>>Asia/Thimphu</option>
+        <option value="Asia/Tokyo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Tokyo", " selected"); ?>>Asia/Tokyo</option>
+        <option value="Asia/Ujung_Pandang"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Ujung_Pandang", " selected"); ?>>Asia/Ujung_Pandang</option>
+        <option value="Asia/Ulaanbaatar"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Ulaanbaatar", " selected"); ?>>Asia/Ulaanbaatar</option>
+        <option value="Asia/Ulan_Bator"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Ulan_Bator", " selected"); ?>>Asia/Ulan_Bator</option>
+        <option value="Asia/Urumqi"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Urumqi", " selected"); ?>>Asia/Urumqi</option>
+        <option value="Asia/Vientiane"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Vientiane", " selected"); ?>>Asia/Vientiane</option>
+        <option value="Asia/Vladivostok"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Vladivostok", " selected"); ?>>Asia/Vladivostok</option>
+        <option value="Asia/Yakutsk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Yakutsk", " selected"); ?>>Asia/Yakutsk</option>
+        <option value="Asia/Yekaterinburg"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Yekaterinburg", " selected"); ?>>Asia/Yekaterinburg</option>
+        <option value="Asia/Yerevan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Asia/Yerevan", " selected"); ?>>Asia/Yerevan</option>
+        <option value="America/Adak"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Adak", " selected"); ?>>America/Adak</option>
+        <option value="America/Anchorage"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Anchorage", " selected"); ?>>America/Anchorage</option>
+        <option value="America/Anguilla"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Anguilla", " selected"); ?>>America/Anguilla</option>
+        <option value="America/Antigua"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Antigua", " selected"); ?>>America/Antigua</option>
+        <option value="America/Araguaina"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Araguaina", " selected"); ?>>America/Araguaina</option>
+        <option value="America/Argentina/Buenos_Aires"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Buenos_Aires", " selected"); ?>>America/Argentina/Buenos_Aires</option>
+        <option value="America/Argentina/Catamarca"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Catamarca", " selected"); ?>>America/Argentina/Catamarca</option>
+        <option value="America/Argentina/ComodRivadavia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/ComodRivadavia", " selected"); ?>>America/Argentina/ComodRivadavia</option>
+        <option value="America/Argentina/Cordoba"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Cordoba", " selected"); ?>>America/Argentina/Cordoba</option>
+        <option value="America/Argentina/Jujuy"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Jujuy", " selected"); ?>>America/Argentina/Jujuy</option>
+        <option value="America/Argentina/La_Rioja"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/La_Rioja", " selected"); ?>>America/Argentina/La_Rioja</option>
+        <option value="America/Argentina/Mendoza"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Mendoza", " selected"); ?>>America/Argentina/Mendoza</option>
+        <option value="America/Argentina/Rio_Gallegos"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Rio_Gallegos", " selected"); ?>>America/Argentina/Rio_Gallegos</option>
+        <option value="America/Argentina/San_Juan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/San_Juan", " selected"); ?>>America/Argentina/San_Juan</option>
+        <option value="America/Argentina/Tucuman"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Tucuman", " selected"); ?>>America/Argentina/Tucuman</option>
+        <option value="America/Argentina/Ushuaia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Argentina/Ushuaia", " selected"); ?>>America/Argentina/Ushuaia</option>
+        <option value="America/Aruba"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Aruba", " selected"); ?>>America/Aruba</option>
+        <option value="America/Asuncion"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Asuncion", " selected"); ?>>America/Asuncion</option>
+        <option value="America/Atikokan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Atikokan", " selected"); ?>>America/Atikokan</option>
+        <option value="America/Atka"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Atka", " selected"); ?>>America/Atka</option>
+        <option value="America/Bahia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Bahia", " selected"); ?>>America/Bahia</option>
+        <option value="America/Barbados"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Barbados", " selected"); ?>>America/Barbados</option>
+        <option value="America/Belem"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Belem", " selected"); ?>>America/Belem</option>
+        <option value="America/Belize"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Belize", " selected"); ?>>America/Belize</option>
+        <option value="America/Blanc-Sablon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Blanc-Sablon", " selected"); ?>>America/Blanc-Sablon</option>
+        <option value="America/Boa_Vista"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Boa_Vista", " selected"); ?>>America/Boa_Vista</option>
+        <option value="America/Bogota"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Bogota", " selected"); ?>>America/Bogota</option>
+        <option value="America/Boise"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Boise", " selected"); ?>>America/Boise</option>
+        <option value="America/Buenos_Aires"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Buenos_Aires", " selected"); ?>>America/Buenos_Aires</option>
+        <option value="America/Cambridge_Bay"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Cambridge_Bay", " selected"); ?>>America/Cambridge_Bay</option>
+        <option value="America/Campo_Grande"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Campo_Grande", " selected"); ?>>America/Campo_Grande</option>
+        <option value="America/Cancun"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Cancun", " selected"); ?>>America/Cancun</option>
+        <option value="America/Caracas"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Caracas", " selected"); ?>>America/Caracas</option>
+        <option value="America/Catamarca"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Catamarca", " selected"); ?>>America/Catamarca</option>
+        <option value="America/Cayenne"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Cayenne", " selected"); ?>>America/Cayenne</option>
+        <option value="America/Cayman"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Cayman", " selected"); ?>>America/Cayman</option>
+        <option value="America/Chicago"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Chicago", " selected"); ?>>America/Chicago</option>
+        <option value="America/Chihuahua"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Chihuahua", " selected"); ?>>America/Chihuahua</option>
+        <option value="America/Coral_Harbour"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Coral_Harbour", " selected"); ?>>America/Coral_Harbour</option>
+        <option value="America/Cordoba"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Cordoba", " selected"); ?>>America/Cordoba</option>
+        <option value="America/Costa_Rica"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Costa_Rica", " selected"); ?>>America/Costa_Rica</option>
+        <option value="America/Cuiaba"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Cuiaba", " selected"); ?>>America/Cuiaba</option>
+        <option value="America/Curacao"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Curacao", " selected"); ?>>America/Curacao</option>
+        <option value="America/Danmarkshavn"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Danmarkshavn", " selected"); ?>>America/Danmarkshavn</option>
+        <option value="America/Dawson"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Dawson", " selected"); ?>>America/Dawson</option>
+        <option value="America/Dawson_Creek"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Dawson_Creek", " selected"); ?>>America/Dawson_Creek</option>
+        <option value="America/Denver"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Denver", " selected"); ?>>America/Denver</option>
+        <option value="America/Detroit"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Detroit", " selected"); ?>>America/Detroit</option>
+        <option value="America/Dominica"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Dominica", " selected"); ?>>America/Dominica</option>
+        <option value="America/Edmonton"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Edmonton", " selected"); ?>>America/Edmonton</option>
+        <option value="America/Eirunepe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Eirunepe", " selected"); ?>>America/Eirunepe</option>
+        <option value="America/El_Salvador"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/El_Salvador", " selected"); ?>>America/El_Salvador</option>
+        <option value="America/Ensenada"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Ensenada", " selected"); ?>>America/Ensenada</option>
+        <option value="America/Fort_Wayne"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Fort_Wayne", " selected"); ?>>America/Fort_Wayne</option>
+        <option value="America/Fortaleza"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Fortaleza", " selected"); ?>>America/Fortaleza</option>
+        <option value="America/Glace_Bay"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Glace_Bay", " selected"); ?>>America/Glace_Bay</option>
+        <option value="America/Godthab"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Godthab", " selected"); ?>>America/Godthab</option>
+        <option value="America/Goose_Bay"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Goose_Bay", " selected"); ?>>America/Goose_Bay</option>
+        <option value="America/Grand_Turk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Grand_Turk", " selected"); ?>>America/Grand_Turk</option>
+        <option value="America/Grenada"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Grenada", " selected"); ?>>America/Grenada</option>
+        <option value="America/Guadeloupe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Guadeloupe", " selected"); ?>>America/Guadeloupe</option>
+        <option value="America/Guatemala"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Guatemala", " selected"); ?>>America/Guatemala</option>
+        <option value="America/Guayaquil"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Guayaquil", " selected"); ?>>America/Guayaquil</option>
+        <option value="America/Guyana"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Guyana", " selected"); ?>>America/Guyana</option>
+        <option value="America/Halifax"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Halifax", " selected"); ?>>America/Halifax</option>
+        <option value="America/Havana"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Havana", " selected"); ?>>America/Havana</option>
+        <option value="America/Hermosillo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Hermosillo", " selected"); ?>>America/Hermosillo</option>
+        <option value="America/Indiana/Indianapolis"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Indianapolis", " selected"); ?>>America/Indiana/Indianapolis</option>
+        <option value="America/Indiana/Knox"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Knox", " selected"); ?>>America/Indiana/Knox</option>
+        <option value="America/Indiana/Marengo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Marengo", " selected"); ?>>America/Indiana/Marengo</option>
+        <option value="America/Indiana/Petersburg"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Petersburg", " selected"); ?>>America/Indiana/Petersburg</option>
+        <option value="America/Indiana/Tell_City"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Tell_City", " selected"); ?>>America/Indiana/Tell_City</option>
+        <option value="America/Indiana/Vevay"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Vevay", " selected"); ?>>America/Indiana/Vevay</option>
+        <option value="America/Indiana/Vincennes"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Vincennes", " selected"); ?>>America/Indiana/Vincennes</option>
+        <option value="America/Indiana/Winamac"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indiana/Winamac", " selected"); ?>>America/Indiana/Winamac</option>
+        <option value="America/Indianapolis"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Indianapolis", " selected"); ?>>America/Indianapolis</option>
+        <option value="America/Inuvik"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Inuvik", " selected"); ?>>America/Inuvik</option>
+        <option value="America/Iqaluit"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Iqaluit", " selected"); ?>>America/Iqaluit</option>
+        <option value="America/Jamaica"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Jamaica", " selected"); ?>>America/Jamaica</option>
+        <option value="America/Jujuy"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Jujuy", " selected"); ?>>America/Jujuy</option>
+        <option value="America/Juneau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Juneau", " selected"); ?>>America/Juneau</option>
+        <option value="America/Kentucky/Louisville"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Kentucky/Louisville", " selected"); ?>>America/Kentucky/Louisville</option>
+        <option value="America/Kentucky/Monticello"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Kentucky/Monticello", " selected"); ?>>America/Kentucky/Monticello</option>
+        <option value="America/Knox_IN"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Knox_IN", " selected"); ?>>America/Knox_IN</option>
+        <option value="America/La_Paz"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/La_Paz", " selected"); ?>>America/La_Paz</option>
+        <option value="America/Lima"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Lima", " selected"); ?>>America/Lima</option>
+        <option value="America/Los_Angeles"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Los_Angeles", " selected"); ?>>America/Los_Angeles</option>
+        <option value="America/Louisville"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Louisville", " selected"); ?>>America/Louisville</option>
+        <option value="America/Maceio"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Maceio", " selected"); ?>>America/Maceio</option>
+        <option value="America/Managua"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Managua", " selected"); ?>>America/Managua</option>
+        <option value="America/Manaus"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Manaus", " selected"); ?>>America/Manaus</option>
+        <option value="America/Martinique"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Martinique", " selected"); ?>>America/Martinique</option>
+        <option value="America/Mazatlan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Mazatlan", " selected"); ?>>America/Mazatlan</option>
+        <option value="America/Mendoza"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Mendoza", " selected"); ?>>America/Mendoza</option>
+        <option value="America/Menominee"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Menominee", " selected"); ?>>America/Menominee</option>
+        <option value="America/Merida"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Merida", " selected"); ?>>America/Merida</option>
+        <option value="America/Mexico_City"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Mexico_City", " selected"); ?>>America/Mexico_City</option>
+        <option value="America/Miquelon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Miquelon", " selected"); ?>>America/Miquelon</option>
+        <option value="America/Moncton"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Moncton", " selected"); ?>>America/Moncton</option>
+        <option value="America/Monterrey"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Monterrey", " selected"); ?>>America/Monterrey</option>
+        <option value="America/Montevideo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Montevideo", " selected"); ?>>America/Montevideo</option>
+        <option value="America/Montreal"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Montreal", " selected"); ?>>America/Montreal</option>
+        <option value="America/Montserrat"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Montserrat", " selected"); ?>>America/Montserrat</option>
+        <option value="America/Nassau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Nassau", " selected"); ?>>America/Nassau</option>
+        <option value="America/New_York"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/New_York", " selected"); ?>>America/New_York</option>
+        <option value="America/Nipigon"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Nipigon", " selected"); ?>>America/Nipigon</option>
+        <option value="America/Nome"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Nome", " selected"); ?>>America/Nome</option>
+        <option value="America/Noronha"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Noronha", " selected"); ?>>America/Noronha</option>
+        <option value="America/North_Dakota/Center"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/North_Dakota/Center", " selected"); ?>>America/North_Dakota/Center</option>
+        <option value="America/North_Dakota/New_Salem"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/North_Dakota/New_Salem", " selected"); ?>>America/North_Dakota/New_Salem</option>
+        <option value="America/Panama"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Panama", " selected"); ?>>America/Panama</option>
+        <option value="America/Pangnirtung"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Pangnirtung", " selected"); ?>>America/Pangnirtung</option>
+        <option value="America/Paramaribo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Paramaribo", " selected"); ?>>America/Paramaribo</option>
+        <option value="America/Phoenix"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Phoenix", " selected"); ?>>America/Phoenix</option>
+        <option value="America/Port-au-Prince"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Port-au-Prince", " selected"); ?>>America/Port-au-Prince</option>
+        <option value="America/Port_of_Spain"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Port_of_Spain", " selected"); ?>>America/Port_of_Spain</option>
+        <option value="America/Porto_Acre"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Porto_Acre", " selected"); ?>>America/Porto_Acre</option>
+        <option value="America/Porto_Velho"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Porto_Velho", " selected"); ?>>America/Porto_Velho</option>
+        <option value="America/Puerto_Rico"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Puerto_Rico", " selected"); ?>>America/Puerto_Rico</option>
+        <option value="America/Rainy_River"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Rainy_River", " selected"); ?>>America/Rainy_River</option>
+        <option value="America/Rankin_Inlet"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Rankin_Inlet", " selected"); ?>>America/Rankin_Inlet</option>
+        <option value="America/Recife"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Recife", " selected"); ?>>America/Recife</option>
+        <option value="America/Regina"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Regina", " selected"); ?>>America/Regina</option>
+        <option value="America/Resolute"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Resolute", " selected"); ?>>America/Resolute</option>
+        <option value="America/Rio_Branco"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Rio_Branco", " selected"); ?>>America/Rio_Branco</option>
+        <option value="America/Rosario"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Rosario", " selected"); ?>>America/Rosario</option>
+        <option value="America/Santiago"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Santiago", " selected"); ?>>America/Santiago</option>
+        <option value="America/Santo_Domingo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Santo_Domingo", " selected"); ?>>America/Santo_Domingo</option>
+        <option value="America/Sao_Paulo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Sao_Paulo", " selected"); ?>>America/Sao_Paulo</option>
+        <option value="America/Scoresbysund"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Scoresbysund", " selected"); ?>>America/Scoresbysund</option>
+        <option value="America/Shiprock"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Shiprock", " selected"); ?>>America/Shiprock</option>
+        <option value="America/St_Johns"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/St_Johns", " selected"); ?>>America/St_Johns</option>
+        <option value="America/St_Kitts"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/St_Kitts", " selected"); ?>>America/St_Kitts</option>
+        <option value="America/St_Lucia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/St_Lucia", " selected"); ?>>America/St_Lucia</option>
+        <option value="America/St_Thomas"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/St_Thomas", " selected"); ?>>America/St_Thomas</option>
+        <option value="America/St_Vincent"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/St_Vincent", " selected"); ?>>America/St_Vincent</option>
+        <option value="America/Swift_Current"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Swift_Current", " selected"); ?>>America/Swift_Current</option>
+        <option value="America/Tegucigalpa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Tegucigalpa", " selected"); ?>>America/Tegucigalpa</option>
+        <option value="America/Thule"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Thule", " selected"); ?>>America/Thule</option>
+        <option value="America/Thunder_Bay"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Thunder_Bay", " selected"); ?>>America/Thunder_Bay</option>
+        <option value="America/Tijuana"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Tijuana", " selected"); ?>>America/Tijuana</option>
+        <option value="America/Toronto"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Toronto", " selected"); ?>>America/Toronto</option>
+        <option value="America/Tortola"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Tortola", " selected"); ?>>America/Tortola</option>
+        <option value="America/Vancouver"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Vancouver", " selected"); ?>>America/Vancouver</option>
+        <option value="America/Virgin"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Virgin", " selected"); ?>>America/Virgin</option>
+        <option value="America/Whitehorse"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Whitehorse", " selected"); ?>>America/Whitehorse</option>
+        <option value="America/Winnipeg"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Winnipeg", " selected"); ?>>America/Winnipeg</option>
+        <option value="America/Yakutat"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Yakutat", " selected"); ?>>America/Yakutat</option>
+        <option value="America/Yellowknife"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "America/Yellowknife", " selected"); ?>>America/Yellowknife</option>
+        <option value="Africa/Abidjan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Abidjan", " selected"); ?>>Africa/Abidjan</option>
+        <option value="Africa/Accra"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Accra", " selected"); ?>>Africa/Accra</option>
+        <option value="Africa/Addis_Ababa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Addis_Ababa", " selected"); ?>>Africa/Addis_Ababa</option>
+        <option value="Africa/Algiers"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Algiers", " selected"); ?>>Africa/Algiers</option>
+        <option value="Africa/Asmara"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Asmara", " selected"); ?>>Africa/Asmara</option>
+        <option value="Africa/Asmera"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Asmera", " selected"); ?>>Africa/Asmera</option>
+        <option value="Africa/Bamako"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Bamako", " selected"); ?>>Africa/Bamako</option>
+        <option value="Africa/Bangui"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Bangui", " selected"); ?>>Africa/Bangui</option>
+        <option value="Africa/Banjul"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Banjul", " selected"); ?>>Africa/Banjul</option>
+        <option value="Africa/Bissau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Bissau", " selected"); ?>>Africa/Bissau</option>
+        <option value="Africa/Blantyre"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Blantyre", " selected"); ?>>Africa/Blantyre</option>
+        <option value="Africa/Brazzaville"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Brazzaville", " selected"); ?>>Africa/Brazzaville</option>
+        <option value="Africa/Bujumbura"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Bujumbura", " selected"); ?>>Africa/Bujumbura</option>
+        <option value="Africa/Cairo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Cairo", " selected"); ?>>Africa/Cairo</option>
+        <option value="Africa/Casablanca"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Casablanca", " selected"); ?>>Africa/Casablanca</option>
+        <option value="Africa/Ceuta"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Ceuta", " selected"); ?>>Africa/Ceuta</option>
+        <option value="Africa/Conakry"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Conakry", " selected"); ?>>Africa/Conakry</option>
+        <option value="Africa/Dakar"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Dakar", " selected"); ?>>Africa/Dakar</option>
+        <option value="Africa/Dar_es_Salaam"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Dar_es_Salaam", " selected"); ?>>Africa/Dar_es_Salaam</option>
+        <option value="Africa/Djibouti"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Djibouti", " selected"); ?>>Africa/Djibouti</option>
+        <option value="Africa/Douala"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Douala", " selected"); ?>>Africa/Douala</option>
+        <option value="Africa/El_Aaiun"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/El_Aaiun", " selected"); ?>>Africa/El_Aaiun</option>
+        <option value="Africa/Freetown"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Freetown", " selected"); ?>>Africa/Freetown</option>
+        <option value="Africa/Gaborone"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Gaborone", " selected"); ?>>Africa/Gaborone</option>
+        <option value="Africa/Harare"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Harare", " selected"); ?>>Africa/Harare</option>
+        <option value="Africa/Johannesburg"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Johannesburg", " selected"); ?>>Africa/Johannesburg</option>
+        <option value="Africa/Kampala"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Kampala", " selected"); ?>>Africa/Kampala</option>
+        <option value="Africa/Khartoum"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Khartoum", " selected"); ?>>Africa/Khartoum</option>
+        <option value="Africa/Kigali"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Kigali", " selected"); ?>>Africa/Kigali</option>
+        <option value="Africa/Kinshasa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Kinshasa", " selected"); ?>>Africa/Kinshasa</option>
+        <option value="Africa/Lagos"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Lagos", " selected"); ?>>Africa/Lagos</option>
+        <option value="Africa/Libreville"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Libreville", " selected"); ?>>Africa/Libreville</option>
+        <option value="Africa/Lome"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Lome", " selected"); ?>>Africa/Lome</option>
+        <option value="Africa/Luanda"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Luanda", " selected"); ?>>Africa/Luanda</option>
+        <option value="Africa/Lubumbashi"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Lubumbashi", " selected"); ?>>Africa/Lubumbashi</option>
+        <option value="Africa/Lusaka"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Lusaka", " selected"); ?>>Africa/Lusaka</option>
+        <option value="Africa/Malabo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Malabo", " selected"); ?>>Africa/Malabo</option>
+        <option value="Africa/Maputo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Maputo", " selected"); ?>>Africa/Maputo</option>
+        <option value="Africa/Maseru"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Maseru", " selected"); ?>>Africa/Maseru</option>
+        <option value="Africa/Mbabane"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Mbabane", " selected"); ?>>Africa/Mbabane</option>
+        <option value="Africa/Mogadishu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Mogadishu", " selected"); ?>>Africa/Mogadishu</option>
+        <option value="Africa/Monrovia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Monrovia", " selected"); ?>>Africa/Monrovia</option>
+        <option value="Africa/Nairobi"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Nairobi", " selected"); ?>>Africa/Nairobi</option>
+        <option value="Africa/Ndjamena"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Ndjamena", " selected"); ?>>Africa/Ndjamena</option>
+        <option value="Africa/Niamey"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Niamey", " selected"); ?>>Africa/Niamey</option>
+        <option value="Africa/Nouakchott"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Nouakchott", " selected"); ?>>Africa/Nouakchott</option>
+        <option value="Africa/Ouagadougou"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Ouagadougou", " selected"); ?>>Africa/Ouagadougou</option>
+        <option value="Africa/Porto-Novo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Porto-Novo", " selected"); ?>>Africa/Porto-Novo</option>
+        <option value="Africa/Sao_Tome"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Sao_Tome", " selected"); ?>>Africa/Sao_Tome</option>
+        <option value="Africa/Timbuktu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Timbuktu", " selected"); ?>>Africa/Timbuktu</option>
+        <option value="Africa/Tripoli"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Tripoli", " selected"); ?>>Africa/Tripoli</option>
+        <option value="Africa/Tunis"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Tunis", " selected"); ?>>Africa/Tunis</option>
+        <option value="Africa/Windhoek"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Africa/Windhoek", " selected"); ?>>Africa/Windhoek</option>
+        <option value="Atlantic/Azores"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Azores", " selected"); ?>>Atlantic/Azores</option>
+        <option value="Atlantic/Bermuda"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Bermuda", " selected"); ?>>Atlantic/Bermuda</option>
+        <option value="Atlantic/Canary"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Canary", " selected"); ?>>Atlantic/Canary</option>
+        <option value="Atlantic/Cape_Verde"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Cape_Verde", " selected"); ?>>Atlantic/Cape_Verde</option>
+        <option value="Atlantic/Faeroe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Faeroe", " selected"); ?>>Atlantic/Faeroe</option>
+        <option value="Atlantic/Faroe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Faroe", " selected"); ?>>Atlantic/Faroe</option>
+        <option value="Atlantic/Jan_Mayen"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Jan_Mayen", " selected"); ?>>Atlantic/Jan_Mayen</option>
+        <option value="Atlantic/Madeira"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Madeira", " selected"); ?>>Atlantic/Madeira</option>
+        <option value="Atlantic/Reykjavik"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Reykjavik", " selected"); ?>>Atlantic/Reykjavik</option>
+        <option value="Atlantic/South_Georgia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/South_Georgia", " selected"); ?>>Atlantic/South_Georgia</option>
+        <option value="Atlantic/St_Helena"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/St_Helena", " selected"); ?>>Atlantic/St_Helena</option>
+        <option value="Atlantic/Stanley"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Atlantic/Stanley", " selected"); ?>>Atlantic/Stanley</option>
+        <option value="CET"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "CET", " selected"); ?>>CET</option>
+        <option value="Chile/Continental"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Chile/Continental", " selected"); ?>>Chile/Continental</option>
+        <option value="Chile/EasterIsland"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Chile/EasterIsland", " selected"); ?>>Chile/EasterIsland</option>
+        <option value="CST6CDT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "CST6CDT", " selected"); ?>>CST6CDT</option>
+        <option value="Cuba"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Cuba", " selected"); ?>>Cuba</option>
+        <option value="EET"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "EET", " selected"); ?>>EET</option>
+        <option value="Egypt"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Egypt", " selected"); ?>>Egypt</option>
+        <option value="Eire"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Eire", " selected"); ?>>Eire</option>
+        <option value="EST"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "EST", " selected"); ?>>EST</option>
+        <option value="EST5EDT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "EST5EDT", " selected"); ?>>EST5EDT</option>
+        <option value="Etc/GMT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT", " selected"); ?>>Etc/GMT</option>
+        <option value="Etc/GMT+0"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+0", " selected"); ?>>Etc/GMT+0</option>
+        <option value="Etc/GMT+1"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+1", " selected"); ?>>Etc/GMT+1</option>
+        <option value="Etc/GMT+10"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+10", " selected"); ?>>Etc/GMT+10</option>
+        <option value="Etc/GMT+11"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+11", " selected"); ?>>Etc/GMT+11</option>
+        <option value="Etc/GMT+12"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+12", " selected"); ?>>Etc/GMT+12</option>
+        <option value="Etc/GMT+2"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+2", " selected"); ?>>Etc/GMT+2</option>
+        <option value="Etc/GMT+3"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+3", " selected"); ?>>Etc/GMT+3</option>
+        <option value="Etc/GMT+4"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+4", " selected"); ?>>Etc/GMT+4</option>
+        <option value="Etc/GMT+5"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+5", " selected"); ?>>Etc/GMT+5</option>
+        <option value="Etc/GMT+6"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+6", " selected"); ?>>Etc/GMT+6</option>
+        <option value="Etc/GMT+7"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+7", " selected"); ?>>Etc/GMT+7</option>
+        <option value="Etc/GMT+8"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+8", " selected"); ?>>Etc/GMT+8</option>
+        <option value="Etc/GMT+9"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT+9", " selected"); ?>>Etc/GMT+9</option>
+        <option value="Etc/GMT-0"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-0", " selected"); ?>>Etc/GMT-0</option>
+        <option value="Etc/GMT-1"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-1", " selected"); ?>>Etc/GMT-1</option>
+        <option value="Etc/GMT-10"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-10", " selected"); ?>>Etc/GMT-10</option>
+        <option value="Etc/GMT-11"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-11", " selected"); ?>>Etc/GMT-11</option>
+        <option value="Etc/GMT-12"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-12", " selected"); ?>>Etc/GMT-12</option>
+        <option value="Etc/GMT-13"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-13", " selected"); ?>>Etc/GMT-13</option>
+        <option value="Etc/GMT-14"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-14", " selected"); ?>>Etc/GMT-14</option>
+        <option value="Etc/GMT-2"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-2", " selected"); ?>>Etc/GMT-2</option>
+        <option value="Etc/GMT-3"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-3", " selected"); ?>>Etc/GMT-3</option>
+        <option value="Etc/GMT-4"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-4", " selected"); ?>>Etc/GMT-4</option>
+        <option value="Etc/GMT-5"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-5", " selected"); ?>>Etc/GMT-5</option>
+        <option value="Etc/GMT-6"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-6", " selected"); ?>>Etc/GMT-6</option>
+        <option value="Etc/GMT-7"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-7", " selected"); ?>>Etc/GMT-7</option>
+        <option value="Etc/GMT-8"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-8", " selected"); ?>>Etc/GMT-8</option>
+        <option value="Etc/GMT-9"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT-9", " selected"); ?>>Etc/GMT-9</option>
+        <option value="Etc/GMT0"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/GMT0", " selected"); ?>>Etc/GMT0</option>
+        <option value="Etc/Greenwich"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/Greenwich", " selected"); ?>>Etc/Greenwich</option>
+        <option value="Etc/UCT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/UCT", " selected"); ?>>Etc/UCT</option>
+        <option value="Etc/Universal"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/Universal", " selected"); ?>>Etc/Universal</option>
+        <option value="Etc/UTC"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/UTC", " selected"); ?>>Etc/UTC</option>
+        <option value="Etc/Zulu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Etc/Zulu", " selected"); ?>>Etc/Zulu</option>
+        <option value="Factory"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Factory", " selected"); ?>>Factory</option>
+        <option value="GB"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "GB", " selected"); ?>>GB</option>
+        <option value="GB-Eire"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "GB-Eire", " selected"); ?>>GB-Eire</option>
+        <option value="GMT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "GMT", " selected"); ?>>GMT</option>
+        <option value="GMT+0"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "GMT+0", " selected"); ?>>GMT+0</option>
+        <option value="GMT-0"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "GMT-0", " selected"); ?>>GMT-0</option>
+        <option value="GMT0"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "GMT0", " selected"); ?>>GMT0</option>
+        <option value="Greenwich"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Greenwich", " selected"); ?>>Greenwich</option>
+        <option value="HST"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "HST", " selected"); ?>>HST</option>
+        <option value="Iceland"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Iceland", " selected"); ?>>Iceland</option>
+        <option value="Indian/Antananarivo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Antananarivo", " selected"); ?>>Indian/Antananarivo</option>
+        <option value="Indian/Chagos"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Chagos", " selected"); ?>>Indian/Chagos</option>
+        <option value="Indian/Christmas"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Christmas", " selected"); ?>>Indian/Christmas</option>
+        <option value="Indian/Cocos"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Cocos", " selected"); ?>>Indian/Cocos</option>
+        <option value="Indian/Comoro"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Comoro", " selected"); ?>>Indian/Comoro</option>
+        <option value="Indian/Kerguelen"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Kerguelen", " selected"); ?>>Indian/Kerguelen</option>
+        <option value="Indian/Mahe"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Mahe", " selected"); ?>>Indian/Mahe</option>
+        <option value="Indian/Maldives"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Maldives", " selected"); ?>>Indian/Maldives</option>
+        <option value="Indian/Mauritius"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Mauritius", " selected"); ?>>Indian/Mauritius</option>
+        <option value="Indian/Mayotte"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Mayotte", " selected"); ?>>Indian/Mayotte</option>
+        <option value="Indian/Reunion"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Indian/Reunion", " selected"); ?>>Indian/Reunion</option>
+        <option value="Kwajalein"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Kwajalein", " selected"); ?>>Kwajalein</option>
+        <option value="Libya"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Libya", " selected"); ?>>Libya</option>
+        <option value="MET"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "MET", " selected"); ?>>MET</option>
+        <option value="Mexico/BajaNorte"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Mexico/BajaNorte", " selected"); ?>>Mexico/BajaNorte</option>
+        <option value="Mexico/BajaSur"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Mexico/BajaSur", " selected"); ?>>Mexico/BajaSur</option>
+        <option value="Mexico/General"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Mexico/General", " selected"); ?>>Mexico/General</option>
+        <option value="MST"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "MST", " selected"); ?>>MST</option>
+        <option value="MST7MDT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "MST7MDT", " selected"); ?>>MST7MDT</option>
+        <option value="Navajo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Navajo", " selected"); ?>>Navajo</option>
+        <option value="NZ"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "NZ", " selected"); ?>>NZ</option>
+        <option value="NZ-CHAT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "NZ-CHAT", " selected"); ?>>NZ-CHAT</option>
+        <option value="Pacific/Apia"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Apia", " selected"); ?>>Pacific/Apia</option>
+        <option value="Pacific/Auckland"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Auckland", " selected"); ?>>Pacific/Auckland</option>
+        <option value="Pacific/Chatham"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Chatham", " selected"); ?>>Pacific/Chatham</option>
+        <option value="Pacific/Easter"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Easter", " selected"); ?>>Pacific/Easter</option>
+        <option value="Pacific/Efate"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Efate", " selected"); ?>>Pacific/Efate</option>
+        <option value="Pacific/Enderbury"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Enderbury", " selected"); ?>>Pacific/Enderbury</option>
+        <option value="Pacific/Fakaofo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Fakaofo", " selected"); ?>>Pacific/Fakaofo</option>
+        <option value="Pacific/Fiji"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Fiji", " selected"); ?>>Pacific/Fiji</option>
+        <option value="Pacific/Funafuti"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Funafuti", " selected"); ?>>Pacific/Funafuti</option>
+        <option value="Pacific/Galapagos"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Galapagos", " selected"); ?>>Pacific/Galapagos</option>
+        <option value="Pacific/Gambier"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Gambier", " selected"); ?>>Pacific/Gambier</option>
+        <option value="Pacific/Guadalcanal"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Guadalcanal", " selected"); ?>>Pacific/Guadalcanal</option>
+        <option value="Pacific/Guam"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Guam", " selected"); ?>>Pacific/Guam</option>
+        <option value="Pacific/Honolulu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Honolulu", " selected"); ?>>Pacific/Honolulu</option>
+        <option value="Pacific/Johnston"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Johnston", " selected"); ?>>Pacific/Johnston</option>
+        <option value="Pacific/Kiritimati"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Kiritimati", " selected"); ?>>Pacific/Kiritimati</option>
+        <option value="Pacific/Kosrae"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Kosrae", " selected"); ?>>Pacific/Kosrae</option>
+        <option value="Pacific/Kwajalein"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Kwajalein", " selected"); ?>>Pacific/Kwajalein</option>
+        <option value="Pacific/Majuro"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Majuro", " selected"); ?>>Pacific/Majuro</option>
+        <option value="Pacific/Marquesas"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Marquesas", " selected"); ?>>Pacific/Marquesas</option>
+        <option value="Pacific/Midway"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Midway", " selected"); ?>>Pacific/Midway</option>
+        <option value="Pacific/Nauru"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Nauru", " selected"); ?>>Pacific/Nauru</option>
+        <option value="Pacific/Niue"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Niue", " selected"); ?>>Pacific/Niue</option>
+        <option value="Pacific/Norfolk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Norfolk", " selected"); ?>>Pacific/Norfolk</option>
+        <option value="Pacific/Noumea"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Noumea", " selected"); ?>>Pacific/Noumea</option>
+        <option value="Pacific/Pago_Pago"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Pago_Pago", " selected"); ?>>Pacific/Pago_Pago</option>
+        <option value="Pacific/Palau"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Palau", " selected"); ?>>Pacific/Palau</option>
+        <option value="Pacific/Pitcairn"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Pitcairn", " selected"); ?>>Pacific/Pitcairn</option>
+        <option value="Pacific/Ponape"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Ponape", " selected"); ?>>Pacific/Ponape</option>
+        <option value="Pacific/Port_Moresby"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Port_Moresby", " selected"); ?>>Pacific/Port_Moresby</option>
+        <option value="Pacific/Rarotonga"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Rarotonga", " selected"); ?>>Pacific/Rarotonga</option>
+        <option value="Pacific/Saipan"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Saipan", " selected"); ?>>Pacific/Saipan</option>
+        <option value="Pacific/Samoa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Samoa", " selected"); ?>>Pacific/Samoa</option>
+        <option value="Pacific/Tahiti"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Tahiti", " selected"); ?>>Pacific/Tahiti</option>
+        <option value="Pacific/Tarawa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Tarawa", " selected"); ?>>Pacific/Tarawa</option>
+        <option value="Pacific/Tongatapu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Tongatapu", " selected"); ?>>Pacific/Tongatapu</option>
+        <option value="Pacific/Truk"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Truk", " selected"); ?>>Pacific/Truk</option>
+        <option value="Pacific/Wake"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Wake", " selected"); ?>>Pacific/Wake</option>
+        <option value="Pacific/Wallis"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Wallis", " selected"); ?>>Pacific/Wallis</option>
+        <option value="Pacific/Yap"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Pacific/Yap", " selected"); ?>>Pacific/Yap</option>
+        <option value="Antarctica/Casey"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Casey", " selected"); ?>>Antarctica/Casey</option>
+        <option value="Antarctica/Davis"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Davis", " selected"); ?>>Antarctica/Davis</option>
+        <option value="Antarctica/DumontDUrville"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/DumontDUrville", " selected"); ?>>Antarctica/DumontDUrville</option>
+        <option value="Antarctica/Mawson"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Mawson", " selected"); ?>>Antarctica/Mawson</option>
+        <option value="Antarctica/McMurdo"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/McMurdo", " selected"); ?>>Antarctica/McMurdo</option>
+        <option value="Antarctica/Palmer"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Palmer", " selected"); ?>>Antarctica/Palmer</option>
+        <option value="Antarctica/Rothera"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Rothera", " selected"); ?>>Antarctica/Rothera</option>
+        <option value="Antarctica/South_Pole"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/South_Pole", " selected"); ?>>Antarctica/South_Pole</option>
+        <option value="Antarctica/Syowa"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Syowa", " selected"); ?>>Antarctica/Syowa</option>
+        <option value="Antarctica/Vostok"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Antarctica/Vostok", " selected"); ?>>Antarctica/Vostok</option>
+        <option value="Arctic/Longyearbyen"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Arctic/Longyearbyen", " selected"); ?>>Arctic/Longyearbyen</option>
+        <option value="PRC"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "PRC", " selected"); ?>>PRC</option>
+        <option value="PST8PDT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "PST8PDT", " selected"); ?>>PST8PDT</option>
+        <option value="ROC"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "ROC", " selected"); ?>>ROC</option>
+        <option value="ROK"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "ROK", " selected"); ?>>ROK</option>
+        <option value="UCT"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "UCT", " selected"); ?>>UCT</option>
+        <option value="Universal"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Universal", " selected"); ?>>Universal</option>
+        <option value="W-SU"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "W-SU", " selected"); ?>>W-SU</option>
+        <option value="WET"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "WET", " selected"); ?>>WET</option>
+        <option value="Zulu"<?php echo IIF($_SWIFT->Settings->Get('dt_timezonephp') == "Zulu", " selected"); ?>>Zulu</option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="dt_daylightsavings" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dt_caltype" type="custom">
+			<defaultvalue>us</defaultvalue>
+			<customcode><![CDATA[
+			<select name="dt_caltype" class="swiftselect">
+				<option value="us"<?php echo IIF($_SWIFT->Settings->Get('dt_caltype')=="us", " selected"); ?>><?php echo $_SWIFT->Language->Get('dtcalus'); ?></option>
+				<option value="eu"<?php echo IIF($_SWIFT->Settings->Get('dt_caltype')=="eu", " selected"); ?>><?php echo $_SWIFT->Language->Get('dtcaleu'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+
+	</group>
+
+	<group name="settings_tickets" module="tickets" ishidden="0">
+		<setting name="t_general" type="title" />
+		<setting name="t_enhistory" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_enpagin" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_postlimit" type="number">
+		  <defaultvalue>7</defaultvalue>
+		</setting>
+		<setting name="t_mergrecip" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_reciplimit" type="number">
+			<defaultvalue>6</defaultvalue>
+		</setting>
+		<setting name="t_postorder" type="custom">
+			<defaultvalue>asc</defaultvalue>
+			<customcode><![CDATA[
+			<select name="t_postorder" class="swiftselect">
+				<option value="asc"<?php echo IIF($_SWIFT->Settings->Get('t_postorder')=="asc", " selected"); ?>><?php echo $_SWIFT->Language->Get('oldestfirst'); ?></option>
+				<option value="desc"<?php echo IIF($_SWIFT->Settings->Get('t_postorder')=="desc", " selected"); ?>><?php echo $_SWIFT->Language->Get('newestfirst'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="t_chtml" type="custom">
+			<defaultvalue>strip</defaultvalue>
+			<customcode><![CDATA[
+			<select name="t_chtml" class="swiftselect">
+				<option value="entities"<?php echo IIF($_SWIFT->Settings->Get('t_chtml')=="entities", " selected"); ?>><?php echo $_SWIFT->Language->Get('tcentities'); ?></option>
+				<option value="html"<?php echo IIF($_SWIFT->Settings->Get('t_chtml')=="html", " selected"); ?>><?php echo $_SWIFT->Language->Get('tchtml'); ?></option>
+				<!--<option value="htmlpurifier"<?php echo IIF($_SWIFT->Settings->Get('t_ochtml')=="htmlpurifier", " selected"); ?>><?php echo $_SWIFT->Language->Get('tchtmlpurifier'); ?></option>-->
+				<option value="strip"<?php echo IIF($_SWIFT->Settings->Get('t_chtml')=="strip", " selected"); ?>><?php echo $_SWIFT->Language->Get('tcstrip'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="t_ochtml" type="custom">
+			<defaultvalue>strip</defaultvalue>
+			<customcode><![CDATA[
+			<select name="t_ochtml" class="swiftselect">
+				<option value="entities"<?php echo IIF($_SWIFT->Settings->Get('t_ochtml')=="entities", " selected"); ?>><?php echo $_SWIFT->Language->Get('tcentities'); ?></option>
+				<option value="html"<?php echo IIF($_SWIFT->Settings->Get('t_ochtml')=="html", " selected"); ?>><?php echo $_SWIFT->Language->Get('tchtml'); ?></option>
+				<!--<option value="htmlpurifier"<?php echo IIF($_SWIFT->Settings->Get('t_ochtml')=="htmlpurifier", " selected"); ?>><?php echo $_SWIFT->Language->Get('tchtmlpurifier'); ?></option>-->
+				<option value="strip"<?php echo IIF($_SWIFT->Settings->Get('t_ochtml')=="strip", " selected"); ?>><?php echo $_SWIFT->Language->Get('tcstrip'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="t_allowhtml" type="yesno">
+		  <defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_allowableadvtags" type="text">
+		  <defaultvalue><![CDATA[br,a,b,i,u,font,hr,strong]]></defaultvalue>
+		</setting>
+		<setting name="t_allowableadvtagsattributes" type="text">
+			  <defaultvalue><![CDATA[href,rel,src]]></defaultvalue>
+		</setting>
+		<setting name="t_tpreview" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_eticketid" type="custom">
+			<defaultvalue>random</defaultvalue>
+			<customcode><![CDATA[
+			<select name="t_eticketid" class="swiftselect">
+				<option value="seq"<?php echo IIF($_SWIFT->Settings->Get('t_eticketid')=="seq", " selected"); ?>><?php echo $_SWIFT->Language->Get('tsequential'); ?></option>
+				<option value="random"<?php echo IIF($_SWIFT->Settings->Get('t_eticketid')=="random", " selected"); ?>><?php echo $_SWIFT->Language->Get('trandom'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="t_restrictnewticket" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_cstatusupd" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="t_cstatusupd" class="swiftselect">
+			<?php echo GenerateClientTicketStatus(); ?>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="t_resultlimit" type="number">
+			<defaultvalue>50</defaultvalue>
+		</setting>
+		<setting name="t_spamhandling" type="title" />
+		<setting name="t_spammovetotrash" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_spamban" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_clientarea" type="title" />
+		<setting name="t_cstaffname" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_cdisplayname" type="text">
+			<defaultvalue>Kayako Support</defaultvalue>
+		</setting>
+		<setting name="t_cthirdparty" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_canirs" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_maxwcnt" type="number">
+			<defaultvalue>20</defaultvalue>
+		</setting>
+		<setting name="t_ccaptcha" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_cpostorder" type="custom">
+			<defaultvalue>asc</defaultvalue>
+			<customcode><![CDATA[
+			<select name="t_cpostorder" class="swiftselect">
+				<option value="asc"<?php echo IIF($_SWIFT->Settings->Get('t_cpostorder')=="asc", " selected"); ?>><?php echo $_SWIFT->Language->Get('oldestfirst'); ?></option>
+				<option value="desc"<?php echo IIF($_SWIFT->Settings->Get('t_cpostorder')=="desc", " selected"); ?>><?php echo $_SWIFT->Language->Get('newestfirst'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="t_cenattach" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_mailset" type="title" />
+		<setting name="t_cleanmailsubjects" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_searchticketidinbody" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_arnews" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_sla" type="title" />
+		<setting name="t_slaresets" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_encustomoverdue" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_overduehrs" type="number">
+			<defaultvalue>24</defaultvalue>
+		</setting>
+		<setting name="t_resolutionduehrs" type="number">
+			<defaultvalue>48</defaultvalue>
+		</setting>
+		<setting name="t_overduecolor" type="color">
+			<defaultvalue>#FFECEC</defaultvalue>
+		</setting>
+		<setting name="t_ticketnoteresetsupdatetime" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_parser" type="title" />
+		<setting name="t_autorecip" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_autorespondercc" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="t_pstaffreply" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="tickets_attachments" type="title" />
+		<setting name="tickets_resattachments" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="t_ticketlock" type="title" />
+		<setting name="t_plockthreshold" type="number">
+			<defaultvalue>1800</defaultvalue>
+		</setting>
+		<setting name="t_locktimeout" type="number">
+			<defaultvalue>600</defaultvalue>
+		</setting>
+		<setting name="tickets_bayesian" type="title" />
+		<setting name="tb_enablespam" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="tb_minwordlength" type="number">
+			<defaultvalue>3</defaultvalue>
+		</setting>
+		<setting name="tb_maxwordlength" type="number">
+			<defaultvalue>30</defaultvalue>
+		</setting>
+		<setting name="tb_indexnumbers" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="tb_minnumberlength" type="number">
+			<defaultvalue>6</defaultvalue>
+		</setting>
+		<setting name="tb_signores" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+
+	</group>
+
+	<group name="settings_parser" module="parser" ishidden="0">
+		<setting name="pr_pop3" type="title" />
+		<setting name="pr_procno" type="number">
+			<defaultvalue>20</defaultvalue>
+		</setting>
+		<setting name="pr_sizelimit" type="number">
+			<defaultvalue>2048</defaultvalue>
+		</setting>
+		<setting name="pr_generalparser" type="title" />
+		<setting name="pr_allowmultiplecreation" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="pr_contentpriority" type="custom">
+			<defaultvalue>text</defaultvalue>
+			<customcode><![CDATA[
+			<select name="pr_contentpriority" class="swiftselect">
+				<option value="text"<?php echo IIF($_SWIFT->Settings->Get('pr_contentpriority')=="text", " selected"); ?>><?php echo $_SWIFT->Language->Get('text'); ?></option>
+				<option value="html"<?php echo IIF($_SWIFT->Settings->Get('pr_contentpriority')=="html", " selected"); ?>><?php echo $_SWIFT->Language->Get('html'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="pr_conversion" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="pr_parsereplyto" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="pr_stripscript" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+    <setting name="pr_loopoptions" type="title" />
+    <setting name="pr_loopcut_prevents_autoresponder" type="yesno">
+      <defaultvalue>1</defaultvalue>
+    </setting>
+    <setting name="pr_loopcut_ignores_cut_mail" type="yesno">
+      <defaultvalue>0</defaultvalue>
+    </setting>
+		<setting name="pr_logoptions" type="title" />
+		<setting name="pr_enablelog" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="pr_logchurndays" type="number">
+			<defaultvalue>30</defaultvalue>
+		</setting>
+		<setting name="pr_maxlogsize" type="number">
+			<defaultvalue>50</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_livechat" module="livechat" ishidden="0">
+		<setting name="livechat_ignorerange" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+
+		<setting name="livesupport_clientchatsettings" type="title" />
+		<setting name="livechat_proactivescroll" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="livechat_timestamps" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="livechat_timestampformat" type="text">
+			<defaultvalue>%H:%M</defaultvalue>
+		</setting>
+		<setting name="livesupport_usehttps" type="hidden">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="livesupport_clientchatrefresh" type="number">
+			<defaultvalue>5</defaultvalue>
+		</setting>
+		<setting name="livesupport_clientpagerefresh" type="number">
+			<defaultvalue>20</defaultvalue>
+		</setting>
+		<setting name="livesupport_chatwidth" type="number">
+			<defaultvalue>600</defaultvalue>
+		</setting>
+		<setting name="livesupport_chatheight" type="number">
+			<defaultvalue>680</defaultvalue>
+		</setting>
+		<setting name="livesupport_displayclientchatqueue" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="livesupport_cachehtmljscode" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="livesupport_roundrobinretries" type="number">
+			<defaultvalue>3</defaultvalue>
+		</setting>
+		<setting name="livesupport_roundrobintimetry" type="number">
+			<defaultvalue>60</defaultvalue>
+		</setting>
+		<setting name="ls_depname" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="ls_forcerandomnumber" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+
+		<setting name="livesupport_clicktocallsettings" type="title" />
+		<setting name="ls_activecountrycode" type="number">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="ls_ignoreactivecountrycode" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="ls_enableinternationalcalls" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="ls_internationalcallprefix" type="number">
+			<defaultvalue>011</defaultvalue>
+		</setting>
+		<setting name="ls_recordphonecalls" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="livesupport_winappsettings" type="title" />
+		<setting name="livesupport_alertttl" type="number">
+			<defaultvalue>30</defaultvalue>
+		</setting>
+		<setting name="livesupport_searchfrcolor" type="color">
+			<defaultvalue>#666666</defaultvalue>
+		</setting>
+		<setting name="livesupport_searchbgcolor" type="color">
+			<defaultvalue>#FFE1FF</defaultvalue>
+		</setting>
+		<setting name="ls_clientarea" type="title" />
+		<setting name="ls_displaystatus" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_kb" module="knowledgebase" ishidden="0">
+		<setting name="kb_parcount" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="kb_categorycolumns" type="number">
+			<defaultvalue>3</defaultvalue>
+		</setting>
+		<setting name="kb_clientarea" type="title" />
+		<setting name="kb_enrating" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="kb_catdisplayorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="kb_catdisplayorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('kb_catdisplayorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_defaultdisp'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('kb_catdisplayorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_alphabetical'); ?></option>
+				<option value="3"<?php echo IIF($_SWIFT->Settings->Get('kb_catdisplayorder')=="3", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_chrono'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="kb_catorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="kb_catorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('kb_catorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_asc'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('kb_catorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_desc'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="kb_ardisplayorder" type="custom">
+			<defaultvalue>2</defaultvalue>
+			<customcode><![CDATA[
+			<select name="kb_ardisplayorder" class="swiftselect">
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('kb_ardisplayorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_alphabetical'); ?></option>
+				<option value="3"<?php echo IIF($_SWIFT->Settings->Get('kb_ardisplayorder')=="3", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_chrono'); ?></option>
+				<option value="4"<?php echo IIF($_SWIFT->Settings->Get('kb_ardisplayorder')=="4", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_datemodified'); ?></option>
+				<option value="5"<?php echo IIF($_SWIFT->Settings->Get('kb_ardisplayorder')=="5", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_views'); ?></option>
+				<option value="6"<?php echo IIF($_SWIFT->Settings->Get('kb_ardisplayorder')=="6", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_rating'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="kb_arorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="kb_arorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('kb_arorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_asc'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('kb_arorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('kb_desc'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="kb_categoryindex" type="title" />
+		<setting name="kb_maxcatarticles" type="number">
+			<defaultvalue>2</defaultvalue>
+		</setting>
+		<setting name="kb_climit" type="number">
+			<defaultvalue>255</defaultvalue>
+		</setting>
+
+		<setting name="kb_clientareaindex" type="title" />
+		<setting name="kb_enpopulararticles" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="kb_maxpopulararticles" type="number">
+			<defaultvalue>8</defaultvalue>
+		</setting>
+		<setting name="kb_enlatestarticles" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="kb_maxlatestarticles" type="number">
+			<defaultvalue>8</defaultvalue>
+		</setting>
+
+		<setting name="kb_rss" type="title" />
+		<setting name="kb_enrss" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="kb_rssclimit" type="number">
+			<defaultvalue>255</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_tr" module="troubleshooter" ishidden="0">
+		<setting name="tr_displayviews" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_dl" module="downloads" ishidden="0">
+		<setting name="dl_staffcp" type="title" />
+		<setting name="dl_entab" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+
+		<setting name="dl_clientarea" type="title" />
+		<setting name="dl_enableclient" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_enpopularfiles" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="dl_maxpopularfiles" type="number">
+			<defaultvalue>4</defaultvalue>
+		</setting>
+		<setting name="dl_dispdownloadcnt" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_enlatestfiles" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_maxlatestfiles" type="number">
+			<defaultvalue>4</defaultvalue>
+		</setting>
+		<setting name="dl_displaydldate" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_dispdateformat" type="text">
+			<defaultvalue>d M Y h:i A</defaultvalue>
+		</setting>
+    <setting name="dl_captcha" type="yesno">
+      <defaultvalue>1</defaultvalue>
+    </setting>
+		<setting name="dl_catindex" type="title" />
+		<setting name="dl_catdisplayorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="dl_catdisplayorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('dl_catdisplayorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_defaultdisp'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('dl_catdisplayorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_alphabetical'); ?></option>
+				<option value="3"<?php echo IIF($_SWIFT->Settings->Get('dl_catdisplayorder')=="3", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_chrono'); ?></option>
+				<option value="4"<?php echo IIF($_SWIFT->Settings->Get('dl_catdisplayorder')=="4", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_totalitems'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="dl_catorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="dl_catorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('dl_catorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_asc'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('dl_catorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_desc'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="dl_itdisplayorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="dl_itdisplayorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('dl_itdisplayorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_defaultdisp'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('dl_itdisplayorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_alphabetical'); ?></option>
+				<option value="3"<?php echo IIF($_SWIFT->Settings->Get('dl_itdisplayorder')=="3", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_chrono'); ?></option>
+				<option value="4"<?php echo IIF($_SWIFT->Settings->Get('dl_itdisplayorder')=="4", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_datemodified'); ?></option>
+				<option value="5"<?php echo IIF($_SWIFT->Settings->Get('dl_itdisplayorder')=="5", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_totaldownloads'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="dl_itorder" type="custom">
+			<defaultvalue>1</defaultvalue>
+			<customcode><![CDATA[
+			<select name="dl_itorder" class="swiftselect">
+				<option value="1"<?php echo IIF($_SWIFT->Settings->Get('dl_itorder')=="1", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_asc'); ?></option>
+				<option value="2"<?php echo IIF($_SWIFT->Settings->Get('dl_itorder')=="2", " selected"); ?>><?php echo $_SWIFT->Language->Get('dl_desc'); ?></option>
+			</select>
+			]]></customcode>
+		</setting>
+		<setting name="dl_maxcatarticles" type="number">
+			<defaultvalue>2</defaultvalue>
+		</setting>
+		<setting name="dl_displaymore" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_catarticledetails" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_climit" type="number">
+			<defaultvalue>500</defaultvalue>
+		</setting>
+
+		<setting name="dl_rss" type="title" />
+		<setting name="dl_enrss" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="dl_rsslinkfile" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_nw" module="news" ishidden="0">
+		<setting name="nw_general" type="title" />
+		<setting name="nw_sendstaffemail" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="nw_newsstaffcp" type="title" />
+		<setting name="nw_enablestaffdashboard" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="nw_maxdashboardnewslist" type="number">
+			<defaultvalue>5</defaultvalue>
+		</setting>
+		<setting name="nw_staffpageno" type="number">
+			<defaultvalue>6</defaultvalue>
+		</setting>
+		<setting name="nw_newsclient" type="title" />
+		<setting name="nw_pageno" type="number">
+			<defaultvalue>6</defaultvalue>
+		</setting>
+		<setting name="nw_svalidate" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="nw_enablenewsnav" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="nw_maxnewslist" type="number">
+			<defaultvalue>5</defaultvalue>
+		</setting>
+		<setting name="nw_rss" type="title" />
+		<setting name="nw_enablerss" type="yesno">
+			<defaultvalue>1</defaultvalue>
+		</setting>
+		<setting name="nw_maxrss" type="number">
+			<defaultvalue>15</defaultvalue>
+		</setting>
+		<setting name="nw_sync" type="title" />
+		<setting name="nw_globalsync" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="nw_publicsync" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="nw_privatesync" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_ringroute" module="ringroute" ishidden="0">
+		<setting name="rr_general" type="title" />
+		<setting name="ringrouteenable" type="yesno">
+			<defaultvalue>0</defaultvalue>
+		</setting>
+		<setting name="ringrouteusername" type="text">
+			<defaultvalue></defaultvalue>
+		</setting>
+		<setting name="ringroutepassword" type="password">
+			<defaultvalue></defaultvalue>
+		</setting>
+	</group>
+
+	<group name="settings_onsite" module="livechat" ishidden="0">
+		<setting name="ons_general_1" type="title" />
+		<setting name="ons_xmpphost_1" type="text">
+			<defaultvalue>jingle.kayako.net</defaultvalue>
+		</setting>
+		<setting name="ons_xmppport_1" type="number">
+			<defaultvalue>5222</defaultvalue>
+		</setting>
+		<setting name="ons_stunhost_1" type="text">
+			<defaultvalue>jingle.kayako.net</defaultvalue>
+		</setting>
+		<setting name="ons_stunport_1" type="number">
+			<defaultvalue>3478</defaultvalue>
+		</setting>
+		<setting name="ons_turnhost_1" type="text">
+			<defaultvalue>jingle.kayako.net</defaultvalue>
+		</setting>
+		<setting name="ons_turnportudp_1" type="number">
+			<defaultvalue>3479</defaultvalue>
+		</setting>
+		<setting name="ons_turnporttcp_1" type="number">
+			<defaultvalue>3479</defaultvalue>
+		</setting>
+<!--		<setting name="ons_general_2" type="title" />
+		<setting name="ons_xmpphost_2" type="text">
+			<defaultvalue>ec2-50-17-143-143.compute-1.amazonaws.com</defaultvalue>
+		</setting>
+		<setting name="ons_xmppport_2" type="number">
+			<defaultvalue>5222</defaultvalue>
+		</setting>
+		<setting name="ons_stunhost_2" type="text">
+			<defaultvalue>stun.l.google.com</defaultvalue>
+		</setting>
+		<setting name="ons_stunport_2" type="number">
+			<defaultvalue>19302</defaultvalue>
+		</setting>
+		<setting name="ons_turnhost_2" type="text">
+			<defaultvalue>ec2-50-17-143-143.compute-1.amazonaws.com</defaultvalue>
+		</setting>
+		<setting name="ons_turnportudp_2" type="number">
+			<defaultvalue>3478</defaultvalue>
+		</setting>
+		<setting name="ons_turnporttcp_2" type="number">
+			<defaultvalue>3478</defaultvalue>
+		</setting>
+-->
+	</group>
+
+</swiftsettings>

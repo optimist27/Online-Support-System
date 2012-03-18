@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swiftholidays>
+	<title><![CDATA[SLA Holiday Pack]]></title>
+	<author><![CDATA[Kayako]]></author>
+	<version><![CDATA[4.00.01]]></version>
+	<holiday>
+		<title><![CDATA[New Year's Day]]></title>
+		<day><![CDATA[1]]></day>
+		<month><![CDATA[1]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Birthday of Martin Luther King, Jr.]]></title>
+		<day><![CDATA[17]]></day>
+		<month><![CDATA[1]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Washington's Birthday]]></title>
+		<day><![CDATA[21]]></day>
+		<month><![CDATA[2]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Memorial Day]]></title>
+		<day><![CDATA[30]]></day>
+		<month><![CDATA[5]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Independence Day]]></title>
+		<day><![CDATA[4]]></day>
+		<month><![CDATA[7]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Labor Day]]></title>
+		<day><![CDATA[5]]></day>
+		<month><![CDATA[9]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Columbus Day]]></title>
+		<day><![CDATA[10]]></day>
+		<month><![CDATA[10]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Veterans Day]]></title>
+		<day><![CDATA[11]]></day>
+		<month><![CDATA[11]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Thanksgiving Day]]></title>
+		<day><![CDATA[24]]></day>
+		<month><![CDATA[11]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+	<holiday>
+		<title><![CDATA[Christmas Day]]></title>
+		<day><![CDATA[25]]></day>
+		<month><![CDATA[12]]></month>
+		<flagicon><![CDATA[{$themepath}us.gif]]></flagicon>
+	</holiday>
+</swiftholidays>
